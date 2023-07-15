@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct TrendyTravelApp: App {
+    @StateObject var userVm = UserViewModel()
+    @StateObject var catVm = CategoryDetailsViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DestinationsListView()
+                .environmentObject(userVm)
+                .environmentObject(catVm)
         }
     }
 }
