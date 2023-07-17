@@ -26,6 +26,7 @@
 		7539DE832A49BF4F0015FA4F /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE822A49BF4F0015FA4F /* UserDetailsView.swift */; };
 		758A0E802A4D64EB008E22FC /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A0E7F2A4D64EB008E22FC /* Posts.swift */; };
 		758A0E9E2A4DA6F6008E22FC /* RestaurantDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A0E9D2A4DA6F6008E22FC /* RestaurantDetailsView.swift */; };
+		A814BB0D2A6547EF0018E680 /* Utility Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = A814BB0C2A6547EF0018E680 /* Utility Toolbox */; };
 		A86CF62E2A6536E3006725C5 /* TrendyTravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86CF62D2A6536E3006725C5 /* TrendyTravelViewModel.swift */; };
 		A86CF6312A653727006725C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A86CF6332A653727006725C5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A814BB0D2A6547EF0018E680 /* Utility Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +244,9 @@
 			dependencies = (
 			);
 			name = TrendyTravel;
+			packageProductDependencies = (
+				A814BB0C2A6547EF0018E680 /* Utility Toolbox */,
+			);
 			productName = TrendyTravel;
 			productReference = 7539DE222A4994650015FA4F /* TrendyTravel.app */;
 			productType = "com.apple.product-type.application";
@@ -315,6 +320,9 @@
 				fr,
 			);
 			mainGroup = 7539DE192A4994650015FA4F;
+			packageReferences = (
+				A814BB0B2A6547EF0018E680 /* XCRemoteSwiftPackageReference "UtilityToolbox" */,
+			);
 			productRefGroup = 7539DE232A4994650015FA4F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -707,6 +715,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A814BB0B2A6547EF0018E680 /* XCRemoteSwiftPackageReference "UtilityToolbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nokuni/UtilityToolbox";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A814BB0C2A6547EF0018E680 /* Utility Toolbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A814BB0B2A6547EF0018E680 /* XCRemoteSwiftPackageReference "UtilityToolbox" */;
+			productName = "Utility Toolbox";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7539DE1A2A4994650015FA4F /* Project object */;
 }
