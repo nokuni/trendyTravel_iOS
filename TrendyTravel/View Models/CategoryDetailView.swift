@@ -7,45 +7,45 @@
 
 import SwiftUI
 
-class CategoryDetailsViewModel: ObservableObject {
-    @Published var isLoading = true
-    @Published var activities: [Activity] = []
-    @Published var errorMessage = ""
-    init() {
-        let urlString = "https://trendytravel.onrender.com/activities"
-        guard let url = URL(string: urlString)
-        else {
-            self.isLoading = false
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                if let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 400 {
-                    self.isLoading = false
-                    self.errorMessage = "Bad status: \(statusCode)"
-                    return
-                }
-                
-                guard let data = data else { return }
-                do {
-                    self.activities = try JSONDecoder().decode([Activity].self, from: data)
-                } catch {
-                    print("Failed to decode JSON: ", error)
-                    self.errorMessage = error.localizedDescription
-                }
-                self.isLoading = false
-            }
-        }.resume()
-    }
-}
+//class CategoryDetailsViewModel: ObservableObject {
+//    @Published var isLoading = true
+//    @Published var activities: [Activity] = []
+//    @Published var errorMessage = ""
+//    init() {
+//        let urlString = "https://trendytravel.onrender.com/activities"
+//        guard let url = URL(string: urlString)
+//        else {
+//            self.isLoading = false
+//            return
+//        }
+//        
+//        URLSession.shared.dataTask(with: url) { data, response, error in
+//            
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                if let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 400 {
+//                    self.isLoading = false
+//                    self.errorMessage = "Bad status: \(statusCode)"
+//                    return
+//                }
+//                
+//                guard let data = data else { return }
+//                do {
+//                    self.activities = try JSONDecoder().decode([Activity].self, from: data)
+//                } catch {
+//                    print("Failed to decode JSON: ", error)
+//                    self.errorMessage = error.localizedDescription
+//                }
+//                self.isLoading = false
+//            }
+//        }.resume()
+//    }
+//}
 
 
 struct CategoryDetailView: View {
     let name: String
     @EnvironmentObject var vm: CategoryDetailsViewModel
-    
+
     var body: some View {
         if vm.isLoading {
             CategoryDetailLoadingView()
@@ -57,23 +57,48 @@ struct CategoryDetailView: View {
                 ScrollView {
                     ForEach(vm.activities, id: \.self) { activity in
                         CategoryDetailCardView(activity: activity)
-                            .navigationBarTitle(activity.category.capitalized, displayMode: .inline)
+//                            .navigationBarTitle(activity.category.capitalized, displayMode: .inline)
                     }
                 }
             }
-            
+            .navigationBarTitle(name.capitalized, displayMode: .inline)
         }
     }
 }
+//
+//struct CategoryDetailView: View {
+//    let destination: Destination
+//    @EnvironmentObject var vm: CategoryDetailsViewModel
+//
+//    var body: some View {
+//        if vm.isLoading {
+//            CategoryDetailLoadingView()
+//        } else {
+//            ZStack {
+//                if !vm.errorMessage.isEmpty {
+//                    CategoryDetailErrorView(errorMessage: vm.errorMessage)
+//                }
+//                ScrollView {
+//                    ForEach(vm.activities.filter { $0.destinationId == destination.id }, id: \.self) { activity in
+//                        CategoryDetailCardView(activity: activity)
+//                    }
+//                }
+//            }
+//            .padding()
+//        }
+////        .navigationBarTitle("\(destination.city), \(destination.country)")
+//    }
+//}
 
-struct CategoryDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            CategoryDetailView(name: "culture")
-                .environmentObject(CategoryDetailsViewModel())
-        }
-    }
-}
+//struct CategoryDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            CategoryDetailView(destination: destination)
+//                .environmentObject(CategoryDetailsViewModel())
+//        }
+//    }
+//}
+
 
 struct ActivityIndicatorView: UIViewRepresentable {
     typealias UIViewType = UIActivityIndicatorView
