@@ -8,7 +8,8 @@
 import Foundation
 
 struct Category: Hashable {
-    let name, imageName: String
+    let name: String
+    let imageName: String
 }
 
 struct Restaurant: Hashable {
@@ -16,10 +17,13 @@ struct Restaurant: Hashable {
 }
 
 // MARK: - Destination
-struct Destination: Codable, Hashable {
+struct Destination: Codable, Hashable, Identifiable {
     var id: Int
-    var country, city, inageName: String
-    var latitude, longitude: Double
+    var country: String
+    var city: String
+    var imageName: String
+    var latitude: Double
+    var longitude: Double
 }
 
 // MARK: - Activity
