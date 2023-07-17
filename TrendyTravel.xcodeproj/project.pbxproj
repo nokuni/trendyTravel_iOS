@@ -26,6 +26,8 @@
 		7539DE832A49BF4F0015FA4F /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE822A49BF4F0015FA4F /* UserDetailsView.swift */; };
 		758A0E802A4D64EB008E22FC /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A0E7F2A4D64EB008E22FC /* Posts.swift */; };
 		758A0E9E2A4DA6F6008E22FC /* RestaurantDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758A0E9D2A4DA6F6008E22FC /* RestaurantDetailsView.swift */; };
+		A86CF62E2A6536E3006725C5 /* TrendyTravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86CF62D2A6536E3006725C5 /* TrendyTravelViewModel.swift */; };
+		A86CF6312A653727006725C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A86CF6332A653727006725C5 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,9 @@
 		7539DE822A49BF4F0015FA4F /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		758A0E7F2A4D64EB008E22FC /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		758A0E9D2A4DA6F6008E22FC /* RestaurantDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsView.swift; sourceTree = "<group>"; };
+		A86CF62D2A6536E3006725C5 /* TrendyTravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendyTravelViewModel.swift; sourceTree = "<group>"; };
+		A86CF6322A653727006725C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A86CF6342A653739006725C5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,10 +123,12 @@
 		7539DE242A4994650015FA4F /* TrendyTravel */ = {
 			isa = PBXGroup;
 			children = (
-				7539DE252A4994650015FA4F /* TrendyTravelApp.swift */,
+				A86CF62A2A653674006725C5 /* App */,
+				A86CF62B2A653680006725C5 /* Resources */,
+				A86CF6292A653661006725C5 /* Data */,
 				7539DE592A49980D0015FA4F /* Models */,
 				7539DE5A2A49993A0015FA4F /* Views */,
-				7539DE292A4994670015FA4F /* Assets.xcassets */,
+				A86CF62C2A653691006725C5 /* View Models */,
 				7539DE2B2A4994670015FA4F /* Preview Content */,
 			);
 			path = TrendyTravel;
@@ -185,6 +192,38 @@
 				7539DE5E2A499BE60015FA4F /* CarouselHeaderView.swift */,
 			);
 			path = ExtractedViews;
+			sourceTree = "<group>";
+		};
+		A86CF6292A653661006725C5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A86CF6332A653727006725C5 /* Localizable.strings */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A86CF62A2A653674006725C5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7539DE252A4994650015FA4F /* TrendyTravelApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A86CF62B2A653680006725C5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7539DE292A4994670015FA4F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A86CF62C2A653691006725C5 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				A86CF62D2A6536E3006725C5 /* TrendyTravelViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +312,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 7539DE192A4994650015FA4F;
 			productRefGroup = 7539DE232A4994650015FA4F /* Products */;
@@ -292,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7539DE2D2A4994670015FA4F /* Preview Assets.xcassets in Resources */,
+				A86CF6312A653727006725C5 /* Localizable.strings in Resources */,
 				7539DE2A2A4994670015FA4F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +360,7 @@
 			files = (
 				7539DE5F2A499BE60015FA4F /* CarouselHeaderView.swift in Sources */,
 				7539DE562A4996F40015FA4F /* DestinationsCategoriesImageAndLabelView.swift in Sources */,
+				A86CF62E2A6536E3006725C5 /* TrendyTravelViewModel.swift in Sources */,
 				758A0E9E2A4DA6F6008E22FC /* RestaurantDetailsView.swift in Sources */,
 				7539DE542A4995EA0015FA4F /* DestinationsCategoriesView.swift in Sources */,
 				7539DE7F2A49B7EB0015FA4F /* TrendingCreatorsView.swift in Sources */,
@@ -366,11 +408,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		A86CF6332A653727006725C5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A86CF6322A653727006725C5 /* en */,
+				A86CF6342A653739006725C5 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		7539DE442A4994670015FA4F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -431,6 +486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -489,7 +545,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TrendyTravel/Preview Content\"";
-				DEVELOPMENT_TEAM = FLBCXB8HYK;
+				DEVELOPMENT_TEAM = Q6DV6C6352;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -518,7 +574,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TrendyTravel/Preview Content\"";
-				DEVELOPMENT_TEAM = FLBCXB8HYK;
+				DEVELOPMENT_TEAM = Q6DV6C6352;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
