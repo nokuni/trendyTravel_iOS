@@ -13,8 +13,8 @@ struct CarouselHeaderView: View {
     var body: some View {
         VStack {
             TabView(selection: $index) {
-                ForEach(images, id: \.self) { index in
-                    CarouselCustomBackground(imageName: index, isBlackBackground: false)
+                ForEach((0..<images.count), id: \.self) { index in
+                    CarouselCustomBackground(imageName: images[index], isBlackBackground: false)
                 }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
