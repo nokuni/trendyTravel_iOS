@@ -14,7 +14,7 @@ struct CarouselHeaderView: View {
         VStack {
             TabView(selection: $index) {
                 ForEach((0..<images.count), id: \.self) { index in
-                    CarouselCustomBackground(imageName: images[index], isBlackBackground: false)
+                    CarouselCustomBackground(imageName: images[index], isBlackBackground: true)
                 }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
@@ -27,26 +27,6 @@ struct CarouselHeaderView: View {
                 }
             }
             .padding()
-        }
-    }
-}
-
-
-struct CarouselCustomBackground: View {
-    let imageName: String
-    let isBlackBackground: Bool
-    var body: some View {
-        if isBlackBackground {
-            ZStack {
-                Color.black
-                Image(imageName)
-                    .resizable()
-                    .scaledToFit()
-            }
-        } else {
-            Image(imageName)
-                .resizable()
-                .scaledToFill()
         }
     }
 }

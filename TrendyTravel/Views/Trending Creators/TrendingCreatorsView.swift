@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct TrendingCreatorsView: View {
-    @EnvironmentObject var vm: UserViewModel
+struct TrendingCreatorsListView: View {
+    @EnvironmentObject var userVM: UserViewModel
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -19,17 +19,15 @@ struct TrendingCreatorsView: View {
                     .font(.system(size: 12, weight: .semibold))
             }
             .padding(.top)
-            .onAppear {
-                vm.users = vm.getUsers()
-            }
+            .onAppear { userVM.fetchUsers() }
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 40) {
-                    ForEach(vm.users, id: \.self) { user in
+                    ForEach(userVM.users) { user in
                         NavigationLink {
                             UserDetailsView(user: user)
                         } label: {
-                            DiscoverUserView(user: user)
+                            TrendingCreatorsItemView(user: user)
                         }
                         
                     }
@@ -42,29 +40,9 @@ struct TrendingCreatorsView: View {
     }
 }
 
-struct DiscoverUserView: View {
-    let user: User
-    var body: some View {
-        VStack {
-            Image(user.profilImage)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 80, height: 80)
-                .cornerRadius(.infinity)
-
-            Text(user.firstName)
-                .font(.system(size: 11, weight: .semibold))
-                .multilineTextAlignment(.center)
-                .foregroundColor(Color(.label))
-        }
-        .frame(width: 60)
-        .shadow(color: .gray, radius: 2, x: 0, y: 2)
-    }
-}
-
-struct TrendingCreatorsView_Previews: PreviewProvider {
+struct TrendingCreatorsListView_Previews: PreviewProvider {
     static var previews: some View {
-        TrendingCreatorsView()
+        TrendingCreatorsListView()
             .environmentObject(UserViewModel())
     }
 }

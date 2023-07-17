@@ -36,3 +36,12 @@ struct Activity: Codable, Hashable {
         case id, category, name, imageName, link, price, latitude, longitude, description, rating, destinationId
     }
 }
+
+extension Destination {
+    static let example = Destination(id: 0,
+                                     country: "France",
+                                     city: "Paris",
+                                     inageName: "",
+                                     latitude: 0,
+                                     longitude: 0)
+}

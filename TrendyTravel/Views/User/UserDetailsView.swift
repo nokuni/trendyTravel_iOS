@@ -2,52 +2,24 @@
 //  UserDetailsView.swift
 //  TrendyTravel
 //
-//  Created by Julie Collazos on 26/06/2023.
+//  Created by Yann Christophe Maertens on 17/07/2023.
 //
 
 import SwiftUI
-
-class UserViewModel: ObservableObject {
-    
-    @Published var users: [User] = []
-    
-    func getUsers() -> [User] {
-        guard let url = URL(string: "https://trendytravel.onrender.com/users") else { return users }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            DispatchQueue.main.async {
-                guard let data = data else { return }
-                do {
-                    self.users = try JSONDecoder().decode([User].self, from: data)
-                } catch let jsonError {
-                    print("Decoding failed for UserDetails:", jsonError)
-                }
-            }
-        }.resume()
-        return users
-    }
-}
 
 struct UserDetailsView: View {
     let user: User
     var body: some View {
         ScrollView {
             VStack(spacing: 12) {
-                Image("\(user.profilImage)")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 80)
-                    .clipShape(Circle())
-                    .shadow(radius: 10)
-                    .overlay(
-                        Circle()
-                            .stroke(Color.cyan.opacity(0.6), lineWidth: 2)
-                            .frame(width: 80, height: 80)
-                    )
-                Text("\(user.firstName) \(user.lastName)")
+                if let profileImage = user.profileImage {
+                    CircleShapeImageView(image: profileImage)
+                }
+                Text("\(user.firstName ?? "") \(user.lastName ?? "")")
                     .font(.system(size: 14, weight: .semibold))
                 
                 HStack {
-                    Text("@\(user.pseudo) •")
+                    Text("@\(user.username ?? "") •")
                     Image(systemName: "hand.thumbsup.fill")
                         .font(.system(size: 10, weight: .semibold))
                     Text("2541")
@@ -104,16 +76,18 @@ struct UserDetailsView: View {
                 ForEach(user.posts, id: \.self) { post in
                     VStack(alignment: .leading) {
                         Image(post.imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(height: 200)
-                                .clipped()
+                            .resizable()
+                            .scaledToFill()
+                            .frame(height: 200)
+                            .clipped()
                         HStack(alignment: .top) {
-                            Image(user.profilImage)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 34)
-                                .clipShape(Circle())
+                            if let profileImage = user.profileImage {
+                                Image(profileImage)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: 34)
+                                    .clipShape(Circle())
+                            }
                             VStack(alignment: .leading) {
                                 Text(post.title)
                                     .font(.system(size: 14, weight: .semibold))
@@ -131,7 +105,7 @@ struct UserDetailsView: View {
                             }
                         }
                         .padding(.horizontal, 8)
-                       
+                        
                         HStack {
                             Button {
                                 // action pour ajouter des likes
@@ -154,14 +128,14 @@ struct UserDetailsView: View {
             }
             .padding(.horizontal)
         }
-        .navigationBarTitle("\(user.pseudo)",  displayMode: .inline)
+        .navigationBarTitle("\(user.username ?? "")",  displayMode: .inline)
     }
 }
 
 struct UserDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            UserDetailsView(user: User(id: 0, firstName: "john", lastName: "doe", description: "hello I'm new", profilImage: "billy", pseudo: "jo.D", password: "kkk", email: "jo.d@gmail.com", posts: [Post(id: 0, title: "1st post", imageName: "eiffel_tower", hashtags: ["paradise", "lost"], userID: 0)]))
+            UserDetailsView(user: User.example)
         }
     }
 }
