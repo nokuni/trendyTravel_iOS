@@ -10,6 +10,7 @@ import SwiftUI
 struct DestinationsCategoriesImageAndLabelView: View {
     let image: String
     let title: String
+    
     var body: some View {
         VStack(spacing: 8) {
             Image(systemName: image)

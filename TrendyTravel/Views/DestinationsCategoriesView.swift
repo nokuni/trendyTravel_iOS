@@ -20,9 +20,13 @@ struct DestinationsCategoriesView: View {
             HStack(alignment: .top, spacing: 14) {
                 ForEach(categories, id: \.self) { category in
                     NavigationLink {
-                        CategoryDetailView(name: category.name)
+                        // TODO: fix link
+//                        CategoryDetailView(destination: destination)
                     } label: {
-                        DestinationsCategoriesImageAndLabelView(image: category.imageName, title: category.name)
+                        DestinationsCategoriesImageAndLabelView(
+                            image: category.imageName,
+                            title: category.name
+                        )
                     }
                 }
             }
