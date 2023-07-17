@@ -1,3 +1,4 @@
 
 .DS_Store
-TrendyTravel.xcodeproj/project.xcworkspace/xcuserdata/zoe.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcuserstate
+
