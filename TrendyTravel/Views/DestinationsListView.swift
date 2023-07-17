@@ -46,27 +46,27 @@ struct DestinationsListView: View {
                 .navigationTitle("Discover")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: MyProfileView(loggedUser: tempUserInfo)) {
-                            VStack(alignment: .trailing, spacing: 3){
-                                if let imageName = tempUserInfo.profilImage, !imageName.isEmpty {
-                                    Image(imageName)
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 36, height: 36)
-                                        .clipShape(Circle())
-                                } else {
-                                    Image(systemName: "person.crop.circle")
-                                        .resizable()
-                                        .frame(width: 36, height: 36)
-                                        .foregroundColor(.white.opacity(0.98))
+                        if tempIsUserLoggedIn {
+                            NavigationLink(destination:  MyProfileView(loggedUser: tempUserInfo)) {
+                                HStack(spacing: 8){
+                                    if let imageName = tempUserInfo.profilImage, !imageName.isEmpty {
+                                        Image(imageName)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 41, height: 41)
+                                            .clipShape(Circle())
+                                            .padding(.bottom, 8)
+                                    }
                                 }
-                                Text(tempIsUserLoggedIn ? tempUserInfo.firstName : "Log In")
-                                    .foregroundColor(.white)
-                                    .font(.system(size: 14))
-                                    .bold(tempIsUserLoggedIn ? false : true)
                             }
-                            .padding(.all, 8)
-                            .padding(.vertical,20)
+                        } else {
+                            NavigationLink(destination: LoginView()) {
+                                Image(systemName: "person.crop.circle")
+                                    .resizable()
+                                    .frame(width: 36, height: 36)
+                                    .foregroundColor(.black.opacity(0.95))
+                                    .padding(.bottom, 8)
+                            }
                         }
                     }
                 }
@@ -74,7 +74,6 @@ struct DestinationsListView: View {
         }
     }
 }
-
 
 struct DestinationsListView_Previews: PreviewProvider {
     static var previews: some View {
