@@ -15,8 +15,7 @@ struct PopularRestaurantsView: View {
                 Text("Popular Restaurants")
                     .font(.system(size: 14, weight: .semibold))
                 Spacer()
-                Text("See all")
-                    .font(.system(size: 12, weight: .semibold))
+                seeAllButton()
             }
             .padding(.horizontal)
             .padding(.top)
@@ -32,7 +31,6 @@ struct PopularRestaurantsView: View {
             Text("See all")
                 .font(.system(size: 12, weight: .semibold))
         }
-
     }
     
     @ViewBuilder
@@ -52,7 +50,7 @@ struct PopularRestaurantsView: View {
     private func restaurantList() -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                ForEach(activityVM.activities, id: \.self) { restaurant in
+                ForEach(activityVM.particularActivities(category: .restaurant), id: \.self) { restaurant in
                     restaurantItem(restaurant: restaurant)
                 }
             }

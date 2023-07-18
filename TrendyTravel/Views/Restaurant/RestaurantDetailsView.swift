@@ -9,37 +9,23 @@ import SwiftUI
 
 
 struct RestaurantDetailsView: View {
+    @EnvironmentObject var destinationVM: DestinationViewModel
     var activity: Activity
     var reviews: [Review]
     var body: some View{
         ScrollView {
             ZStack(alignment: .bottomLeading) {
-                Image(activity.imageName)
-                    .resizable()
-                    .scaledToFill()
-                
-                LinearGradient(gradient: Gradient(colors: [Color.clear, Color.black]), startPoint: .center, endPoint: .bottom)
-                
-                HStack {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(activity.name)
-                            .foregroundColor(.white)
-                            .font(.system(size: 18, weight: .bold))
-                        HStack {
-                            ForEach(0..<5, id: \.self) { _ in
-                                Image(systemName: "star.fill")
-                            }
-                            .foregroundColor(.orange)
-                        }
-                    }
-                    Spacer()
-                }
-                .padding()
+                imageHeader()
+                imageGradientOverlay()
+                nameAndRating()
             }
             VStack(alignment: .leading, spacing: 8) {
                 Text("Location & Description")
                     .font(.system(size: 16, weight: .bold))
-                Text("Tokyo, Japan")
+                if let destination = destinationVM.destination(id: activity.id) {
+                    Text("\(destination.city), \(destination.country)")
+                    
+                }
                 HStack {
                     ForEach(0..<5, id: \.self) { _ in
                         Image(systemName: "dollarsign.circle.fill")
@@ -50,17 +36,52 @@ struct RestaurantDetailsView: View {
             }
             .padding(.top)
             .padding(.horizontal)
-            Text(activity.description)
-                .padding(.top, 8)
-                .font(.system(size: 14, weight: .regular))
-                .padding(.horizontal)
-                .padding(.bottom)
+            description()
             Divider()
                 .padding(.horizontal)
             ReviewList(reviews: reviews)
                 .padding(.top)
         }
         .navigationBarTitle("Restaurant Details", displayMode: .inline)
+    }
+    
+    @ViewBuilder
+    private func imageHeader() -> some View {
+        ImageURLView(image: activity.imageName)
+            .scaledToFill()
+    }
+    
+    @ViewBuilder
+    private func imageGradientOverlay() -> some View {
+        LinearGradient(gradient: Gradient(colors: [Color.clear, Color.black]), startPoint: .center, endPoint: .bottom)
+    }
+    
+    @ViewBuilder
+    private func nameAndRating() -> some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(activity.name)
+                    .foregroundColor(.white)
+                    .font(.system(size: 18, weight: .bold))
+                StarRatingView(rating: activity.rating)
+            }
+            Spacer()
+        }
+        .padding()
+    }
+    
+    @ViewBuilder
+    private func description() -> some View {
+        Text(activity.description)
+            .padding(.top, 8)
+            .font(.system(size: 14, weight: .regular))
+            .padding(.horizontal)
+            .padding(.bottom)
+    }
+    
+    @ViewBuilder
+    private func function() -> some View {
+        
     }
 }
 

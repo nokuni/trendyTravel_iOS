@@ -12,13 +12,11 @@ class DestinationViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var destinations: [Destination] = []
     
-    var destination: Destination?
+    private let url = AppConfiguration.routes.destinationsBaseURL
     
     init() {
         fetchDestinations()
     }
-    
-    private let url = AppConfiguration.routes.destinationsBaseURL
     
     private func getDestinations() async throws -> [Destination] {
         do {
@@ -47,12 +45,10 @@ class DestinationViewModel: ObservableObject {
         }
     }
     
-    func destination(id: Int) {
-        DispatchQueue.main.async {
-            AsyncManager.loadContent { [weak self] in
-                guard let self else { return }
-                self.destination = try await self.getDestination(id: id)
-            }
+    func destination(id: Int) -> Destination? {
+        if let destination = destinations.first(where: { $0.id == id }) {
+            return destination
         }
+        return nil
     }
 }

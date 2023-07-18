@@ -60,6 +60,9 @@
 		A8D718422A66CF73008F4524 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D718412A66CF73008F4524 /* ActivityIndicatorView.swift */; };
 		A8D718442A66D589008F4524 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D718432A66D589008F4524 /* Follower.swift */; };
 		A8D718452A66DA28008F4524 /* DestinationDetailCarouselHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE5E2A499BE60015FA4F /* DestinationDetailCarouselHeader.swift */; };
+		A8D718472A66E7F7008F4524 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D718462A66E7F7008F4524 /* StarRatingView.swift */; };
+		A8D718492A66EBC1008F4524 /* AllDestinationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D718482A66EBC1008F4524 /* AllDestinationListView.swift */; };
+		A8D7184B2A66ED6A008F4524 /* ImageURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D7184A2A66ED6A008F4524 /* ImageURLView.swift */; };
 		C846F6922A6572D6000FF9E8 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846F6912A6572D6000FF9E8 /* MyProfileView.swift */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +141,9 @@
 		A8D7183D2A66CF4C008F4524 /* CategoryDetailLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDetailLoadingView.swift; sourceTree = "<group>"; };
 		A8D718412A66CF73008F4524 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		A8D718432A66D589008F4524 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		A8D718462A66E7F7008F4524 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		A8D718482A66EBC1008F4524 /* AllDestinationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDestinationListView.swift; sourceTree = "<group>"; };
+		A8D7184A2A66ED6A008F4524 /* ImageURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLView.swift; sourceTree = "<group>"; };
 		C846F6912A6572D6000FF9E8 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -307,6 +313,8 @@
 				A8C503E82A65997A00A4BF22 /* AppButtonView.swift */,
 				A8C503F42A65A6FA00A4BF22 /* CircleShapeImageView.swift */,
 				A8C504002A65BD7600A4BF22 /* SearchBarView.swift */,
+				A8D718462A66E7F7008F4524 /* StarRatingView.swift */,
+				A8D7184A2A66ED6A008F4524 /* ImageURLView.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -434,6 +442,7 @@
 				A8D7182D2A66CEF7008F4524 /* DestinationsCategoriesView.swift */,
 				A8D7182F2A66CEF7008F4524 /* PopularDestinationsView.swift */,
 				A8D7182E2A66CEF7008F4524 /* PopularDestinationTile.swift */,
+				A8D718482A66EBC1008F4524 /* AllDestinationListView.swift */,
 			);
 			path = Lists;
 			sourceTree = "<group>";
@@ -582,7 +591,9 @@
 				A8C503FB2A65A8CD00A4BF22 /* APIRoute.swift in Sources */,
 				A8C503F72A65A74400A4BF22 /* UserDetailsView.swift in Sources */,
 				A8C5042D2A669A8B00A4BF22 /* RestaurantTileView.swift in Sources */,
+				A8D718472A66E7F7008F4524 /* StarRatingView.swift in Sources */,
 				A814BB132A656EE90018E680 /* LoginView.swift in Sources */,
+				A8D7184B2A66ED6A008F4524 /* ImageURLView.swift in Sources */,
 				A86CF62E2A6536E3006725C5 /* DestinationViewModel.swift in Sources */,
 				758A0E9E2A4DA6F6008E22FC /* RestaurantDetailsView.swift in Sources */,
 				A8C503E32A6596CD00A4BF22 /* FieldView.swift in Sources */,
@@ -605,6 +616,7 @@
 				A8D718402A66CF4C008F4524 /* CategoryDetailLoadingView.swift in Sources */,
 				A8C503F92A65A8A300A4BF22 /* AppConfiguration.swift in Sources */,
 				7539DE7B2A49B4DC0015FA4F /* PopularRestaurantsView.swift in Sources */,
+				A8D718492A66EBC1008F4524 /* AllDestinationListView.swift in Sources */,
 				A8C503EB2A6599D700A4BF22 /* SignInView.swift in Sources */,
 				A8C504042A65D34E00A4BF22 /* Attraction.swift in Sources */,
 				A8C503ED2A6599DC00A4BF22 /* SignUpView.swift in Sources */,

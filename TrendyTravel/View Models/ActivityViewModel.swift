@@ -12,12 +12,13 @@ class ActivityViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var activities: [Activity] = []
     
+    private let url = AppConfiguration.routes.activitiesBaseURL
+    
     init () {
         fetchActivities()
     }
     
     func getActivities() async throws -> [Activity] {
-        let url = AppConfiguration.routes.activitiesBaseURL
         do {
             return try await AppConfiguration.routes.manager.get(url: url)
         } catch {
@@ -27,7 +28,6 @@ class ActivityViewModel: ObservableObject {
     }
     
     func getActivity(id: Int) async throws -> Activity? {
-        let url = AppConfiguration.routes.activitiesBaseURL
         do {
             return try await AppConfiguration.routes.manager.get(url: url, id: id)
         } catch {

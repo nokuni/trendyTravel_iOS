@@ -13,8 +13,13 @@ class CategoryDetailsViewModel: ObservableObject {
     @Published var activities: [Activity] = []
     @Published var errorMessage = ""
     
+    private let url = AppConfiguration.routes.activitiesBaseURL
+    
+    init() {
+        fetchActivities()
+    }
+    
     func getActivities() async throws -> [Activity] {
-        let url = AppConfiguration.routes.activitiesBaseURL
         do {
             return try await AppConfiguration.routes.manager.get(url: url)
         } catch {
@@ -29,9 +34,5 @@ class CategoryDetailsViewModel: ObservableObject {
                 self.activities = try await self.getActivities()
             }
         }
-    }
-    
-    init() {
-        fetchActivities()
     }
 }

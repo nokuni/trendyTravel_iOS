@@ -21,7 +21,6 @@ struct TrendyTravelApp: App {
                 .environmentObject(activityVM)
                 .environmentObject(userVm)
                 .environmentObject(catVm)
-                .environmentObject(destinationVM)
         }
     }
 }

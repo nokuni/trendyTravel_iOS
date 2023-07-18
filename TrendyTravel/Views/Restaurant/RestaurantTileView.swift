@@ -21,19 +21,9 @@ struct RestaurantTileView: View {
     
     @ViewBuilder
     private func image() -> some View {
-        if let url = URL(string: activity.imageName) {
-            AsyncImage(url: url) { phase in
-                if let image = phase.image {
-                    image.resizable()
-                } else if phase.error != nil {
-                    Color.silver
-                } else {
-                    ProgressView()
-                }
-            }
+        ImageURLView(image: activity.imageName)
             .frame(width: 70, height: 70)
             .cornerRadius(5)
-        }
     }
     
     @ViewBuilder
@@ -47,14 +37,11 @@ struct RestaurantTileView: View {
                     Image(systemName: "star.fill")
                     Text("\(activity.rating)")
                 }
-                if let destination = destinationVM.destination {
-                    Text("\(destination.country), \(destination.city)")
+                if let destination = destinationVM.destination(id: activity.destinationId) {
+                    Text("\(destination.country.capitalized), \(destination.city.capitalized)")
                 }
             }
             .font(.system(size: 12, weight: .semibold))
-            .onAppear {
-                destinationVM.destination(id: activity.destinationId)
-            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal)
