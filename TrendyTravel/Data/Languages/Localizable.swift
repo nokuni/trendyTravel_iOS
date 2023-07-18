@@ -117,4 +117,11 @@ internal enum L10n {
         internal static let password = NSLocalizedString("Password", comment: "")
         internal static let register = NSLocalizedString("Register", comment: "")
     }
+    internal enum DestinationsCategoriesView {
+        internal static let culture = NSLocalizedString("culture", comment: "")
+        internal static let show = NSLocalizedString("show", comment: "")
+        internal static let sports = NSLocalizedString("sports", comment: "")
+        internal static let restaurant = NSLocalizedString("restaurant", comment: "")
+        internal static let bar = NSLocalizedString("bar", comment: "")
+    }
 }

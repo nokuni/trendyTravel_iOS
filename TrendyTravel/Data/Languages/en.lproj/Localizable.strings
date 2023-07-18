@@ -11,11 +11,11 @@
 "destinationView_navigationBar.title" = "Discover";
 
 //DestinationsCategoriesView
-"destinationsCategoriesView.categories.culture.title" = "Culture";
-"destinationsCategoriesView.categories.spectacles.title" = "Spectacles";
-"destinationsCategoriesView.categories.sports.title" = "Sports";
-"destinationsCategoriesView.categories.restaurant.title" = "Restaurant";
-"destinationsCategoriesView.categories.bar.title" = "Bar";
+"destinationsCategoriesView.culture" = "Culture";
+"destinationsCategoriesView.show" = "show";
+"destinationsCategoriesView.sports" = "Sports";
+"destinationsCategoriesView.restaurant" = "Restaurant";
+"destinationsCategoriesView.bar" = "Bar";
 
 // CategoryDetailLoadingView
 "categoryDetailLoadingView.loarding" = "Loarding...";
