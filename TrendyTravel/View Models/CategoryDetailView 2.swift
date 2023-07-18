@@ -57,7 +57,7 @@ struct CategoryDetailView: View {
                 ScrollView {
                     ForEach(vm.activities, id: \.self) { activity in
                         CategoryDetailCardView(activity: activity)
-                            .navigationBarTitle(activity.category.rawValue.capitalized, displayMode: .inline)
+                            .navigationBarTitle(activity.category.capitalized, displayMode: .inline)
                     }
                 }
             }
