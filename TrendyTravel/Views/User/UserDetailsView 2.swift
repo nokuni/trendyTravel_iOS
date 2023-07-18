@@ -22,28 +22,28 @@ struct UserDetailsView: View {
                     Text("@\(user.username ?? "") •")
                     Image(systemName: "hand.thumbsup.fill")
                         .font(.system(size: 10, weight: .semibold))
-                    Text(L10n.UserDetailsView.numero)
+                    Text("2541")
                 }
                 .font(.system(size: 12, weight: .regular))
                 
-                Text(L10n.UserDetailsView.description)
+                Text("YouTuber, Vlogger, Travel Creator")
                     .font(.system(size: 14, weight: .regular))
                     .foregroundColor(Color(.lightGray))
                 
                 HStack(spacing: 12) {
                     VStack {
-                        Text(L10n.UserDetailsView.Followers.numbers)
+                        Text("3")
                             .font(.system(size: 13, weight: .semibold))
-                        Text(L10n.UserDetailsView.Followers.followers)
+                        Text("Followers")
                             .font(.system(size: 9, weight: .regular))
                     }
                     Spacer()
                         .frame(width: 0.5, height: 12)
                         .background(Color(.lightGray))
                     VStack {
-                        Text(L10n.UserDetailsView.Following.numbers)
+                        Text("2")
                             .font(.system(size: 13, weight: .semibold))
-                        Text(L10n.UserDetailsView.Following.following)
+                        Text("Following")
                             .font(.system(size: 9, weight: .regular))
                     }
                 }
@@ -51,7 +51,7 @@ struct UserDetailsView: View {
                     Button(action: {}) {
                         HStack {
                             Spacer()
-                            Text(L10n.UserDetailsView.follow)
+                            Text("Follow")
                                 .foregroundColor(.white)
                             Spacer()
                         }
@@ -62,7 +62,7 @@ struct UserDetailsView: View {
                     Button(action: {}) {
                         HStack {
                             Spacer()
-                            Text(L10n.UserDetailsView.contact)
+                            Text("Contact")
                                 .foregroundColor(.black)
                             Spacer()
                         }
@@ -114,7 +114,7 @@ struct UserDetailsView: View {
                                     .foregroundColor(.cyan)
                                     .font(.system(size: 12))
                             }
-                            Text(L10n.UserDetailsView.likes)
+                            Text("102 likes")
                                 .font(.system(size: 12, weight: .regular))
                                 .foregroundColor(.gray)
                         }
@@ -134,6 +134,8 @@ struct UserDetailsView: View {
 
 struct UserDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        UserDetailsView(user: User.example)
+        NavigationView {
+            UserDetailsView(user: User.example)
+        }
     }
 }

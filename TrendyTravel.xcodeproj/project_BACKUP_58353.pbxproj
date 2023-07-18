@@ -613,8 +613,11 @@
 				A8C503F92A65A8A300A4BF22 /* AppConfiguration.swift in Sources */,
 				7539DE7B2A49B4DC0015FA4F /* PopularRestaurantsView.swift in Sources */,
 				A8C503EB2A6599D700A4BF22 /* SignInView.swift in Sources */,
+<<<<<<< HEAD
 				A8C5040E2A65E2A900A4BF22 /* CarouselCustomBackground.swift in Sources */,
 				7BF381852A66909C009C5442 /* Localizable.swift in Sources */,
+=======
+>>>>>>> b2c1cad9776ae710cc402aa3018ddc86bec368e8
 				A8C504042A65D34E00A4BF22 /* Attraction.swift in Sources */,
 				A8C504082A65D39700A4BF22 /* PopularDestinationsDetailsView.swift in Sources */,
 				A8C503ED2A6599DC00A4BF22 /* SignUpView.swift in Sources */,
@@ -802,7 +805,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TrendyTravel/Preview Content\"";
+<<<<<<< HEAD
+				DEVELOPMENT_TEAM = GGSAC4842K;
+=======
 				DEVELOPMENT_TEAM = CC445LJFJY;
+>>>>>>> b2c1cad9776ae710cc402aa3018ddc86bec368e8
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TrendyTravel/Info.plist;
@@ -835,7 +842,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TrendyTravel/Preview Content\"";
+<<<<<<< HEAD
+				DEVELOPMENT_TEAM = GGSAC4842K;
+=======
 				DEVELOPMENT_TEAM = CC445LJFJY;
+>>>>>>> b2c1cad9776ae710cc402aa3018ddc86bec368e8
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TrendyTravel/Info.plist;

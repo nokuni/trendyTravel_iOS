@@ -57,7 +57,7 @@ struct CategoryDetailView: View {
                 ScrollView {
                     ForEach(vm.activities, id: \.self) { activity in
                         CategoryDetailCardView(activity: activity)
-                            .navigationBarTitle(activity.category.rawValue.capitalized, displayMode: .inline)
+                            .navigationBarTitle(activity.category.capitalized, displayMode: .inline)
                     }
                 }
             }
@@ -94,7 +94,7 @@ struct CategoryDetailLoadingView: View {
     var body: some View {
         VStack {
             ActivityIndicatorView()
-            Text(L10n.CategoryDetailLoadingView.loarding)
+            Text("Loading...")
                 .foregroundColor(.white)
                 .font(.system(size: 16, weight: .semibold))
         }

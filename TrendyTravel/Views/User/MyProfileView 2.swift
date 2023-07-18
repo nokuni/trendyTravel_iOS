@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
+//temp comp, copied form user view
 struct MyProfileView: View {
     @EnvironmentObject var userVM: UserViewModel
-    
     var body: some View {
         if let user = userVM.user {
             ScrollView {
@@ -35,28 +35,28 @@ struct MyProfileView: View {
                         Text("@\(user.username ?? "") •")
                         Image(systemName: "hand.thumbsup.fill")
                             .font(.system(size: 10, weight: .semibold))
-                        Text(L10n.MyProfileView.numero)
+                        Text("2541")
                     }
                     .font(.system(size: 12, weight: .regular))
                     
-                    Text(L10n.MyProfileView.description)
+                    Text("YouTuber, Vlogger, Travel Creator")
                         .font(.system(size: 14, weight: .regular))
                         .foregroundColor(Color(.lightGray))
                     
                     HStack(spacing: 12) {
                         VStack {
-                            Text(L10n.MyProfileView.Followers.numbers)
+                            Text("3")
                                 .font(.system(size: 13, weight: .semibold))
-                            Text(L10n.MyProfileView.Followers.followers)
+                            Text("Followers")
                                 .font(.system(size: 9, weight: .regular))
                         }
                         Spacer()
                             .frame(width: 0.5, height: 12)
                             .background(Color(.lightGray))
                         VStack {
-                            Text(L10n.MyProfileView.Following.numbers)
+                            Text("2")
                                 .font(.system(size: 13, weight: .semibold))
-                            Text(L10n.MyProfileView.Following.following)
+                            Text("Following")
                                 .font(.system(size: 9, weight: .regular))
                         }
                     }
@@ -64,7 +64,7 @@ struct MyProfileView: View {
                         Button(action: {}) {
                             HStack {
                                 Spacer()
-                                Text(L10n.MyProfileView.follow)
+                                Text("Follow")
                                     .foregroundColor(.white)
                                 Spacer()
                             }
@@ -75,7 +75,7 @@ struct MyProfileView: View {
                         Button(action: {}) {
                             HStack {
                                 Spacer()
-                                Text(L10n.MyProfileView.contact)
+                                Text("Contact")
                                     .foregroundColor(.black)
                                 Spacer()
                             }
@@ -90,8 +90,8 @@ struct MyProfileView: View {
                 }
                 .padding(.horizontal)
             }
-            .padding(.all, 8)
-            .padding(.vertical,20)
+            
+            .navigationBarTitle("\(user.username ?? "")",  displayMode: .inline)
         }
     }
 }
@@ -100,7 +100,6 @@ struct MyProfileView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             MyProfileView()
-                .environmentObject(UserViewModel())
         }
     }
 }

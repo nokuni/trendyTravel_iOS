@@ -2,7 +2,7 @@
 //  DiscoverView.swift
 //  TrendyTravel
 //
-//  Created by Yann Christophe Maertens on 17/07/2023.
+//  Created by Julie Collazos on 26/06/2023.
 //
 
 import SwiftUI
@@ -12,14 +12,13 @@ struct DiscoverView: View {
     @FocusState var focusField: FocusField?
     @EnvironmentObject var userVM: UserViewModel
     @State var searchText = ""
-
     var body: some View {
         NavigationView {
             ZStack {
                 background()
                 scrollContent()
             }
-            .navigationTitle(L10n.DiscoverView.NavigationBar.title)
+            .navigationTitle("Discover")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     UserProfileItemView()
@@ -42,7 +41,7 @@ struct DiscoverView: View {
     private func scrollContent() -> some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                SearchBarView(prompt: L10n.DiscoverView.SchearchBar.prompt,
+                SearchBarView(prompt: "Where do you want to go?",
                               focusField: $focusField,
                               text: $searchText)
                 DestinationsCategoriesView()
