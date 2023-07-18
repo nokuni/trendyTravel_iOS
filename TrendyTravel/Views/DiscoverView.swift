@@ -19,7 +19,7 @@ struct DiscoverView: View {
                 background()
                 scrollContent()
             }
-            .navigationTitle("Discover")
+            .navigationTitle(L10n.DiscoverView.NavigationBar.title)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     UserProfileItemView()
@@ -42,7 +42,7 @@ struct DiscoverView: View {
     private func scrollContent() -> some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                SearchBarView(prompt: "Where do you want to go?",
+                SearchBarView(prompt: L10n.DiscoverView.SchearchBar.prompt,
                               focusField: $focusField,
                               text: $searchText)
                 DestinationsCategoriesView()

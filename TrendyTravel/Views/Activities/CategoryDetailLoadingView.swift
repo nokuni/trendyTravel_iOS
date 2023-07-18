@@ -11,7 +11,7 @@ struct CategoryDetailLoadingView: View {
     var body: some View {
         VStack {
             ActivityIndicatorView()
-            Text("Loading...")
+            Text(L10n.CategoryDetailLoadingView.loarding)
                 .foregroundColor(.white)
                 .font(.system(size: 16, weight: .semibold))
         }

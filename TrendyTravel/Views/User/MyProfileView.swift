@@ -12,80 +12,83 @@ struct MyProfileView: View {
     @EnvironmentObject var userVM: UserViewModel
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 12) {
-                Image("\(userVM.user?.profileImage ?? "")")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 80)
-                    .clipShape(Circle())
-                    .shadow(radius: 10)
-                    .overlay(
-                        Circle()
-                            .stroke(Color.cyan.opacity(0.6), lineWidth: 2)
-                            .frame(width: 80, height: 80)
-                    )
-                Text("\(userVM.user?.firstName ?? "NotFound") \(userVM.user?.lastName ?? "NotFound")")
-                    .font(.system(size: 14, weight: .semibold))
-                
-                HStack {
-                    Text("@\(userVM.user?.username ?? "NotFound") •")
-                    Image(systemName: "hand.thumbsup.fill")
-                        .font(.system(size: 10, weight: .semibold))
-                    Text("2541")
-                }
-                .font(.system(size: 12, weight: .regular))
-                
-                Text("YouTuber, Vlogger, Travel Creator")
-                    .font(.system(size: 14, weight: .regular))
-                    .foregroundColor(Color(.lightGray))
-                
-                HStack(spacing: 12) {
-                    VStack {
-                        Text("3")
-                            .font(.system(size: 13, weight: .semibold))
-                        Text("Followers")
-                            .font(.system(size: 9, weight: .regular))
+        if let user = userVM.user {
+            ScrollView {
+                VStack(spacing: 12) {
+                    if let profileImage = user.profileImage {
+                        Image("\(profileImage)")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 80)
+                            .clipShape(Circle())
+                            .shadow(radius: 10)
+                            .overlay(
+                                Circle()
+                                    .stroke(Color.cyan.opacity(0.6), lineWidth: 2)
+                                    .frame(width: 80, height: 80)
+                            )
                     }
-                    Spacer()
-                        .frame(width: 0.5, height: 12)
-                        .background(Color(.lightGray))
-                    VStack {
-                        Text("2")
-                            .font(.system(size: 13, weight: .semibold))
-                        Text("Following")
-                            .font(.system(size: 9, weight: .regular))
+                    Text("\(user.firstName ?? "") \(user.lastName ?? "")")
+                        .font(.system(size: 14, weight: .semibold))
+                    
+                    HStack {
+                        Text("@\(user.username ?? "") •")
+                        Image(systemName: "hand.thumbsup.fill")
+                            .font(.system(size: 10, weight: .semibold))
+                        Text(L10n.MyProfileView.numero)
                     }
-                }
-                HStack(spacing: 12) {
-                    Button(action: {}) {
-                        HStack {
-                            Spacer()
-                            Text("Follow")
-                                .foregroundColor(.white)
-                            Spacer()
+                    .font(.system(size: 12, weight: .regular))
+                    
+                    Text(L10n.MyProfileView.description)
+                        .font(.system(size: 14, weight: .regular))
+                        .foregroundColor(Color(.lightGray))
+                    
+                    HStack(spacing: 12) {
+                        VStack {
+                            Text(L10n.MyProfileView.Followers.numbers)
+                                .font(.system(size: 13, weight: .semibold))
+                            Text(L10n.MyProfileView.Followers.followers)
+                                .font(.system(size: 9, weight: .regular))
                         }
-                        .padding(.vertical, 8)
-                        .background(Color.cyan)
-                        .cornerRadius(50)
-                    }
-                    Button(action: {}) {
-                        HStack {
-                            Spacer()
-                            Text("Contact")
-                                .foregroundColor(.black)
-                            Spacer()
+                        Spacer()
+                            .frame(width: 0.5, height: 12)
+                            .background(Color(.lightGray))
+                        VStack {
+                            Text(L10n.MyProfileView.Following.numbers)
+                                .font(.system(size: 13, weight: .semibold))
+                            Text(L10n.MyProfileView.Following.following)
+                                .font(.system(size: 9, weight: .regular))
                         }
-                        .padding(.vertical, 8)
-                        .background(Color(white: 0.9))
-                        .cornerRadius(50)
                     }
+                    HStack(spacing: 12) {
+                        Button(action: {}) {
+                            HStack {
+                                Spacer()
+                                Text(L10n.MyProfileView.follow)
+                                    .foregroundColor(.white)
+                                Spacer()
+                            }
+                            .padding(.vertical, 8)
+                            .background(Color.cyan)
+                            .cornerRadius(50)
+                        }
+                        Button(action: {}) {
+                            HStack {
+                                Spacer()
+                                Text(L10n.MyProfileView.contact)
+                                    .foregroundColor(.black)
+                                Spacer()
+                            }
+                            .padding(.vertical, 8)
+                            .background(Color(white: 0.9))
+                            .cornerRadius(50)
+                        }
+                    }
+                    .font(.system(size: 12, weight: .semibold))
+                    
+                    PostsListView(user: user)
                 }
-                if let firstName = userVM.user?.firstName {
-                    Text(firstName)
-                        .foregroundColor(.white)
-                        .font(.system(size: 14))
-                }
+                .padding(.horizontal)
             }
             .padding(.all, 8)
             .padding(.vertical,20)

@@ -12,7 +12,7 @@ struct PopularRestaurantsView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("Popular Restaurants")
+                Text(L10n.PopularRestaurantsView.title)
                     .font(.system(size: 14, weight: .semibold))
                 Spacer()
                 seeAllButton()
@@ -28,7 +28,7 @@ struct PopularRestaurantsView: View {
         NavigationLink {
             AllRestaurantListView()
         } label: {
-            Text("See all")
+            Text(L10n.PopularRestaurantsView.see_all)
                 .font(.system(size: 12, weight: .semibold))
         }
     }
@@ -37,7 +37,7 @@ struct PopularRestaurantsView: View {
     private func restaurantItem(restaurant: Activity) -> some View {
         NavigationLink {
             RestaurantDetailsView(activity: restaurant,
-                                  reviews: [Review(id: 0, content: "Very good restaurant with typical Tokyo habitants and amazing food", rating: 5, userID: 0, activityID: 0)])
+                                  reviews: [Review(id: 0, content: L10n.RestaurantDetailsView.content, rating: 5, userID: 0, activityID: 0)])
         } label: {
             RestaurantTileView(activity: restaurant)
                 .foregroundColor(Color(.label))
