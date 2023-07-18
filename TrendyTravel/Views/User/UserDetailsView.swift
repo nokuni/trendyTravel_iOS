@@ -134,8 +134,6 @@ struct UserDetailsView: View {
 
 struct UserDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            UserDetailsView(user: User.example)
-        }
+        UserDetailsView(user: User.example)
     }
 }
