@@ -11,7 +11,8 @@ import Utility_Toolbox
 struct DiscoverView: View {
     @FocusState var focusField: FocusField?
     @EnvironmentObject var userVM: UserViewModel
-    @State var searchText = ""
+    @State private var searchText = ""
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -41,17 +42,21 @@ struct DiscoverView: View {
     private func scrollContent() -> some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                SearchBarView(prompt: "Where do you want to go?",
+                SearchBarView(prompt: "Where would you like to go?",
                               focusField: $focusField,
                               text: $searchText)
-                DestinationsCategoriesView()
-                VStack {
-                    PopularDestinationsView()
-                    PopularRestaurantsView()
-                    TrendingCreatorsListView()
+                if searchText.isNotEmpty {
+                    SearchListView(text: $searchText)
+                } else {
+                    DestinationsCategoriesView()
+                    VStack {
+                        PopularDestinationsView()
+                        PopularRestaurantsView()
+                        TrendingCreatorsListView()
+                    }
+                    .background(Color.white)
+                    .cornerRadius(16)
                 }
-                .background(Color.white)
-                .cornerRadius(16)
             }
         }
     }
