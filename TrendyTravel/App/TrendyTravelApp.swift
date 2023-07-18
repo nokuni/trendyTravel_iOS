@@ -11,12 +11,15 @@ import SwiftUI
 struct TrendyTravelApp: App {
     @StateObject var userVm = UserViewModel()
     @StateObject var catVm = CategoryDetailsViewModel()
+    @StateObject var destinationVM = DestinationViewModel()
+    
     var body: some Scene {
         WindowGroup {
 //            LoginView()
             DiscoverView()
                 .environmentObject(userVm)
                 .environmentObject(catVm)
+                .environmentObject(destinationVM)
         }
     }
 }
