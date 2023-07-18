@@ -18,7 +18,7 @@ struct Restaurant: Hashable {
 // MARK: - Destination
 struct Destination: Codable, Hashable {
     var id: Int
-    var country, city, inageName: String
+    var country, city, imageName: String
     var latitude, longitude: Double
 }
 
@@ -41,7 +41,11 @@ extension Destination {
     static let example = Destination(id: 0,
                                      country: "France",
                                      city: "Paris",
-                                     inageName: "",
+                                     imageName: "",
                                      latitude: 0,
                                      longitude: 0)
+}
+
+extension Activity {
+    static let example = Activity(id: 0, category: "", name: "", imageName: "", link: "", price: "", latitude: 0.0, longitude: 0.0, description: "", rating: 0, destinationId: 0)
 }

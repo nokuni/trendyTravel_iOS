@@ -11,7 +11,7 @@ struct PopularDestinationTile: View {
     let destination: Destination
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Image(destination.inageName)
+            Image(destination.imageName)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 125, height: 125)
