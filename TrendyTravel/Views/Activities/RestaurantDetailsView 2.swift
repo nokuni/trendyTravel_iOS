@@ -9,12 +9,13 @@ import SwiftUI
 
 
 struct RestaurantDetailsView: View {
-    var activity: Activity
+    @ObservedObject var vm = RestaurantDetailsViewModel()
+    let restaurant: Restaurant
     var reviews: [Review]
     var body: some View{
         ScrollView {
             ZStack(alignment: .bottomLeading) {
-                Image(activity.imageName)
+                Image(restaurant.image)
                     .resizable()
                     .scaledToFill()
                 
@@ -22,7 +23,7 @@ struct RestaurantDetailsView: View {
                 
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(activity.name)
+                        Text(restaurant.name)
                             .foregroundColor(.white)
                             .font(.system(size: 18, weight: .bold))
                         HStack {
@@ -50,7 +51,7 @@ struct RestaurantDetailsView: View {
             }
             .padding(.top)
             .padding(.horizontal)
-            Text(activity.description)
+            Text(vm.details?.description ?? "")
                 .padding(.top, 8)
                 .font(.system(size: 14, weight: .regular))
                 .padding(.horizontal)
@@ -67,7 +68,7 @@ struct RestaurantDetailsView: View {
 struct RestaurantDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            RestaurantDetailsView(activity: Activity.example, reviews: [])
+            RestaurantDetailsView(restaurant: .init(name: "Japan's Finest Tapas", image: "tapas"), reviews: [Review(id: 0, content: "Very good restaurant with typical Tokyo habitants and amazing food", rating: 5, userID: 0, activityID: 0)])
         }
     }
 }

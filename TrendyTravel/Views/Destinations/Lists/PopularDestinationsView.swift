@@ -12,10 +12,10 @@ struct PopularDestinationsView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Popular Destinations")
+                Text(L10n.PopularDestinationsView.title)
                     .font(.system(size: 14, weight: .semibold))
                 Spacer()
-                Text("See all")
+                Text(L10n.PopularDestinationsView.see_all)
                     .font(.system(size: 12, weight: .semibold))
             }
             .padding(.horizontal)
@@ -25,7 +25,7 @@ struct PopularDestinationsView: View {
                 HStack(spacing: 8) {
                     ForEach(destinationVM.destinations, id: \.self) { destination in
                         NavigationLink {
-                                                        PopularDestinationsDetailsView(destination: destination)
+                            PopularDestinationsDetailsView(destination: destination)
                         } label: {
                             PopularDestinationTile(destination: destination)
                                 .padding(.bottom)

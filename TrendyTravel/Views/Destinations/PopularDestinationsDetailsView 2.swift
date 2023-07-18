@@ -36,7 +36,7 @@ struct PopularDestinationsDetailsView: View {
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            DestinationDetailCarouselHeader(images: activityImages(destination: destination))
+            CarouselHeaderView(images: activityImages(destination: destination))
                 .frame(height: 250)
             HStack {
                 VStack(alignment: .leading) {
