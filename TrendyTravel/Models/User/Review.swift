@@ -18,3 +18,7 @@ struct Review: Codable, Hashable {
         case activityID = "activityId"
     }
 }
+
+extension Review {
+    static let example = Review(id: 0, content: "", rating: 3, userID: 0, activityID: 0)
+}
