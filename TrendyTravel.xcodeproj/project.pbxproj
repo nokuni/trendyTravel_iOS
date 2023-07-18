@@ -53,6 +53,7 @@
 		A8C504172A65E34800A4BF22 /* ReviewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C504162A65E34800A4BF22 /* ReviewUser.swift */; };
 		A8C504192A65E37400A4BF22 /* RestaurantDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C504182A65E37400A4BF22 /* RestaurantDetailsViewModel.swift */; };
 		A8C5041B2A65E3B700A4BF22 /* ReviewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5041A2A65E3B700A4BF22 /* ReviewListView.swift */; };
+		ACA380872A66A51B0007DF8C /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA380862A66A51B0007DF8C /* SearchListView.swift */; };
 		C846F6922A6572D6000FF9E8 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846F6912A6572D6000FF9E8 /* MyProfileView.swift */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +124,7 @@
 		A8C504162A65E34800A4BF22 /* ReviewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewUser.swift; sourceTree = "<group>"; };
 		A8C504182A65E37400A4BF22 /* RestaurantDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewModel.swift; sourceTree = "<group>"; };
 		A8C5041A2A65E3B700A4BF22 /* ReviewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListView.swift; sourceTree = "<group>"; };
+		ACA380862A66A51B0007DF8C /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		C846F6912A6572D6000FF9E8 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -302,6 +304,7 @@
 				A8C504052A65D36E00A4BF22 /* CustomMapAnnotationView.swift */,
 				A8C504072A65D39700A4BF22 /* PopularDestinationsDetailsView.swift */,
 				A8C504092A65D96900A4BF22 /* PopularDestinationTile.swift */,
+				ACA380862A66A51B0007DF8C /* SearchListView.swift */,
 			);
 			path = Destinations;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				A8C503E32A6596CD00A4BF22 /* FieldView.swift in Sources */,
 				A8C503F32A65A62100A4BF22 /* UserProfileItemView.swift in Sources */,
 				A8C503E52A6596FF00A4BF22 /* FocusField.swift in Sources */,
+				ACA380872A66A51B0007DF8C /* SearchListView.swift in Sources */,
 				7539DE7F2A49B7EB0015FA4F /* TrendingCreatorsView.swift in Sources */,
 				7539DE832A49BF4F0015FA4F /* UserViewModel.swift in Sources */,
 				A8C504142A65E2FE00A4BF22 /* Review.swift in Sources */,
