@@ -19,7 +19,7 @@ struct UserProfileItemView: View {
                         .frame(width: 36, height: 36)
                         .foregroundColor(.white.opacity(0.95))
                         .padding(.bottom, 8)
-                    if let loggedUserImage = User.example.profileImage, !loggedUserImage.isEmpty {
+                    if let loggedUserImage = userVM.user?.profileImage, !loggedUserImage.isEmpty {
                         Image(loggedUserImage)
                             .resizable()
                             .scaledToFill()
