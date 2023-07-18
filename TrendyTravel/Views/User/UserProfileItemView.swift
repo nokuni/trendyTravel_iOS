@@ -1,51 +1,75 @@
 //
-//  UserProfileItemView.swift
+//  DiscoverView.swift
 //  TrendyTravel
 //
-//  Created by Yann Christophe Maertens on 17/07/2023.
+//  Created by Julie Collazos on 26/06/2023.
 //
 
 import SwiftUI
+import Utility_Toolbox
 
-struct UserProfileItemView: View {
+struct DiscoverView: View {
+    @FocusState var focusField: FocusField?
     @EnvironmentObject var userVM: UserViewModel
+    @State var searchText = ""
 
     var body: some View {
-        NavigationLink(destination: MyProfileView()) {
-            if userVM.isUserConnected{
-                NavigationLink(destination:  MyProfileView()) {
-                    ZStack{
-                        Image(systemName: "person.crop.circle.fill")
-                            .resizable()
-                            .frame(width: 36, height: 36)
-                            .foregroundColor(.white.opacity(0.95))
-                            .padding(.bottom, 8)
-                        if let loggedUserImage = User.example.profileImage, !loggedUserImage.isEmpty {
-                            Image(loggedUserImage)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 41, height: 41)
-                                .clipShape(Circle())
-                                .padding(.bottom, 8)
-                        }
-                    }
+        NavigationView {
+            ZStack {
+                background()
+                scrollContent()
+            }
+            .navigationTitle("Discover")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    UserProfileItemView()
                 }
-            } else {
-                NavigationLink(destination: LoginView()) {
-                    Image(systemName: "person.crop.circle")
-                        .resizable()
-                        .frame(width: 36, height: 36)
-                        .foregroundColor(.black.opacity(0.95))
-                        .padding(.bottom, 8)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func background() -> some View {
+        VStack {
+            LinearGradient(gradient: Gradient(colors: [.cyan, .mint]), startPoint: .top,
+                           endPoint: .center)
+            Color.white
+        }
+        .ignoresSafeArea()
+    }
+    
+    @ViewBuilder
+    private func scrollContent() -> some View {
+        ScrollView(showsIndicators: false) {
+            VStack {
+                SearchBarView(prompt: "Where do you want to go?",
+                              focusField: $focusField,
+                              text: $searchText)
+                DestinationsCategoriesView()
+                VStack {
+                    PopularDestinationsView()
+                    PopularRestaurantsView()
+                    TrendingCreatorsListView()
                 }
+                .background(Color.white)
+                .cornerRadius(16)
             }
         }
     }
 }
 
-struct UserProfileItemView_Previews: PreviewProvider {
+
+struct DiscoverView_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileItemView()
+        DiscoverView()
+            .colorScheme(.light)
             .environmentObject(UserViewModel())
+            .environmentObject(DestinationViewModel())
+            .environmentObject(CategoryDetailsViewModel())
+        DiscoverView()
+            .colorScheme(.dark)
+            .environmentObject(UserViewModel())
+            .environmentObject(DestinationViewModel())
+            .environmentObject(CategoryDetailsViewModel())
     }
 }
