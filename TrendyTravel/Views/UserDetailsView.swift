@@ -23,6 +23,7 @@ class UserViewModel: ObservableObject {
                 }
             }
         }.resume()
+        print(users)
         return users
     }
 }

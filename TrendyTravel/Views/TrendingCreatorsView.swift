@@ -10,18 +10,26 @@ import SwiftUI
 struct TrendingCreatorsView: View {
     @EnvironmentObject var vm: UserViewModel
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text("Trending Creators")
-                    .font(.system(size: 14, weight: .semibold))
-                Spacer()
-                Text("See all")
-                    .font(.system(size: 12, weight: .semibold))
+        NavigationStack{
+            VStack(alignment: .leading) {
+                HStack {
+                    Text("Trending Creators")
+                        .font(.system(size: 14, weight: .semibold))
+                        .onAppear {
+                            vm.users = vm.getUsers()
+                            print("ERROR: \(vm.users)")
+                        }
+                    Spacer()
+                    NavigationLink {
+                        SeeAllCreatorsView()
+                    } label: {
+                        Text("See all")
+                            .font(.system(size: 12, weight: .semibold))
+                            .foregroundColor(.black)
+                    }
+                }
             }
             .padding(.top)
-            .onAppear {
-                vm.users = vm.getUsers()
-            }
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 40) {
@@ -31,7 +39,7 @@ struct TrendingCreatorsView: View {
                         } label: {
                             DiscoverUserView(user: user)
                         }
-                        
+
                     }
                 }
                 .padding(.horizontal)
@@ -61,6 +69,7 @@ struct DiscoverUserView: View {
         .shadow(color: .gray, radius: 2, x: 0, y: 2)
     }
 }
+
 
 struct TrendingCreatorsView_Previews: PreviewProvider {
     static var previews: some View {

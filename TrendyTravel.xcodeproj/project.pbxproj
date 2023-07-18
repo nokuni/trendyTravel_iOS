@@ -29,6 +29,7 @@
 		A814BB0D2A6547EF0018E680 /* Utility Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = A814BB0C2A6547EF0018E680 /* Utility Toolbox */; };
 		A86CF62E2A6536E3006725C5 /* TrendyTravelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86CF62D2A6536E3006725C5 /* TrendyTravelViewModel.swift */; };
 		A86CF6312A653727006725C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A86CF6332A653727006725C5 /* Localizable.strings */; };
+		D95A30F92A668E4200344207 /* SeeAllCreatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A30F82A668E4200344207 /* SeeAllCreatorsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		A86CF62D2A6536E3006725C5 /* TrendyTravelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendyTravelViewModel.swift; sourceTree = "<group>"; };
 		A86CF6322A653727006725C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A86CF6342A653739006725C5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D95A30F82A668E4200344207 /* SeeAllCreatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllCreatorsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				7539DE7A2A49B4DC0015FA4F /* PopularRestaurantsView.swift */,
 				758A0E9D2A4DA6F6008E22FC /* RestaurantDetailsView.swift */,
 				7539DE7E2A49B7EB0015FA4F /* TrendingCreatorsView.swift */,
+				D95A30F82A668E4200344207 /* SeeAllCreatorsView.swift */,
 				7539DE822A49BF4F0015FA4F /* UserDetailsView.swift */,
 				7539DE5B2A4999810015FA4F /* ExtractedViews */,
 			);
@@ -373,6 +376,7 @@
 				7539DE542A4995EA0015FA4F /* DestinationsCategoriesView.swift in Sources */,
 				7539DE7F2A49B7EB0015FA4F /* TrendingCreatorsView.swift in Sources */,
 				7539DE832A49BF4F0015FA4F /* UserDetailsView.swift in Sources */,
+				D95A30F92A668E4200344207 /* SeeAllCreatorsView.swift in Sources */,
 				758A0E802A4D64EB008E22FC /* Posts.swift in Sources */,
 				7539DE812A49B84A0015FA4F /* Users.swift in Sources */,
 				7539DE5D2A4999A50015FA4F /* PopularDestinationsView.swift in Sources */,
@@ -561,6 +565,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -590,6 +595,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
