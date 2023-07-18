@@ -11,33 +11,31 @@ struct UserProfileItemView: View {
     @EnvironmentObject var userVM: UserViewModel
 
     var body: some View {
-        NavigationLink(destination: MyProfileView()) {
-            if userVM.isUserConnected{
-                NavigationLink(destination:  MyProfileView()) {
-                    ZStack{
-                        Image(systemName: "person.crop.circle.fill")
-                            .resizable()
-                            .frame(width: 36, height: 36)
-                            .foregroundColor(.white.opacity(0.95))
-                            .padding(.bottom, 8)
-                        if let loggedUserImage = User.example.profileImage, !loggedUserImage.isEmpty {
-                            Image(loggedUserImage)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 41, height: 41)
-                                .clipShape(Circle())
-                                .padding(.bottom, 8)
-                        }
-                    }
-                }
-            } else {
-                NavigationLink(destination: LoginView()) {
-                    Image(systemName: "person.crop.circle")
+        if userVM.isUserConnected{
+            NavigationLink(destination:  MyProfileView()) {
+                ZStack{
+                    Image(systemName: "person.crop.circle.fill")
                         .resizable()
                         .frame(width: 36, height: 36)
-                        .foregroundColor(.black.opacity(0.95))
+                        .foregroundColor(.white.opacity(0.95))
                         .padding(.bottom, 8)
+                    if let loggedUserImage = User.example.profileImage, !loggedUserImage.isEmpty {
+                        Image(loggedUserImage)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 41, height: 41)
+                            .clipShape(Circle())
+                            .padding(.bottom, 8)
+                    }
                 }
+            }
+        } else {
+            NavigationLink(destination: LoginView()) {
+                Image(systemName: "person.crop.circle")
+                    .resizable()
+                    .frame(width: 36, height: 36)
+                    .foregroundColor(.black.opacity(0.95))
+                    .padding(.bottom, 8)
             }
         }
     }
