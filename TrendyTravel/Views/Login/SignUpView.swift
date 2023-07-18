@@ -33,7 +33,7 @@ struct SignUpView: View {
     
     @ViewBuilder
     private func title() -> some View {
-        Text("Create an account")
+        Text(L10n.SignUpView.title)
             .font(.system(.title, design: .default, weight: .bold))
             .padding()
     }
@@ -42,7 +42,7 @@ struct SignUpView: View {
     private func fullNameField() -> some View {
         FieldView(focusField: $focusField,
                   text: $fullName,
-                  prompt: "Full name",
+                  prompt: L10n.SignUpView.full_name,
                   focusedValue: .fullName,
                   submitValue: .username)
     }
@@ -51,7 +51,7 @@ struct SignUpView: View {
     private func usernameField() -> some View {
         FieldView(focusField: $focusField,
                   text: $username,
-                  prompt: "Username",
+                  prompt: L10n.SignUpView.username,
                   focusedValue: .username,
                   submitValue: .email)
     }
@@ -60,7 +60,7 @@ struct SignUpView: View {
     private func emailField() -> some View {
         FieldView(focusField: $focusField,
                   text: $email,
-                  prompt: "Email",
+                  prompt: L10n.SignUpView.email,
                   focusedValue: .email,
                   submitValue: .password)
     }
@@ -69,14 +69,14 @@ struct SignUpView: View {
     private func passwordField() -> some View {
         FieldView(focusField: $focusField,
                   text: $password,
-                  prompt: "Password",
+                  prompt: L10n.SignUpView.password,
                   focusedValue: .password,
                   submitValue: .password)
     }
     
     @ViewBuilder
     private func registerButton() -> some View {
-        AppButtonView(label: "Register",
+        AppButtonView(label: L10n.SignUpView.register,
                       labelColor: .white,
                       backgroundColor: .accentColor) {
             // Connection

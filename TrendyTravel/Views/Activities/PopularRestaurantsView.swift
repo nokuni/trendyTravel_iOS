@@ -14,10 +14,10 @@ struct PopularRestaurantsView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Popular Restaurants")
+                Text(L10n.PopularDestinationsView.Section.title)
                     .font(.system(size: 14, weight: .semibold))
                 Spacer()
-                Text("See all")
+                Text(L10n.PopularDestinationsView.Section.see_all)
                     .font(.system(size: 12, weight: .semibold))
             }
             .padding(.horizontal)
@@ -26,7 +26,7 @@ struct PopularRestaurantsView: View {
                 HStack(spacing: 8) {
                     ForEach(restaurants, id: \.self) { restaurant in
                         NavigationLink {
-                            RestaurantDetailsView(restaurant: restaurant, reviews: [Review(id: 0, content: "Very good restaurant with typical Tokyo habitants and amazing food", rating: 5, userID: 0, activityID: 0)])
+                            RestaurantDetailsView(restaurant: restaurant, reviews: [Review(id: 0, content: L10n.RestaurantDetailsView.content, rating: 5, userID: 0, activityID: 0)])
                         } label: {
                             RestaurantTile(restaurant: restaurant)
                                 .foregroundColor(Color(.label))
@@ -64,9 +64,9 @@ struct RestaurantTile: View {
                 }
                 HStack {
                     Image(systemName: "star.fill")
-                    Text("4.7")
+                    Text(L10n.RestaurantTile.rate)
                 }
-                Text("Tokyo, Japan")
+                Text(L10n.RestaurantTile.name)
             }
             .font(.system(size: 12, weight: .semibold))
             Spacer()

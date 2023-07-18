@@ -38,9 +38,9 @@ struct RestaurantDetailsView: View {
                 .padding()
             }
             VStack(alignment: .leading, spacing: 8) {
-                Text("Location & Description")
+                Text(L10n.RestaurantDetailsView.title)
                     .font(.system(size: 16, weight: .bold))
-                Text("Tokyo, Japan")
+                Text(L10n.RestaurantDetailsView.name)
                 HStack {
                     ForEach(0..<5, id: \.self) { _ in
                         Image(systemName: "dollarsign.circle.fill")
@@ -61,7 +61,7 @@ struct RestaurantDetailsView: View {
             ReviewList(reviews: reviews)
                 .padding(.top)
         }
-        .navigationBarTitle("Restaurant Details", displayMode: .inline)
+        .navigationBarTitle(L10n.RestaurantDetailsView.navigationBar_title, displayMode: .inline)
     }
 }
 
