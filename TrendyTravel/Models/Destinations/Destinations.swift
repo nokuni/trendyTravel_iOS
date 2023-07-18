@@ -25,7 +25,3 @@ extension Destination {
                                      latitude: 0,
                                      longitude: 0)
 }
-
-extension Activity {
-    static let example = Activity(id: 0, category: "", name: "", imageName: "", link: "", price: "", latitude: 0.0, longitude: 0.0, description: "", rating: 0, destinationId: 0)
-}
