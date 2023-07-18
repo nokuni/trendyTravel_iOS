@@ -22,28 +22,28 @@ struct UserDetailsView: View {
                     Text("@\(user.username ?? "") •")
                     Image(systemName: "hand.thumbsup.fill")
                         .font(.system(size: 10, weight: .semibold))
-                    Text(L10n.userDetailsView.numero)
+                    Text(L10n.UserDetailsView.numero)
                 }
                 .font(.system(size: 12, weight: .regular))
                 
-                Text(L10n.userDetailsView.description)
+                Text(L10n.UserDetailsView.description)
                     .font(.system(size: 14, weight: .regular))
                     .foregroundColor(Color(.lightGray))
                 
                 HStack(spacing: 12) {
                     VStack {
-                        Text(L10n.userDetailsView.Followers.numbers)
+                        Text(L10n.UserDetailsView.Followers.numbers)
                             .font(.system(size: 13, weight: .semibold))
-                        Text(L10n.userDetailsView.Followers.followers)
+                        Text(L10n.UserDetailsView.Followers.followers)
                             .font(.system(size: 9, weight: .regular))
                     }
                     Spacer()
                         .frame(width: 0.5, height: 12)
                         .background(Color(.lightGray))
                     VStack {
-                        Text(L10n.userDetailsView.Following.numbers)
+                        Text(L10n.UserDetailsView.Following.numbers)
                             .font(.system(size: 13, weight: .semibold))
-                        Text(L10n.userDetailsView.Following.following)
+                        Text(L10n.UserDetailsView.Following.following)
                             .font(.system(size: 9, weight: .regular))
                     }
                 }
@@ -51,7 +51,7 @@ struct UserDetailsView: View {
                     Button(action: {}) {
                         HStack {
                             Spacer()
-                            Text(L10n.userDetailsView.follow)
+                            Text(L10n.UserDetailsView.follow)
                                 .foregroundColor(.white)
                             Spacer()
                         }
@@ -62,7 +62,7 @@ struct UserDetailsView: View {
                     Button(action: {}) {
                         HStack {
                             Spacer()
-                            Text(L10n.userDetailsView.contact)
+                            Text(L10n.UserDetailsView.contact)
                                 .foregroundColor(.black)
                             Spacer()
                         }
@@ -114,7 +114,7 @@ struct UserDetailsView: View {
                                     .foregroundColor(.cyan)
                                     .font(.system(size: 12))
                             }
-                            Text(L10n.userDetailsView.likes)
+                            Text(L10n.UserDetailsView.likes)
                                 .font(.system(size: 12, weight: .regular))
                                 .foregroundColor(.gray)
                         }

@@ -14,10 +14,10 @@ struct PopularRestaurantsView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(L10n.PopularDestinationsView.Section.title)
+                Text(L10n.PopularDestinationsView.title)
                     .font(.system(size: 14, weight: .semibold))
                 Spacer()
-                Text(L10n.PopularDestinationsView.Section.see_all)
+                Text(L10n.PopularDestinationsView.see_all)
                     .font(.system(size: 12, weight: .semibold))
             }
             .padding(.horizontal)

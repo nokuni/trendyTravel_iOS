@@ -18,7 +18,7 @@ struct DiscoverView: View {
                 background()
                 scrollContent()
             }
-            .navigationTitle(L10n.DiscoverView.navigationBar.title)
+            .navigationTitle(L10n.DiscoverView.NavigationBar.title)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     UserProfileItemView()

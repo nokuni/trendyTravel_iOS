@@ -35,28 +35,28 @@ struct MyProfileView: View {
                         Text("@\(user.username ?? "") •")
                         Image(systemName: "hand.thumbsup.fill")
                             .font(.system(size: 10, weight: .semibold))
-                        Text(L10n.myProfileView.numero)
+                        Text(L10n.MyProfileView.numero)
                     }
                     .font(.system(size: 12, weight: .regular))
                     
-                    Text(L10n.myProfileView.description)
+                    Text(L10n.MyProfileView.description)
                         .font(.system(size: 14, weight: .regular))
                         .foregroundColor(Color(.lightGray))
                     
                     HStack(spacing: 12) {
                         VStack {
-                            Text(L10n.myProfileView.followers.numbers)
+                            Text(L10n.MyProfileView.Followers.numbers)
                                 .font(.system(size: 13, weight: .semibold))
-                            Text(L10n.myProfileView.followers.followers)
+                            Text(L10n.MyProfileView.Followers.followers)
                                 .font(.system(size: 9, weight: .regular))
                         }
                         Spacer()
                             .frame(width: 0.5, height: 12)
                             .background(Color(.lightGray))
                         VStack {
-                            Text(L10n.myProfileView.following.numbers)
+                            Text(L10n.MyProfileView.Following.numbers)
                                 .font(.system(size: 13, weight: .semibold))
-                            Text(L10n.myProfileView.following.following)
+                            Text(L10n.MyProfileView.Following.following)
                                 .font(.system(size: 9, weight: .regular))
                         }
                     }
@@ -64,7 +64,7 @@ struct MyProfileView: View {
                         Button(action: {}) {
                             HStack {
                                 Spacer()
-                                Text(L10n.myProfileView.follow)
+                                Text(L10n.MyProfileView.follow)
                                     .foregroundColor(.white)
                                 Spacer()
                             }
@@ -75,7 +75,7 @@ struct MyProfileView: View {
                         Button(action: {}) {
                             HStack {
                                 Spacer()
-                                Text(L10n.myProfileView.contact)
+                                Text(L10n.MyProfileView.contact)
                                     .foregroundColor(.black)
                                 Spacer()
                             }
