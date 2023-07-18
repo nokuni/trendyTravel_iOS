@@ -45,7 +45,7 @@ extension Destination {
     static let example = Destination(id: 0,
                                      country: "France",
                                      city: "Paris",
-                                     inageName: "",
+                                     imageName: "",
                                      latitude: 0,
                                      longitude: 0)
 }
