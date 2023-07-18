@@ -2,7 +2,7 @@
 //  DiscoverView.swift
 //  TrendyTravel
 //
-//  Created by Julie Collazos on 26/06/2023.
+//  Created by Yann Christophe Maertens on 17/07/2023.
 //
 
 import SwiftUI
@@ -12,6 +12,7 @@ struct DiscoverView: View {
     @FocusState var focusField: FocusField?
     @EnvironmentObject var userVM: UserViewModel
     @State var searchText = ""
+
     var body: some View {
         NavigationView {
             ZStack {
