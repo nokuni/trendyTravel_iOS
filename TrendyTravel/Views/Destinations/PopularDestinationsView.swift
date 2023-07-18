@@ -9,8 +9,15 @@ import SwiftUI
 
 struct PopularDestinationsView: View {
     let destinations: [Destination] = [
-        .init(id: 1, country: "France", city: "Paris", imageName: "eiffel_tower", latitude: 48.859565, longitude: 2.353235)
-        ]
+        .init(
+            id: 1,
+            country: "France",
+            city: "Paris",
+            imageName: "eiffel_tower",
+            latitude: 48.859565,
+            longitude: 2.353235
+        )
+    ]
     var body: some View {
         VStack {
             HStack {
@@ -27,7 +34,7 @@ struct PopularDestinationsView: View {
                 HStack(spacing: 8) {
                     ForEach(destinations, id: \.self) { destination in
                         NavigationLink {
-                                                        PopularDestinationsDetailsView(destination: destination)
+                            PopularDestinationsDetailsView(destination: destination)
                         } label: {
                             PopularDestinationTile(destination: destination)
                                 .padding(.bottom)
@@ -43,7 +50,14 @@ struct PopularDestinationsView: View {
 struct PopularDestinationsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            PopularDestinationsDetailsView(destination: .init(id: 1, country: "France", city: "Paris", imageName: "eiffel_tower", latitude: 48.859565, longitude: 2.353235))
+            PopularDestinationsDetailsView(destination: .init(
+                id: 1,
+                country: "France",
+                city: "Paris",
+                imageName: "eiffel_tower",
+                latitude: 48.859565,
+                longitude: 2.353235
+            ))
         }
     }
 }
