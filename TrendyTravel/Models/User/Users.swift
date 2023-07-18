@@ -42,11 +42,11 @@ extension User {
          email: "jo.d@gmail.com",
          password: "kkk",
          posts: [
-            Post(id: 0,
+            Post(id: UUID(),
                  title: "1st post",
                  imageName: "eiffel_tower",
                  hashtags: ["paradise", "lost"],
-                 userID: 0)
+                 userID: UUID())
          ]
     )
 }
