@@ -7,50 +7,52 @@
 */
 
 //DestinationsView
-"destinationView_schearchBar.title" = "Where do you want to go?";
-"destinationView_navigationBar.title" = "Discover";
+"destinationView.schearchBar.title" = "Où voulez-vous allez?";
+"destinationView.navigationBar.title" = "Découvrir";
 
 //DestinationsCategoriesView
 "destinationsCategoriesView.culture" = "Culture";
-"destinationsCategoriesView.show" = "Spectacles";
+"destinationsCategoriesView.show" = "Spectacle";
 "destinationsCategoriesView.sports" = "Sports";
 "destinationsCategoriesView.restaurant" = "Restaurant";
 "destinationsCategoriesView.bar" = "Bar";
 
 // CategoryDetailLoadingView
-"categoryDetailLoadingView.loarding" = "Loarding...";
+"categoryDetailLoadingView.loarding" = "Chargement...";
 
 //PopularDestinationsView
-"popularDestinationsView_section.title" = "Popular Destinations";
-"popularDestinationsView_section.see_all" = "See all";
+"popularDestinationsView.title" = "Destination populaire";
+"popularDestinationsView.see_all" = "Tout voir";
 
 //PopularDestinationsDetailsView
-"popularDestinationsDetailsView.toggle.title" = "Location";
-"popularDestinationsDetailsView.toggle.hide" = "Hide Attractions";
-"popularDestinationsDetailsView.toggle.show" = "Show Attractions";
+"popularDestinationsDetailsView.toggle.title" = "Emplacement";
+"popularDestinationsDetailsView.toggle.hide" = "Cacher Attractions";
+"popularDestinationsDetailsView.toggle.show" = "Montrer Attractions";
 
 //DiscoverView
-"discoverView.schearchBar.title" = "Where do you want to go?";
-"discoverView.navigationBar.title" = "Discover";
+"discoverView.schearchBar.promt" = "Où voulez-vous allez?";
+"discoverView.navigationBar.title" = "Découvrir";
 
 //TrendingCreatorsListView
-"trendingCreatorsListView.title" = "Trending Creators";
-"trendingCreatorsListView.see_all" = "See all";
+"trendingCreatorsListView.title" = "Créateurs top tendances";
+"trendingCreatorsListView.see_all" = "Tout voir";
 
-//TrendingCreatorsListView
-"popularRestaurantsView.title" = "Popular Restaurants";
-"popularRestaurantsView.see_all" = "See all";
-"restaurantDetailsView.content" = "Very good restaurant with typical Tokyo habitants and amazing food";
+//popularRestaurantsView
+"popularRestaurantsView.title" = "Restaurants populaires";
+"popularRestaurantsView.see_all" = "Tout voir";
+
+//restaurantTile
 "restaurantTile.rate" = "4.7";
-"restaurantTile.name" = "Tokyo, Japan";
+"restaurantTile.name" = "Tokyo, Japon";
 
 //RestaurantDetailsView
-"restaurantDetailsView.title" = "Location & Description";
-"restaurantDetailsView.name" = "Tokyo, Japan";
-"restaurantDetailsView.navigationBar.title" = "Restaurant Details";
+"restaurantDetailsView.content" = "Très bon restaurant avec des habitants typiques de Tokyo et une cuisine incroyable";
+"restaurantDetailsView.title" = "Emplacement & Description";
+"restaurantDetailsView.name" = "Tokyo, Japon";
+"restaurantDetailsView.navigationBar_title" = "Détail du restaurant";
 
 //ReviewList
-"reviewList.title" = "Customer Reviews";
+"reviewList.title" = "Avis des clients";
 "reviewList.name" = "Billy Jones";
 "reviewList.date" = "Dec 2020";
 
@@ -68,32 +70,33 @@
 //UserDetailsView
 "userDetailsView.numero" = "2541";
 "userDetailsView.description" = "YouTuber, Vlogger, Travel Creator";
-"userDetailsView.followers" = "Followers";
+"userDetailsView.followers.followers" = "Followers";
 "userDetailsView.followers.numbers" = "3";
-"userDetailsView.following" = "Following";
+"userDetailsView.following.following" = "Following";
 "userDetailsView.following.numbers" = "2";
 "userDetailsView.follow" = "Follow";
-"userDetailsView.contact" = "Contact";
+"userDetailsView.contact" = "Contacte";
 "userDetailsView.follow" = "Follow";
-"userDetailsView.likes" = "102 likes";
+"userDetailsView.likes" = "102 j'aime";
 
 //PostsListView
-"postsListView.likes" = "102 likes";
+"postsListView.likes" = "102 j'aime";
 
 //LoginView
-"loginView.signIn" = "Sign In";
-"loginView.signUp" = "Sign Un";
+"loginView.signIn" = "S'identifier";
+"loginView.signUp" = "S'inscrire";
 
 //SignInView
-"signInView.logIn" = "Log in";
+"signInView.logIn" = "Connexion";
 "signInView.email" = "Email";
-"signInView.password" = "Password";
-"signInView.connect" = "Connect";
+"signInView.password" = "Mot de passe";
+"signInView.connect" = "se connecter";
 
 //SignUpView
-"signUpView.title" = "Create an account";
-"signUpView.full_name" = "Full name";
-"signUpView.username" = "Username";
+"signUpView.title" = "Crée un compte";
+"signUpView.full_name" = "nom complet";
+"signUpView.username" = "Nom d'utilisateur";
 "signUpView.email" = "Email";
-"signUpView.password" = "Password";
-"signUpView.register" = "register";
+"signUpView.password" = "Mot de passe";
+"signUpView.register" = "S'enregistrer";
+

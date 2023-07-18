@@ -7,12 +7,12 @@
 */
 
 //DestinationsView
-"destinationView_schearchBar.title" = "Where do you want to go?";
-"destinationView_navigationBar.title" = "Discover";
+"destinationView.schearchBar.title" = "Where do you want to go?";
+"destinationView.navigationBar.title" = "Discover";
 
 //DestinationsCategoriesView
 "destinationsCategoriesView.culture" = "Culture";
-"destinationsCategoriesView.show" = "show";
+"destinationsCategoriesView.show" = "Show";
 "destinationsCategoriesView.sports" = "Sports";
 "destinationsCategoriesView.restaurant" = "Restaurant";
 "destinationsCategoriesView.bar" = "Bar";
@@ -21,8 +21,8 @@
 "categoryDetailLoadingView.loarding" = "Loarding...";
 
 //PopularDestinationsView
-"popularDestinationsView_section.title" = "Popular Destinations";
-"popularDestinationsView_section.see_all" = "See all";
+"popularDestinationsView.title" = "Popular Destinations";
+"popularDestinationsView.see_all" = "See all";
 
 //PopularDestinationsDetailsView
 "popularDestinationsDetailsView.toggle.title" = "Location";
@@ -30,24 +30,26 @@
 "popularDestinationsDetailsView.toggle.show" = "Show Attractions";
 
 //DiscoverView
-"discoverView.schearchBar.title" = "Where do you want to go?";
+"discoverView.schearchBar.promt" = "Where do you want to go?";
 "discoverView.navigationBar.title" = "Discover";
 
 //TrendingCreatorsListView
 "trendingCreatorsListView.title" = "Trending Creators";
 "trendingCreatorsListView.see_all" = "See all";
 
-//TrendingCreatorsListView
+//popularRestaurantsView
 "popularRestaurantsView.title" = "Popular Restaurants";
 "popularRestaurantsView.see_all" = "See all";
-"restaurantDetailsView.content" = "Very good restaurant with typical Tokyo habitants and amazing food";
+
+//restaurantTile
 "restaurantTile.rate" = "4.7";
 "restaurantTile.name" = "Tokyo, Japan";
 
 //RestaurantDetailsView
+"restaurantDetailsView.content" = "Very good restaurant with typical Tokyo habitants and amazing food";
 "restaurantDetailsView.title" = "Location & Description";
 "restaurantDetailsView.name" = "Tokyo, Japan";
-"restaurantDetailsView.navigationBar.title" = "Restaurant Details";
+"restaurantDetailsView.navigationBar_title" = "Restaurant Details";
 
 //ReviewList
 "reviewList.title" = "Customer Reviews";
@@ -68,9 +70,9 @@
 //UserDetailsView
 "userDetailsView.numero" = "2541";
 "userDetailsView.description" = "YouTuber, Vlogger, Travel Creator";
-"userDetailsView.followers" = "Followers";
+"userDetailsView.followers.followers" = "Followers";
 "userDetailsView.followers.numbers" = "3";
-"userDetailsView.following" = "Following";
+"userDetailsView.following.following" = "Following";
 "userDetailsView.following.numbers" = "2";
 "userDetailsView.follow" = "Follow";
 "userDetailsView.contact" = "Contact";
