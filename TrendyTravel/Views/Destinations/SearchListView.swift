@@ -62,13 +62,13 @@ struct DestinationItemView: View {
                 .font(.system(size: 12, weight: .semibold))
                 .lineLimit(2)
                 .multilineTextAlignment(.center)
-
                 Spacer()
             }
             .padding(.horizontal, 8)
             .padding(.bottom, 4)
         }
         .background(.white)
+        .frame(width: 120, height: 158)
         .cornerRadius(12)
     }
 }
