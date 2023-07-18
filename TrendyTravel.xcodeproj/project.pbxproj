@@ -16,7 +16,6 @@
 		7539DE502A49948D0015FA4F /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE4F2A49948D0015FA4F /* DiscoverView.swift */; };
 		7539DE522A4995CB0015FA4F /* Destinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE512A4995CB0015FA4F /* Destinations.swift */; };
 		7539DE582A4997BD0015FA4F /* CategoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE572A4997BD0015FA4F /* CategoryDetailsViewModel.swift */; };
-		7539DE5F2A499BE60015FA4F /* DestinationDetailCarouselHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE5E2A499BE60015FA4F /* DestinationDetailCarouselHeader.swift */; };
 		7539DE7B2A49B4DC0015FA4F /* PopularRestaurantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE7A2A49B4DC0015FA4F /* PopularRestaurantsView.swift */; };
 		7539DE7F2A49B7EB0015FA4F /* TrendingCreatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE7E2A49B7EB0015FA4F /* TrendingCreatorsView.swift */; };
 		7539DE812A49B84A0015FA4F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE802A49B84A0015FA4F /* Users.swift */; };
@@ -59,6 +58,8 @@
 		A8D7183F2A66CF4C008F4524 /* CategoryDetailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D7183C2A66CF4C008F4524 /* CategoryDetailCardView.swift */; };
 		A8D718402A66CF4C008F4524 /* CategoryDetailLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D7183D2A66CF4C008F4524 /* CategoryDetailLoadingView.swift */; };
 		A8D718422A66CF73008F4524 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D718412A66CF73008F4524 /* ActivityIndicatorView.swift */; };
+		A8D718442A66D589008F4524 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D718432A66D589008F4524 /* Follower.swift */; };
+		A8D718452A66DA28008F4524 /* DestinationDetailCarouselHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE5E2A499BE60015FA4F /* DestinationDetailCarouselHeader.swift */; };
 		C846F6922A6572D6000FF9E8 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846F6912A6572D6000FF9E8 /* MyProfileView.swift */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +137,7 @@
 		A8D7183C2A66CF4C008F4524 /* CategoryDetailCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDetailCardView.swift; sourceTree = "<group>"; };
 		A8D7183D2A66CF4C008F4524 /* CategoryDetailLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDetailLoadingView.swift; sourceTree = "<group>"; };
 		A8D718412A66CF73008F4524 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		A8D718432A66D589008F4524 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		C846F6912A6572D6000FF9E8 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -392,6 +394,7 @@
 				758A0E7F2A4D64EB008E22FC /* Posts.swift */,
 				A8C504132A65E2FE00A4BF22 /* Review.swift */,
 				A8C504162A65E34800A4BF22 /* ReviewUser.swift */,
+				A8D718432A66D589008F4524 /* Follower.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -573,11 +576,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8D718452A66DA28008F4524 /* DestinationDetailCarouselHeader.swift in Sources */,
 				C846F6922A6572D6000FF9E8 /* MyProfileView.swift in Sources */,
 				A8D7183A2A66CF3A008F4524 /* CategoryDetailView.swift in Sources */,
 				A8C503FB2A65A8CD00A4BF22 /* APIRoute.swift in Sources */,
-				7539DE5F2A499BE60015FA4F /* DestinationDetailCarouselHeader.swift in Sources */,
-				7539DE5F2A499BE60015FA4F /* DestinationDetailCarouselHeader.swift in Sources */,
 				A8C503F72A65A74400A4BF22 /* UserDetailsView.swift in Sources */,
 				A8C5042D2A669A8B00A4BF22 /* RestaurantTileView.swift in Sources */,
 				A814BB132A656EE90018E680 /* LoginView.swift in Sources */,
@@ -592,6 +594,7 @@
 				7539DE7F2A49B7EB0015FA4F /* TrendingCreatorsView.swift in Sources */,
 				7539DE832A49BF4F0015FA4F /* UserViewModel.swift in Sources */,
 				A8C504142A65E2FE00A4BF22 /* Review.swift in Sources */,
+				A8D718442A66D589008F4524 /* Follower.swift in Sources */,
 				A8C503FF2A65AF7400A4BF22 /* PostsListView.swift in Sources */,
 				758A0E802A4D64EB008E22FC /* Posts.swift in Sources */,
 				7539DE812A49B84A0015FA4F /* Users.swift in Sources */,
