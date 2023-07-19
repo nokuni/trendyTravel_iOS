@@ -9,20 +9,24 @@ import SwiftUI
 
 struct DestinationsCategoriesView: View {
     let categories: [Category] = [
-        .init(name: "Culture", imageName: "books.vertical.fill"),
-        .init(name: "Spectacles", imageName: "music.mic"),
-        .init(name: "Sports", imageName: "sportscourt.fill"),
-        .init(name: "Restaurant", imageName: "fork.knife"),
-        .init(name: "Bar", imageName: "wineglass.fill"),
+        .init(name: L10n.DestinationsCategoriesView.culture, imageName: "books.vertical.fill"),
+        .init(name: L10n.DestinationsCategoriesView.show, imageName: "music.mic"),
+        .init(name: L10n.DestinationsCategoriesView.sports, imageName: "sportscourt.fill"),
+        .init(name: L10n.DestinationsCategoriesView.restaurant, imageName: "fork.knife"),
+        .init(name: L10n.DestinationsCategoriesView.bar, imageName: "wineglass.fill"),
     ]
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .top, spacing: 14) {
                 ForEach(categories, id: \.self) { category in
                     NavigationLink {
-                        CategoryDetailView(name: category.name)
+                        // TODO: fix link
+//                        CategoryDetailView(destination: destination)
                     } label: {
-                        DestinationsCategoriesImageAndLabelView(image: category.imageName, title: category.name)
+                        DestinationsCategoriesImageAndLabelView(
+                            image: category.imageName,
+                            title: category.name
+                        )
                     }
                 }
             }

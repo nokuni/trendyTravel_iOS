@@ -11,8 +11,8 @@ import Utility_Toolbox
 struct DiscoverView: View {
     @FocusState var focusField: FocusField?
     @EnvironmentObject var userVM: UserViewModel
-    @State var searchText = ""
-
+    @State private var searchText = ""
+    
     var body: some View {
 //        let loggedUser = userVM.loggedUser ?? User.errorIndicators
 
@@ -21,7 +21,7 @@ struct DiscoverView: View {
                 background()
                 scrollContent()
             }
-            .navigationTitle("Discover")
+            .navigationTitle(L10n.DiscoverView.NavigationBar.title)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     UserProfileItemView()
@@ -44,17 +44,21 @@ struct DiscoverView: View {
     private func scrollContent() -> some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                SearchBarView(prompt: "Where do you want to go?",
+                SearchBarView(prompt: L10n.DiscoverView.SchearchBar.prompt,
                               focusField: $focusField,
                               text: $searchText)
-                DestinationsCategoriesView()
-                VStack {
-                    PopularDestinationsView()
-                    PopularRestaurantsView()
-                    TrendingCreatorsListView()
+                if searchText.isNotEmpty {
+                    SearchListView(text: $searchText)
+                } else {
+                    DestinationsCategoriesView()
+                    VStack {
+                        PopularDestinationsView()
+                        PopularRestaurantsView()
+                        TrendingCreatorsListView()
+                    }
+                    .background(Color.white)
+                    .cornerRadius(16)
                 }
-                .background(Color.white)
-                .cornerRadius(16)
             }
         }
     }

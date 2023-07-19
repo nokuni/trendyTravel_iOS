@@ -194,6 +194,7 @@ struct MyProfileView: View {
                     .opacity(0.97)
                     .fontWeight(.semibold)
                 Spacer()
+
             }
             .padding(.vertical, 8)
             .background(Color.red)

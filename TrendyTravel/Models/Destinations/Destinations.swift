@@ -7,34 +7,14 @@
 
 import Foundation
 
-struct Category: Hashable {
-    let name, imageName: String
-}
-
-struct Restaurant: Hashable {
-    let name, image: String
-}
-
 // MARK: - Destination
-struct Destination: Codable, Hashable {
+struct Destination: Codable, Hashable, Identifiable {
     var id: Int
-    var country, city, imageName: String
-    var latitude, longitude: Double
-}
-
-// MARK: - Activity
-struct Activity: Codable, Hashable {
-    var id: Int
-    var category, name, imageName: String
-    var link: String
-    var price: String
-    var latitude, longitude: Double
-    var description: String
-    var rating, destinationId: Int
-
-    enum CodingKeys: String, CodingKey {
-        case id, category, name, imageName, link, price, latitude, longitude, description, rating, destinationId
-    }
+    var country: String
+    var city: String
+    var imageName: String
+    var latitude: Double
+    var longitude: Double
 }
 
 extension Destination {
@@ -44,8 +24,4 @@ extension Destination {
                                      imageName: "",
                                      latitude: 0,
                                      longitude: 0)
-}
-
-extension Activity {
-    static let example = Activity(id: 0, category: "", name: "", imageName: "", link: "", price: "", latitude: 0.0, longitude: 0.0, description: "", rating: 0, destinationId: 0)
 }

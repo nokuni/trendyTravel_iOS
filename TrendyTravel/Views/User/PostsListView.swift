@@ -74,7 +74,7 @@ struct PostsListView: View {
                             .foregroundColor(.cyan)
                             .font(.system(size: 12))
                     }
-                    Text("102 likes")
+                    Text(L10n.PostsListView.likes)
                         .font(.system(size: 12, weight: .regular))
                         .foregroundColor(.gray)
                 }

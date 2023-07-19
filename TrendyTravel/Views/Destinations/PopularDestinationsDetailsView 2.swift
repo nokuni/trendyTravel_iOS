@@ -54,13 +54,13 @@ struct PopularDestinationsDetailsView: View {
             }
             .padding(.horizontal)
             HStack {
-                Text("Location")
+                Text(L10n.PopularDestinationsDetailsView.Toggle.title)
                     .font(.system(size: 18, weight: .semibold))
                 Spacer()
                 Button(action: {
                     isShowingAttractions.toggle()
                 }) {
-                    Text("\(isShowingAttractions ? "Hide" : "Show") Attractions")
+                    Text("\(isShowingAttractions ? L10n.PopularDestinationsDetailsView.Toggle.hide : L10n.PopularDestinationsDetailsView.Toggle.show)")
                         .font(.system(size: 12, weight: .semibold))
                 }
                 Toggle("", isOn: $isShowingAttractions)

@@ -19,7 +19,7 @@ struct User: Identifiable, Hashable, Codable {
     var password: String
     var posts: [Post] = []
     var followers: [Follower] = []
-    
+
     enum CodingKeys: String, CodingKey {
         case firstName = "first_name"
         case lastName = "last_name"
@@ -29,7 +29,7 @@ struct User: Identifiable, Hashable, Codable {
         case password
         case email
         case posts = "Posts"
-
+        case followers = "Followers"
     }
 }
 

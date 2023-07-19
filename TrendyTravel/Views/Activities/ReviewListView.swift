@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ReviewList: View {
-    var reviews: [Review] = [Review(id: 0, content: "Very good restaurant with typical Tokyo habitants and amazing food", rating: 5, userID: 0, activityID: 0)]
+    var reviews: [Review] = [Review(id: 0, content: L10n.RestaurantDetailsView.content, rating: 5, userID: 0, activityID: 0)]
     var body: some View {
         HStack {
-            Text("Customer Reviews")
+            Text(L10n.ReviewList.title)
                 .font(.system(size: 16, weight: .bold))
             Spacer()
         }
@@ -26,7 +26,7 @@ struct ReviewList: View {
                                 .clipShape(Circle())
                            
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Billy Jones")
+                            Text(L10n.ReviewList.name)
                                 .font(.system(size: 14,weight: .bold))
                             HStack(spacing: 4) {
                                 ForEach(0..<5, id: \.self) { rating in
@@ -37,7 +37,7 @@ struct ReviewList: View {
                             }
                         }
                         Spacer()
-                        Text("Dec 2020")
+                        Text(L10n.ReviewList.date)
                             .font(.system(size: 14, weight: .bold))
                     }
                     Text(review.content)

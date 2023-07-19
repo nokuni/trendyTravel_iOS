@@ -57,6 +57,7 @@
 "MyProfileView.LOG_OUT" = "Log Out";
 "MyProfileView.DELETE_ACCOUNT" = "Delete My Account";
 
+
 //UserDetailsView
 "userDetailsView.numero" = "2541";
 "userDetailsView.description" = "YouTuber, Vlogger, Travel Creator";
@@ -99,3 +100,4 @@
 //"MyProfileView.NEW_POST" = "Nouvelle publication";
 //"MyProfileView.LOG_OUT" = "Deconnexion";
 //"MyProfileView.DELETE_ACCOUNT" = "Supprimer mon compte"';
+
