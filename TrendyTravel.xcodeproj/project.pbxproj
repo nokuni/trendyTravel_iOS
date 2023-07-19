@@ -62,6 +62,7 @@
 		A8C504292A668C0000A4BF22 /* AllDestinationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C504282A668C0000A4BF22 /* AllDestinationsListView.swift */; };
 		A8C5042B2A668F9F00A4BF22 /* StarsReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C5042A2A668F9F00A4BF22 /* StarsReviewView.swift */; };
 		C846F6922A6572D6000FF9E8 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846F6912A6572D6000FF9E8 /* MyProfileView.swift */; };
+		C859BB7F2A681CA00006F499 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C859BB7E2A681CA00006F499 /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		A8C504282A668C0000A4BF22 /* AllDestinationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDestinationsListView.swift; sourceTree = "<group>"; };
 		A8C5042A2A668F9F00A4BF22 /* StarsReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsReviewView.swift; sourceTree = "<group>"; };
 		C846F6912A6572D6000FF9E8 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		C859BB7E2A681CA00006F499 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				C846F6912A6572D6000FF9E8 /* MyProfileView.swift */,
+				C859BB7E2A681CA00006F499 /* EditProfileView.swift */,
 				A8C503F22A65A62100A4BF22 /* UserProfileItemView.swift */,
 				A8C503F62A65A74400A4BF22 /* UserDetailsView.swift */,
 				A8C503FE2A65AF7400A4BF22 /* PostsListView.swift */,
@@ -581,6 +584,7 @@
 				A8C503FF2A65AF7400A4BF22 /* PostsListView.swift in Sources */,
 				758A0E802A4D64EB008E22FC /* Posts.swift in Sources */,
 				7539DE812A49B84A0015FA4F /* Users.swift in Sources */,
+				C859BB7F2A681CA00006F499 /* EditProfileView.swift in Sources */,
 				7539DE5D2A4999A50015FA4F /* PopularDestinationsView.swift in Sources */,
 				A8C504172A65E34800A4BF22 /* ReviewUser.swift in Sources */,
 				A8C504012A65BD7600A4BF22 /* SearchBarView.swift in Sources */,

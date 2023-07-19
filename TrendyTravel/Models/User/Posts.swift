@@ -9,11 +9,11 @@ import Foundation
 
 // MARK: - Post
 struct Post: Codable, Hashable {
-    var id: UUID
+    var id: Int
     var title: String
     var imageName: String
     var hashtags: [String]
-    var userID: UUID
+    var userID: Int
 
     enum CodingKeys: String, CodingKey {
         case id

@@ -1,7 +1,15 @@
-/* 
-  Localizable.strings
-  TrendyTravel
+"NO_DESCRIPTION" = "No description.";
+"FOLLOWERS" = "Followers";
+"FOLLOWING" = "Following";
+"EDIT_PROFILE" = "Edit My Profile";
+"NEW_POST" = "New Post";
+"LOG_OUT" = "Log Out";
+"DELETE_ACCOUNT" = "Delete My Account";
 
-  Created by Yann Christophe Maertens on 17/07/2023.
-  
-*/
+//"NO_DESCRIPTION" = "Pas de description.";
+//"FOLLOWERS" = "Abonnés";
+//"FOLLOWING" = "Abonnements";
+//"EDIT_PROFILE" = "Editer mon profil";
+//"NEW_POST" = "Nouvelle publication";
+//"LOG_OUT" = "Deconnexion";
+//"DELETE_ACCOUNT" = "Supprimer mon compte"';

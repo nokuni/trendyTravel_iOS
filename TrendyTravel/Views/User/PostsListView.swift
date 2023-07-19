@@ -8,15 +8,36 @@
 import SwiftUI
 
 struct PostsListView: View {
+    
+    @EnvironmentObject var userVM: UserViewModel
     var user: User
+    
     var body: some View {
         ForEach(user.posts, id: \.self) { post in
             VStack(alignment: .leading) {
-                Image(post.imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 200)
-                    .clipped()
+                ZStack{
+                    Image(post.imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 200)
+                        .clipped()
+                    if user.id == userVM.userID ??  0{
+                        VStack{
+                            HStack {
+                                Spacer()
+                                EditButton()
+                                    .foregroundColor(.black)
+                                    .padding(10)
+                                    .padding(.vertical, 8)
+                                    .background(Color(white: 0.9))
+                                    .cornerRadius(50)
+                                    .opacity(0.92)
+                                    .padding(10)
+                            }
+                            Spacer()
+                        }
+                    }
+                }
                 HStack(alignment: .top) {
                     if let profileImage = user.profileImage {
                         Image(profileImage)
@@ -61,6 +82,7 @@ struct PostsListView: View {
             .background(Color(white: 1))
             .cornerRadius(12)
             .shadow(color: .init(white: 0.8), radius: 5, x: 0, y: 4)
+            .frame(maxHeight:280)
         }
     }
 }
@@ -68,5 +90,6 @@ struct PostsListView: View {
 struct PostsListView_Previews: PreviewProvider {
     static var previews: some View {
         PostsListView(user: User.example)
+            .environmentObject(UserViewModel())
     }
 }
