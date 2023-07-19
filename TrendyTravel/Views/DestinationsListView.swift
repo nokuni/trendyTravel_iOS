@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DestinationsListView: View {
+    @State private var searchText: String = ""
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -17,28 +19,19 @@ struct DestinationsListView: View {
                 Color.white
                     .offset(y: 400)
                 ScrollView(showsIndicators: false) {
-                    HStack {
-                        Image(systemName: "magnifyingglass")
-                        Text("Where do you want to go?")
-                        Spacer()
+                    SearchBarView(searchText: $searchText)
+
+                    DestinationsCategoriesView()
+
+                    VStack {
+                        PopularDestinationsView()
+                        PopularRestaurantsView()
+                        TrendingCreatorsView()
                     }
-                    .font(.system(size: 14, weight: .semibold))
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color(.init(white: 1, alpha: 0.3)))
-                    .cornerRadius(10)
-                    .padding(16)
-                        DestinationsCategoriesView()
-                        VStack {
-                            PopularDestinationsView()
-                            PopularRestaurantsView()
-                            TrendingCreatorsView()
-                        }
-                        .background(Color.white)
-                        .cornerRadius(16)
-                        .padding(.top, 32)
-                    }
-                
+                    .background(Color.white)
+                    .cornerRadius(16)
+                    .padding(.top, 32)
+                }
                 .navigationTitle("Discover")
             }
         }
@@ -46,7 +39,7 @@ struct DestinationsListView: View {
 }
 
 struct DestinationsListView_Previews: PreviewProvider {
-//    @EnvironmentObject var userVm = UserViewModel()
+//        @EnvironmentObject var userVm = UserViewModel()
     static var previews: some View {
         DestinationsListView()
             .colorScheme(.light)
