@@ -31,7 +31,7 @@ struct MyProfileView: View {
                     
                     profileDescription(loggedUser: loggedUser)
                     followCounts()
-                    editProfileButton()
+                    editProfileButton(loggedUser: loggedUser)
                     userPosts(loggedUser: loggedUser)
                     
                     Spacer().frame(height: 50)
@@ -122,9 +122,9 @@ struct MyProfileView: View {
     }
     
     @ViewBuilder
-    private func editProfileButton() -> some View {
+    private func editProfileButton(loggedUser:User) -> some View {
         NavigationLink {
-            EditProfileView()
+            EditProfileView(user: loggedUser)
         } label: {
             HStack {
                 Spacer()

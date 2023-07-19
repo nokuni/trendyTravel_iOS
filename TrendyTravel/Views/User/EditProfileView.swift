@@ -19,6 +19,16 @@ struct EditProfileView: View {
     @State var profileImage: String = ""
     @State var updatedUser: User? = nil
     
+    init(user: User) {
+        _firstName = State(initialValue: user.firstName)
+        _lastName = State(initialValue: user.lastName ?? "")
+        _username = State(initialValue: user.username)
+        _email = State(initialValue: user.email)
+        _password = State(initialValue: user.password)
+        _description = State(initialValue: user.description ?? "")
+        _profileImage = State(initialValue: user.profileImage ?? "")
+    }
+    
     var body: some View {
         if userVM.loggedUser != nil {
             VStack{
@@ -65,7 +75,7 @@ struct EditProfileView: View {
 struct EditProfileView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            EditProfileView()
+            EditProfileView(user: User.example)
                 .environmentObject(UserViewModel())
         }
     }
