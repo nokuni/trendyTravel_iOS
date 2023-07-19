@@ -25,4 +25,3 @@ struct Post: Codable, Identifiable {
         case likes = "Likes"
     }
 }
-

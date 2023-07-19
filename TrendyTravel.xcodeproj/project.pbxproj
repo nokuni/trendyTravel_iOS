@@ -65,6 +65,7 @@
 		A8D7184B2A66ED6A008F4524 /* ImageURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D7184A2A66ED6A008F4524 /* ImageURLView.swift */; };
 		A8D7184D2A6702BB008F4524 /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D7184C2A6702BB008F4524 /* Like.swift */; };
 		A8D7184F2A672BE2008F4524 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D7184E2A672BE2008F4524 /* StringExtension.swift */; };
+		ACAFA0962A681A38003E2C83 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAFA0952A681A38003E2C83 /* SearchListView.swift */; };
 		C846F6922A6572D6000FF9E8 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846F6912A6572D6000FF9E8 /* MyProfileView.swift */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +144,7 @@
 		A8D7183D2A66CF4C008F4524 /* CategoryDetailLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDetailLoadingView.swift; sourceTree = "<group>"; };
 		A8D718412A66CF73008F4524 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		A8D718432A66D589008F4524 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		ACAFA0952A681A38003E2C83 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		A8D718462A66E7F7008F4524 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		A8D718482A66EBC1008F4524 /* AllDestinationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDestinationListView.swift; sourceTree = "<group>"; };
 		A8D7184A2A66ED6A008F4524 /* ImageURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLView.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				A8D7182D2A66CEF7008F4524 /* DestinationsCategoriesView.swift */,
 				A8D7182F2A66CEF7008F4524 /* PopularDestinationsView.swift */,
 				A8D7182E2A66CEF7008F4524 /* PopularDestinationTile.swift */,
+				ACAFA0952A681A38003E2C83 /* SearchListView.swift */,
 				A8D718482A66EBC1008F4524 /* AllDestinationListView.swift */,
 			);
 			path = Lists;
@@ -604,6 +607,7 @@
 				A8D7183A2A66CF3A008F4524 /* CategoryDetailView.swift in Sources */,
 				A8C503FB2A65A8CD00A4BF22 /* APIRoute.swift in Sources */,
 				A8C503F72A65A74400A4BF22 /* UserDetailsView.swift in Sources */,
+				ACAFA0962A681A38003E2C83 /* SearchListView.swift in Sources */,
 				A8C5042D2A669A8B00A4BF22 /* RestaurantTileView.swift in Sources */,
 				A8D718472A66E7F7008F4524 /* StarRatingView.swift in Sources */,
 				A814BB132A656EE90018E680 /* LoginView.swift in Sources */,
