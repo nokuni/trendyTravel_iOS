@@ -1,5 +1,5 @@
 //
-//  CarouselHeaderView.swift
+//  DestinationDetailCarouselHeader.swift
 //  TrendyTravel
 //
 //  Created by Julie Collazos on 26/06/2023.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct CarouselHeaderView: View {
+struct DestinationDetailCarouselHeader: View {
     @State private var index = 0
     var images: [String]
     var body: some View {
         VStack {
             TabView(selection: $index) {
                 ForEach((0..<images.count), id: \.self) { index in
-                    CarouselCustomBackground(imageName: images[index], isBlackBackground: true)
+                    image(index: index)
                 }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
@@ -29,9 +29,16 @@ struct CarouselHeaderView: View {
             .padding()
         }
     }
+    
+    @ViewBuilder
+    private func image(index: Int) -> some View {
+        Image(images[index])
+            .resizable()
+            .scaledToFill()
+    }
 }
 
-struct CarouselHeaderView_Previews: PreviewProvider {
+struct DestinationDetailCarouselHeader_Previews: PreviewProvider {
     static let attractionsImages: [String] = [
         .init("eiffel_tower"),
         .init("new_york"),
@@ -40,7 +47,7 @@ struct CarouselHeaderView_Previews: PreviewProvider {
     ]
     
     static var previews: some View {
-        CarouselHeaderView(images: attractionsImages)
+        DestinationDetailCarouselHeader(images: attractionsImages)
             .frame(height: 300)
     }
 }

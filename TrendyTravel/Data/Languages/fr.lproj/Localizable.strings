@@ -5,3 +5,98 @@
   Created by Yann Christophe Maertens on 17/07/2023.
   
 */
+
+//DestinationsView
+"destinationView.schearchBar.title" = "Où voulez-vous allez?";
+"destinationView.navigationBar.title" = "Découvrir";
+
+//DestinationsCategoriesView
+"destinationsCategoriesView.culture" = "Culture";
+"destinationsCategoriesView.show" = "Spectacle";
+"destinationsCategoriesView.sports" = "Sports";
+"destinationsCategoriesView.restaurant" = "Restaurant";
+"destinationsCategoriesView.bar" = "Bar";
+
+// CategoryDetailLoadingView
+"categoryDetailLoadingView.loarding" = "Chargement...";
+
+//PopularDestinationsView
+"popularDestinationsView.title" = "Destination populaire";
+"popularDestinationsView.see_all" = "Tout voir";
+
+//PopularDestinationsDetailsView
+"popularDestinationsDetailsView.toggle.title" = "Emplacement";
+"popularDestinationsDetailsView.toggle.hide" = "Cacher Attractions";
+"popularDestinationsDetailsView.toggle.show" = "Montrer Attractions";
+
+//DiscoverView
+"discoverView.schearchBar.promt" = "Où voulez-vous allez?";
+"discoverView.navigationBar.title" = "Découvrir";
+
+//TrendingCreatorsListView
+"trendingCreatorsListView.title" = "Créateurs top tendances";
+"trendingCreatorsListView.see_all" = "Tout voir";
+
+//popularRestaurantsView
+"popularRestaurantsView.title" = "Restaurants populaires";
+"popularRestaurantsView.see_all" = "Tout voir";
+
+//restaurantTile
+"restaurantTile.rate" = "4.7";
+"restaurantTile.name" = "Tokyo, Japon";
+
+//RestaurantDetailsView
+"restaurantDetailsView.content" = "Très bon restaurant avec des habitants typiques de Tokyo et une cuisine incroyable";
+"restaurantDetailsView.title" = "Emplacement & Description";
+"restaurantDetailsView.name" = "Tokyo, Japon";
+"restaurantDetailsView.navigationBar_title" = "Détail du restaurant";
+
+//ReviewList
+"reviewList.title" = "Avis des clients";
+"reviewList.name" = "Billy Jones";
+"reviewList.date" = "Dec 2020";
+
+//MyProfileView
+"myProfileView.numero" = "2541";
+"myProfileView.description" = "YouTuber, Vlogger, Travel Creator";
+"myProfileView.followers" = "Followers";
+"myProfileView.followers.numbers" = "3";
+"myProfileView.following" = "Following";
+"myProfileView.following.numbers" = "2";
+"myProfileView.follow" = "Follow";
+"myProfileView.contact" = "Contact";
+"myProfileView.follow" = "Follow";
+
+//UserDetailsView
+"userDetailsView.numero" = "2541";
+"userDetailsView.description" = "YouTuber, Vlogger, Travel Creator";
+"userDetailsView.followers.followers" = "Followers";
+"userDetailsView.followers.numbers" = "3";
+"userDetailsView.following.following" = "Following";
+"userDetailsView.following.numbers" = "2";
+"userDetailsView.follow" = "Follow";
+"userDetailsView.contact" = "Contacte";
+"userDetailsView.follow" = "Follow";
+"userDetailsView.likes" = "102 j'aime";
+
+//PostsListView
+"postsListView.likes" = "102 j'aime";
+
+//LoginView
+"loginView.signIn" = "S'identifier";
+"loginView.signUp" = "S'inscrire";
+
+//SignInView
+"signInView.logIn" = "Connexion";
+"signInView.email" = "Email";
+"signInView.password" = "Mot de passe";
+"signInView.connect" = "se connecter";
+
+//SignUpView
+"signUpView.title" = "Crée un compte";
+"signUpView.full_name" = "nom complet";
+"signUpView.username" = "Nom d'utilisateur";
+"signUpView.email" = "Email";
+"signUpView.password" = "Mot de passe";
+"signUpView.register" = "S'enregistrer";
+

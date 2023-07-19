@@ -2,45 +2,36 @@
 //  CategoryDetailsViewModel.swift
 //  TrendyTravel
 //
-//  Created by N N on 17/07/2023.
+//  Created by Julie Collazos on 26/06/2023.
 //
 
-import Foundation
 import SwiftUI
+import Utility_Toolbox
 
 class CategoryDetailsViewModel: ObservableObject {
     @Published var isLoading = true
     @Published var activities: [Activity] = []
     @Published var errorMessage = ""
-
+    
+    func getActivities() async throws -> [Activity] {
+        let url = AppConfiguration.routes.activitiesBaseURL
+        do {
+            return try await AppConfiguration.routes.manager.get(url: url)
+        } catch {
+            throw error.localizedDescription
+        }
+    }
+    
+    func fetchActivities() {
+        DispatchQueue.main.async {
+            AsyncManager.loadContent { [weak self] in
+                guard let self else { return }
+                self.activities = try await self.getActivities()
+            }
+        }
+    }
+    
     init() {
         fetchActivities()
-    }
-
-    func fetchActivities() {
-        let urlString = "https://trendytravel.onrender.com/activities"
-        guard let url = URL(string: urlString) else {
-            self.isLoading = false
-            return
-        }
-
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            DispatchQueue.main.async {
-                self.isLoading = false
-
-                if let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 400 {
-                    self.errorMessage = "Bad status: \(statusCode)"
-                    return
-                }
-
-                guard let data = data else { return }
-                do {
-                    self.activities = try JSONDecoder().decode([Activity].self, from: data)
-                } catch {
-                    print("Failed to decode JSON: ", error)
-                    self.errorMessage = error.localizedDescription
-                }
-            }
-        }.resume()
     }
 }

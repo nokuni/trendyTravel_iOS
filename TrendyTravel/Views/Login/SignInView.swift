@@ -29,7 +29,7 @@ struct SignInView: View {
     
     @ViewBuilder
     private func title() -> some View {
-        Text("Log in")
+        Text(L10n.SignInView.logIn)
             .font(.system(.title, design: .default, weight: .bold))
             .padding()
     }
@@ -38,7 +38,7 @@ struct SignInView: View {
     private func emailField() -> some View {
         FieldView(focusField: $focusField,
                   text: $email,
-                  prompt: "Email",
+                  prompt: L10n.SignInView.email,
                   focusedValue: .email,
                   submitValue: .password)
     }
@@ -47,7 +47,7 @@ struct SignInView: View {
     private func passwordField() -> some View {
         FieldView(focusField: $focusField,
                   text: $password,
-                  prompt: "Password",
+                  prompt: L10n.SignInView.password,
                   focusedValue: .password,
                   submitValue: .password,
                   isSecure: true,
@@ -56,7 +56,7 @@ struct SignInView: View {
     
     @ViewBuilder
     private func connectButton() -> some View {
-        AppButtonView(label: "Connect",
+        AppButtonView(label: L10n.SignInView.connect,
                       labelColor: .white,
                       backgroundColor: .accentColor) {
             // Connection

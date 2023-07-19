@@ -12,10 +12,10 @@ struct TrendingCreatorsListView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("Trending Creators")
+                Text(L10n.TrendingCreatorsListView.title)
                     .font(.system(size: 14, weight: .semibold))
                 Spacer()
-                Text("See all")
+                Text(L10n.TrendingCreatorsListView.see_all)
                     .font(.system(size: 12, weight: .semibold))
             }
             .padding(.top)

@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct DestinationsCategoriesImageAndLabelView: View {
-    let image: String
-    let title: String
-    
+    var category: Activity.Category
     var body: some View {
         VStack(spacing: 8) {
-            Image(systemName: image)
+            Image(systemName: category.image)
                 .font(.system(size: 20))
                 .foregroundColor(Color.cyan)
                 .frame(width: 64, height: 64)
                 .background(Color.white)
                 .cornerRadius(.infinity)
-            Text(title)
+            Text(category.rawValue)
                 .font(.system(size: 12, weight: .semibold))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
@@ -33,7 +31,7 @@ struct DestinationsCategoriesImageAndLabelView_Previews: PreviewProvider {
         NavigationView {
             ZStack {
                 Color.cyan
-                DestinationsCategoriesImageAndLabelView(image: "paintpalette.fill", title: "Art")
+                DestinationsCategoriesImageAndLabelView(category: .restaurant)
             }
         }
     }

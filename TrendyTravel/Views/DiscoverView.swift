@@ -2,7 +2,7 @@
 //  DiscoverView.swift
 //  TrendyTravel
 //
-//  Created by Julie Collazos on 26/06/2023.
+//  Created by Yann Christophe Maertens on 17/07/2023.
 //
 
 import SwiftUI
@@ -19,7 +19,7 @@ struct DiscoverView: View {
                 background()
                 scrollContent()
             }
-            .navigationTitle("Discover")
+            .navigationTitle(L10n.DiscoverView.NavigationBar.title)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     UserProfileItemView()
@@ -42,7 +42,7 @@ struct DiscoverView: View {
     private func scrollContent() -> some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                SearchBarView(prompt: "Where would you like to go?",
+                SearchBarView(prompt: L10n.DiscoverView.SchearchBar.prompt,
                               focusField: $focusField,
                               text: $searchText)
                 if searchText.isNotEmpty {
