@@ -37,7 +37,7 @@ struct PopularRestaurantsView: View {
     private func restaurantItem(restaurant: Activity) -> some View {
         NavigationLink {
             RestaurantDetailsView(activity: restaurant,
-                                  reviews: [Review(id: 0, content: L10n.RestaurantDetailsView.content, rating: 5, userID: 0, activityID: 0)])
+                                  reviews: [Review(id: 0, content: L10n.RestaurantDetailsView.content, rating: 5, userID: 0, activityID: 0, createdAt: "")])
         } label: {
             RestaurantTileView(activity: restaurant)
                 .foregroundColor(Color(.label))

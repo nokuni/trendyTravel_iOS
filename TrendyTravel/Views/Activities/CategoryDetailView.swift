@@ -8,25 +8,14 @@
 import SwiftUI
 
 struct CategoryDetailView: View {
-    let name: String
-    @EnvironmentObject var vm: CategoryDetailsViewModel
-    
+    @EnvironmentObject var activityVM: ActivityViewModel
+    let category: Activity.Category
     var body: some View {
-        if vm.isLoading {
-            CategoryDetailLoadingView()
-        } else {
-            ZStack {
-                if !vm.errorMessage.isEmpty {
-                    CategoryDetailErrorView(errorMessage: vm.errorMessage)
-                }
-                ScrollView {
-                    ForEach(vm.activities, id: \.self) { activity in
-                        CategoryDetailCardView(activity: activity)
-                            .navigationBarTitle(activity.category.rawValue.capitalized, displayMode: .inline)
-                    }
-                }
+        ScrollView {
+            ForEach(activityVM.particularActivities(category: category), id: \.self) { activity in
+                CategoryDetailCardView(activity: activity)
+                    .navigationBarTitle(activity.category.rawValue.capitalized, displayMode: .inline)
             }
-            
         }
     }
 }
@@ -34,8 +23,8 @@ struct CategoryDetailView: View {
 struct CategoryDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            CategoryDetailView(name: "culture")
-                .environmentObject(CategoryDetailsViewModel())
+            CategoryDetailView(category: .bar)
+                .environmentObject(ActivityViewModel())
         }
     }
 }

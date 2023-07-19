@@ -9,23 +9,31 @@ import SwiftUI
 
 struct CircleShapeImageView: View {
     var image: String
+    var isFromURL: Bool
     var body: some View {
-        Image(image)
-            .resizable()
-            .scaledToFill()
-            .frame(width: 80)
-            .clipShape(Circle())
-            .shadow(radius: 10)
-            .overlay(
-                Circle()
-                    .stroke(Color.cyan.opacity(0.6), lineWidth: 2)
-                    .frame(width: 80, height: 80)
-            )
+        ZStack {
+            if isFromURL {
+                ImageURLView(image: image)
+                    
+            } else {
+                Image(image)
+                    .resizable()
+            }
+        }
+        .scaledToFill()
+        .frame(width: 80)
+        .clipShape(Circle())
+        .shadow(radius: 10)
+        .overlay(
+            Circle()
+                .stroke(Color.cyan.opacity(0.6), lineWidth: 2)
+                .frame(width: 80, height: 80)
+        )
     }
 }
 
 struct CircleShapeImageView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleShapeImageView(image: "amy")
+        CircleShapeImageView(image: "amy", isFromURL: false)
     }
 }

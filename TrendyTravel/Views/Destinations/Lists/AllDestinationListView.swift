@@ -41,10 +41,9 @@ struct AllDestinationListView: View {
             HStack {
                 Text(destination.country.capitalized)
                     .font(.system(.title2, design: .default, weight: .bold))
-                    .foregroundColor(.aluminium)
                 Text(destination.city.capitalized)
                     .font(.system(.title3, design: .default, weight: .regular))
-                    .foregroundColor(.aluminium)
+                    .foregroundColor(.nickel)
             }
             ImageURLView(image: destination.imageName)
                 .cornerRadius(5)

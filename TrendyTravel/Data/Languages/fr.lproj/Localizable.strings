@@ -41,46 +41,33 @@
 "popularRestaurantsView.title" = "Restaurants populaires";
 "popularRestaurantsView.see_all" = "Tout voir";
 
-//restaurantTile
-"restaurantTile.rate" = "4.7";
-"restaurantTile.name" = "Tokyo, Japon";
-
 //RestaurantDetailsView
 "restaurantDetailsView.content" = "Très bon restaurant avec des habitants typiques de Tokyo et une cuisine incroyable";
 "restaurantDetailsView.title" = "Emplacement & Description";
-"restaurantDetailsView.name" = "Tokyo, Japon";
 "restaurantDetailsView.navigationBar_title" = "Détail du restaurant";
 
 //ReviewList
 "reviewList.title" = "Avis des clients";
-"reviewList.name" = "Billy Jones";
-"reviewList.date" = "Dec 2020";
 
 //MyProfileView
-"myProfileView.numero" = "2541";
 "myProfileView.description" = "YouTuber, Vlogger, Travel Creator";
 "myProfileView.followers" = "Followers";
-"myProfileView.followers.numbers" = "3";
 "myProfileView.following" = "Following";
-"myProfileView.following.numbers" = "2";
 "myProfileView.follow" = "Follow";
 "myProfileView.contact" = "Contact";
 "myProfileView.follow" = "Follow";
 
 //UserDetailsView
-"userDetailsView.numero" = "2541";
 "userDetailsView.description" = "YouTuber, Vlogger, Travel Creator";
 "userDetailsView.followers.followers" = "Followers";
-"userDetailsView.followers.numbers" = "3";
 "userDetailsView.following.following" = "Following";
-"userDetailsView.following.numbers" = "2";
 "userDetailsView.follow" = "Follow";
 "userDetailsView.contact" = "Contacte";
 "userDetailsView.follow" = "Follow";
-"userDetailsView.likes" = "102 j'aime";
+"userDetailsView.likes" = "j'aime";
 
 //PostsListView
-"postsListView.likes" = "102 j'aime";
+"postsListView.likes" = "j'aime";
 
 //LoginView
 "loginView.signIn" = "S'identifier";

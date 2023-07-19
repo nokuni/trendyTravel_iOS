@@ -12,7 +12,6 @@ struct TrendyTravelApp: App {
     @StateObject var destinationVM = DestinationViewModel()
     @StateObject var activityVM = ActivityViewModel()
     @StateObject var userVm = UserViewModel()
-    @StateObject var catVm = CategoryDetailsViewModel()
     var body: some Scene {
         WindowGroup {
 //            LoginView()
@@ -20,7 +19,6 @@ struct TrendyTravelApp: App {
                 .environmentObject(destinationVM)
                 .environmentObject(activityVM)
                 .environmentObject(userVm)
-                .environmentObject(catVm)
         }
     }
 }

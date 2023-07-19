@@ -29,7 +29,7 @@ struct PopularDestinationsView: View {
     
     @ViewBuilder
     private func title() -> some View {
-        Text("Popular Destinations")
+        Text(L10n.PopularDestinationsView.title)
             .font(.system(size: 14, weight: .semibold))
     }
     
@@ -38,7 +38,7 @@ struct PopularDestinationsView: View {
         NavigationLink {
             AllDestinationListView()
         } label: {
-            Text("See all")
+            Text(L10n.PopularDestinationsView.see_all)
                 .font(.system(size: 12, weight: .semibold))
         }
     }

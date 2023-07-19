@@ -24,7 +24,6 @@ struct RestaurantDetailsView: View {
                     .font(.system(size: 16, weight: .bold))
                 if let destination = destinationVM.destination(id: activity.id) {
                     Text("\(destination.city), \(destination.country)")
-                    
                 }
                 HStack {
                     ForEach(0..<5, id: \.self) { _ in
@@ -39,7 +38,7 @@ struct RestaurantDetailsView: View {
             description()
             Divider()
                 .padding(.horizontal)
-            ReviewList(reviews: reviews)
+            ReviewList(activity: activity)
                 .padding(.top)
         }
         .navigationBarTitle(L10n.RestaurantDetailsView.navigationBar_title, displayMode: .inline)

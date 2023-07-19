@@ -10,7 +10,7 @@ import SwiftUI
 struct PostsListView: View {
     var user: User
     var body: some View {
-        ForEach(user.posts, id: \.self) { post in
+        ForEach(user.posts) { post in
             VStack(alignment: .leading) {
                 Image(post.imageName)
                     .resizable()

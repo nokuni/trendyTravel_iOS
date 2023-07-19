@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ReviewList: View {
-    var reviews: [Review] = [Review(id: 0, content: L10n.RestaurantDetailsView.content, rating: 5, userID: 0, activityID: 0)]
+    @EnvironmentObject var userVM: UserViewModel
+    @EnvironmentObject var activityVM: ActivityViewModel
+    var activity: Activity
     var body: some View {
         HStack {
             Text(L10n.ReviewList.title)
@@ -16,7 +18,7 @@ struct ReviewList: View {
             Spacer()
         }
         .padding(.horizontal)
-            ForEach(reviews, id: \.self) { review in
+        ForEach(activityVM.activityReviews(activity), id: \.self) { review in
                 VStack(alignment: .leading) {
                     HStack {
                         Image("billy")
@@ -26,19 +28,17 @@ struct ReviewList: View {
                                 .clipShape(Circle())
                            
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(L10n.ReviewList.name)
-                                .font(.system(size: 14,weight: .bold))
-                            HStack(spacing: 4) {
-                                ForEach(0..<5, id: \.self) { rating in
-                                    Image(systemName: "star.fill")
-                                        .foregroundColor(rating < review.rating ? .orange : .gray)
-                                        .font(.system(size: 12))
-                                }
+                            if let user = userVM.userFromReview(review) {
+                                Text("\(user.lastName ?? "") \(user.firstName ?? "")")
+                                    .font(.system(size: 14,weight: .bold))
                             }
+                            StarRatingView(rating: review.rating)
                         }
                         Spacer()
-                        Text(L10n.ReviewList.date)
-                            .font(.system(size: 14, weight: .bold))
+                        if let date = review.createdAt.convertToDate() {
+                            Text(date.label())
+                                .font(.system(size: 14, weight: .bold))
+                        }
                     }
                     Text(review.content)
                         .font(.system(size: 14, weight: .regular))

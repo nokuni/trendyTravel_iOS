@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - User
 struct User: Codable, Identifiable {
-    var id = UUID()
+    var id: Int?
     var firstName: String?
     var lastName: String?
     var description: String?
@@ -21,6 +21,7 @@ struct User: Codable, Identifiable {
     var followers: [Follower] = []
 
     enum CodingKeys: String, CodingKey {
+        case id
         case firstName = "first_name"
         case lastName = "last_name"
         case description
@@ -35,7 +36,8 @@ struct User: Codable, Identifiable {
 
 extension User {
     static let example =
-    User(firstName: "john",
+    User(id: 0,
+         firstName: "john",
          lastName: "doe",
          description: "hello I'm new",
          profileImage: "billy",
@@ -47,7 +49,8 @@ extension User {
                  title: "1st post",
                  imageName: "eiffel_tower",
                  hashtags: ["paradise", "lost"],
-                 userID: 0)
+                 userID: 0,
+                 likes: [])
          ],
          followers: [
             Follower(id: 0, followerID: 0, followedID: 0)

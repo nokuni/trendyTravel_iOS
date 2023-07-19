@@ -19,7 +19,6 @@ struct TrendingCreatorsListView: View {
                     .font(.system(size: 12, weight: .semibold))
             }
             .padding(.top)
-            .onAppear { userVM.fetchUsers() }
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(alignment: .top, spacing: 40) {

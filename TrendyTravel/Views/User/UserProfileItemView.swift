@@ -11,8 +11,8 @@ struct UserProfileItemView: View {
     @EnvironmentObject var userVM: UserViewModel
 
     var body: some View {
-        if userVM.isUserConnected{
-            NavigationLink(destination:  MyProfileView()) {
+        if userVM.user != nil {
+            NavigationLink(destination: MyProfileView()) {
                 ZStack{
                     Image(systemName: "person.crop.circle.fill")
                         .resizable()

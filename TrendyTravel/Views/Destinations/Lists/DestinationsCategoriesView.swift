@@ -13,7 +13,7 @@ struct DestinationsCategoriesView: View {
             HStack(alignment: .top, spacing: 14) {
                 ForEach(Activity.Category.allCases, id: \.self) { category in
                     NavigationLink {
-                        CategoryDetailView(name: category.rawValue)
+                        CategoryDetailView(category: category)
                     } label: {
                         DestinationsCategoriesImageAndLabelView(category: category)
                     }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Utility_Toolbox
 
 struct CategoryDetailCardView: View {
     let activity: Activity
@@ -21,12 +22,11 @@ struct CategoryDetailCardView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Image(activity.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
             Text(activity.name)
                 .font(.system(size: 12, weight: .semibold))
-                .padding()
+            ImageURLView(image: activity.imageName)
+                .cornerRadius(5)
+                .frame(maxWidth: .infinity, maxHeight: CGSize.screen.height * 0.3)
         }
         .padding()
     }

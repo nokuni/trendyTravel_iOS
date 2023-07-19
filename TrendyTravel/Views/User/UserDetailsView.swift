@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct UserDetailsView: View {
+    @EnvironmentObject var userVM: UserViewModel
     let user: User
     var body: some View {
         ScrollView {
             VStack(spacing: 12) {
                 if let profileImage = user.profileImage {
-                    CircleShapeImageView(image: profileImage)
+                    CircleShapeImageView(image: profileImage, isFromURL: true)
                 }
                 Text("\(user.firstName ?? "") \(user.lastName ?? "")")
                     .font(.system(size: 14, weight: .semibold))
@@ -22,17 +23,17 @@ struct UserDetailsView: View {
                     Text("@\(user.username ?? "") •")
                     Image(systemName: "hand.thumbsup.fill")
                         .font(.system(size: 10, weight: .semibold))
-                    Text(L10n.UserDetailsView.numero)
+                    Text("\(userVM.userLikes(user: user))")
                 }
                 .font(.system(size: 12, weight: .regular))
                 
-                Text(L10n.UserDetailsView.description)
+                Text(user.description ?? "")
                     .font(.system(size: 14, weight: .regular))
                     .foregroundColor(Color(.lightGray))
                 
                 HStack(spacing: 12) {
                     VStack {
-                        Text(L10n.UserDetailsView.Followers.numbers)
+                        Text("\(user.followers.count)")
                             .font(.system(size: 13, weight: .semibold))
                         Text(L10n.UserDetailsView.Followers.followers)
                             .font(.system(size: 9, weight: .regular))
@@ -41,8 +42,8 @@ struct UserDetailsView: View {
                         .frame(width: 0.5, height: 12)
                         .background(Color(.lightGray))
                     VStack {
-                        Text(L10n.UserDetailsView.Following.numbers)
-                            .font(.system(size: 13, weight: .semibold))
+//                        Text(L10n.UserDetailsView.Following.numbers)
+//                            .font(.system(size: 13, weight: .semibold))
                         Text(L10n.UserDetailsView.Following.following)
                             .font(.system(size: 9, weight: .regular))
                     }
@@ -73,7 +74,7 @@ struct UserDetailsView: View {
                 }
                 .font(.system(size: 12, weight: .semibold))
                 
-                ForEach(user.posts, id: \.self) { post in
+                ForEach(user.posts) { post in
                     VStack(alignment: .leading) {
                         Image(post.imageName)
                             .resizable()

@@ -16,6 +16,5 @@ struct Follower: Codable {
         case id
         case followerID = "followerId"
         case followedID = "followedId"
-
     }
 }

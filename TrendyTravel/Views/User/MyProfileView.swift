@@ -35,18 +35,18 @@ struct MyProfileView: View {
                         Text("@\(user.username ?? "") •")
                         Image(systemName: "hand.thumbsup.fill")
                             .font(.system(size: 10, weight: .semibold))
-                        Text(L10n.MyProfileView.numero)
+//                        Text(user.followers)
                     }
                     .font(.system(size: 12, weight: .regular))
                     
-                    Text(L10n.MyProfileView.description)
+                    Text(user.description ?? "")
                         .font(.system(size: 14, weight: .regular))
                         .foregroundColor(Color(.lightGray))
                     
                     HStack(spacing: 12) {
                         VStack {
-                            Text(L10n.MyProfileView.Followers.numbers)
-                                .font(.system(size: 13, weight: .semibold))
+//                            Text(L10n.MyProfileView.Followers.numbers)
+//                                .font(.system(size: 13, weight: .semibold))
                             Text(L10n.MyProfileView.Followers.followers)
                                 .font(.system(size: 9, weight: .regular))
                         }
@@ -54,8 +54,8 @@ struct MyProfileView: View {
                             .frame(width: 0.5, height: 12)
                             .background(Color(.lightGray))
                         VStack {
-                            Text(L10n.MyProfileView.Following.numbers)
-                                .font(.system(size: 13, weight: .semibold))
+//                            Text(L10n.MyProfileView.Following.numbers)
+//                                .font(.system(size: 13, weight: .semibold))
                             Text(L10n.MyProfileView.Following.following)
                                 .font(.system(size: 9, weight: .regular))
                         }
