@@ -11,8 +11,8 @@ import Utility_Toolbox
 struct DiscoverView: View {
     @FocusState var focusField: FocusField?
     @EnvironmentObject var userVM: UserViewModel
-    @State var searchText = ""
-
+    @State private var searchText = ""
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -45,14 +45,18 @@ struct DiscoverView: View {
                 SearchBarView(prompt: L10n.DiscoverView.SchearchBar.prompt,
                               focusField: $focusField,
                               text: $searchText)
-                DestinationsCategoriesView()
-                VStack {
-                    PopularDestinationsView()
-                    PopularRestaurantsView()
-                    TrendingCreatorsListView()
+                if searchText.isNotEmpty {
+                    SearchListView(text: $searchText)
+                } else {
+                    DestinationsCategoriesView()
+                    VStack {
+                        PopularDestinationsView()
+                        PopularRestaurantsView()
+                        TrendingCreatorsListView()
+                    }
+                    .background(Color.white)
+                    .cornerRadius(16)
                 }
-                .background(Color.white)
-                .cornerRadius(16)
             }
         }
     }

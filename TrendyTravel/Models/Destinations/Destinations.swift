@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Destination
-struct Destination: Codable, Hashable {
+struct Destination: Codable, Hashable, Identifiable {
     var id: Int
     var country: String
     var city: String

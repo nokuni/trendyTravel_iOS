@@ -18,16 +18,16 @@ class CategoryDetailsViewModel: ObservableObject {
             self.isLoading = false
             return
         }
-        
+
         URLSession.shared.dataTask(with: url) { data, response, error in
-            
+
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 if let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 400 {
                     self.isLoading = false
                     self.errorMessage = "Bad status: \(statusCode)"
                     return
                 }
-                
+
                 guard let data = data else { return }
                 do {
                     self.activities = try JSONDecoder().decode([Activity].self, from: data)
@@ -45,7 +45,7 @@ class CategoryDetailsViewModel: ObservableObject {
 struct CategoryDetailView: View {
     let name: String
     @EnvironmentObject var vm: CategoryDetailsViewModel
-    
+
     var body: some View {
         if vm.isLoading {
             CategoryDetailLoadingView()
@@ -61,19 +61,11 @@ struct CategoryDetailView: View {
                     }
                 }
             }
-            
+            .navigationBarTitle(name.capitalized, displayMode: .inline)
         }
     }
 }
 
-struct CategoryDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            CategoryDetailView(name: "culture")
-                .environmentObject(CategoryDetailsViewModel())
-        }
-    }
-}
 
 struct ActivityIndicatorView: UIViewRepresentable {
     typealias UIViewType = UIActivityIndicatorView

@@ -9,20 +9,44 @@ import SwiftUI
 import MapKit
 
 struct PopularDestinationsDetailsView: View {
-    @ObservedObject var vm: DestinationViewModel
+    @ObservedObject private var vm: DestinationViewModel
     let destination: Destination
     @State var region: MKCoordinateRegion
     @State var isShowingAttractions = true
     
     let attractions: [Attraction] = [
-        .init(name: "eiffel tower", imageName: "eiffel_tower", latitude: 48.858605, longitude: 2.2946),
-        .init(name: "Champs-Elysees", imageName: "new_york", latitude: 48.866867, longitude: 2.311780),
-        .init(name: "Louvre Museum", imageName: "art2", latitude: 48.860288, longitude: 2.337789)
+        .init(
+            name: "eiffel tower",
+            imageName: "eiffel_tower",
+            latitude: 48.858605,
+            longitude: 2.2946
+        ),
+        .init(
+            name: "Champs-Elysees",
+            imageName: "new_york",
+            latitude: 48.866867,
+            longitude: 2.311780
+        ),
+        .init(
+            name: "Louvre Museum",
+            imageName: "art2",
+            latitude: 48.860288,
+            longitude: 2.337789
+        )
     ]
     
     init(destination: Destination) {
         self.destination = destination
-        self.region = MKCoordinateRegion(center: .init(latitude: destination.latitude, longitude: destination.longitude), span: .init(latitudeDelta: 0.07, longitudeDelta: 0.07))
+        self.region = MKCoordinateRegion(
+            center: .init(
+                latitude: destination.latitude,
+                longitude: destination.longitude
+            ),
+            span: .init(
+                latitudeDelta: 0.07,
+                longitudeDelta: 0.07
+            )
+        )
         self.vm = .init()
     }
     

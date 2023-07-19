@@ -12,6 +12,7 @@ struct SearchBarView: View {
     var prompt: String
     var focusField: FocusState<FocusField?>.Binding
     @Binding var text: String
+
     var body: some View {
         SearchBar(text: $text,
                   prompt: prompt,
