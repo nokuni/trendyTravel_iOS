@@ -23,4 +23,3 @@ struct Post: Codable, Hashable {
         case userID = "userId"
     }
 }
-
