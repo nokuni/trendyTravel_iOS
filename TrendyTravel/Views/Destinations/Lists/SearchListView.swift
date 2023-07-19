@@ -2,7 +2,7 @@
 //  SearchListView.swift
 //  TrendyTravel
 //
-//  Created by N N on 18/07/2023.
+//  Created by N N on 19/07/2023.
 //
 
 import SwiftUI
@@ -25,7 +25,7 @@ struct SearchListView: View {
             .padding()
         }
     }
-    
+
     var filteredDestinations: [Destination] {
         if text.isEmpty {
             return destinationVM.destinations
@@ -79,7 +79,7 @@ struct SearchListView_Previews: PreviewProvider {
         .init(id: 2, country: "Italy", city: "Rome", imageName: "colosseum", latitude: 41.890210, longitude: 12.492231),
         .init(id: 3, country: "USA", city: "New York", imageName: "statue_of_liberty", latitude: 40.689247, longitude: -74.044502)
     ]
-    
+
     static var previews: some View {
         SearchListView(text: .constant(""))
             .environmentObject(DestinationViewModel())
