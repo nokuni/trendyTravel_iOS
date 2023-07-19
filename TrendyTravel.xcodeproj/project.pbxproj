@@ -587,6 +587,8 @@
 				C859BB7F2A681CA00006F499 /* EditProfileView.swift in Sources */,
 				7539DE5D2A4999A50015FA4F /* PopularDestinationsView.swift in Sources */,
 				A8C504172A65E34800A4BF22 /* ReviewUser.swift in Sources */,
+                A8D7183E2A66CF4C008F4524 /* CategoryDetailErrorView.swift in Sources */,
+				C859BB7F2A681CA00006F499 /* EditProfileView.swift in Sources */,
 				A8C504012A65BD7600A4BF22 /* SearchBarView.swift in Sources */,
 				A8C5041B2A65E3B700A4BF22 /* ReviewListView.swift in Sources */,
 				A8C503F92A65A8A300A4BF22 /* AppConfiguration.swift in Sources */,

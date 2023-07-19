@@ -1,15 +1,101 @@
-"NO_DESCRIPTION" = "No description.";
-"FOLLOWERS" = "Followers";
-"FOLLOWING" = "Following";
-"EDIT_PROFILE" = "Edit My Profile";
-"NEW_POST" = "New Post";
-"LOG_OUT" = "Log Out";
-"DELETE_ACCOUNT" = "Delete My Account";
+//DestinationsView
+"destinationView.schearchBar.title" = "Where do you want to go?";
+"destinationView.navigationBar.title" = "Discover";
 
-//"NO_DESCRIPTION" = "Pas de description.";
-//"FOLLOWERS" = "Abonnés";
-//"FOLLOWING" = "Abonnements";
-//"EDIT_PROFILE" = "Editer mon profil";
-//"NEW_POST" = "Nouvelle publication";
-//"LOG_OUT" = "Deconnexion";
-//"DELETE_ACCOUNT" = "Supprimer mon compte"';
+//DestinationsCategoriesView
+"destinationsCategoriesView.culture" = "Culture";
+"destinationsCategoriesView.show" = "Show";
+"destinationsCategoriesView.sports" = "Sports";
+"destinationsCategoriesView.restaurant" = "Restaurant";
+"destinationsCategoriesView.bar" = "Bar";
+
+// CategoryDetailLoadingView
+"categoryDetailLoadingView.loarding" = "Loading...";
+
+//PopularDestinationsView
+"popularDestinationsView.title" = "Popular Destinations";
+"popularDestinationsView.see_all" = "See all";
+
+//PopularDestinationsDetailsView
+"popularDestinationsDetailsView.toggle.title" = "Location";
+"popularDestinationsDetailsView.toggle.hide" = "Hide Attractions";
+"popularDestinationsDetailsView.toggle.show" = "Show Attractions";
+
+//DiscoverView
+"discoverView.schearchBar.promt" = "Where do you want to go?";
+"discoverView.navigationBar.title" = "Discover";
+
+//TrendingCreatorsListView
+"trendingCreatorsListView.title" = "Trending Creators";
+"trendingCreatorsListView.see_all" = "See all";
+
+//popularRestaurantsView
+"popularRestaurantsView.title" = "Popular Restaurants";
+"popularRestaurantsView.see_all" = "See all";
+
+//restaurantTile
+"restaurantTile.rate" = "4.7";
+"restaurantTile.name" = "Tokyo, Japan";
+
+//RestaurantDetailsView
+"restaurantDetailsView.content" = "Very good restaurant with typical Tokyo habitants and amazing food";
+"restaurantDetailsView.title" = "Location & Description";
+"restaurantDetailsView.name" = "Tokyo, Japan";
+"restaurantDetailsView.navigationBar_title" = "Restaurant Details";
+
+//ReviewList
+"reviewList.title" = "Customer Reviews";
+"reviewList.name" = "Billy Jones";
+"reviewList.date" = "Dec 2020";
+
+//MyProfileView
+"MyProfileView.NO_DESCRIPTION" = "No description.";
+"MyProfileView.FOLLOWERS" = "Followers";
+"MyProfileView.FOLLOWING" = "Following";
+"MyProfileView.EDIT_PROFILE" = "Edit My Profile";
+"MyProfileView.NEW_POST" = "New Post";
+"MyProfileView.LOG_OUT" = "Log Out";
+"MyProfileView.DELETE_ACCOUNT" = "Delete My Account";
+
+//UserDetailsView
+"userDetailsView.numero" = "2541";
+"userDetailsView.description" = "YouTuber, Vlogger, Travel Creator";
+"userDetailsView.followers.followers" = "Followers";
+"userDetailsView.followers.numbers" = "3";
+"userDetailsView.following.following" = "Following";
+"userDetailsView.following.numbers" = "2";
+"userDetailsView.follow" = "Follow";
+"userDetailsView.contact" = "Contact";
+"userDetailsView.follow" = "Follow";
+"userDetailsView.likes" = "102 likes";
+
+//PostsListView
+"postsListView.likes" = "102 likes";
+
+//LoginView
+"loginView.signIn" = "Sign In";
+"loginView.signUp" = "Sign Un";
+
+//SignInView
+"signInView.logIn" = "Log in";
+"signInView.email" = "Email";
+"signInView.password" = "Password";
+"signInView.connect" = "Connect";
+
+//SignUpView
+"signUpView.title" = "Create an account";
+"signUpView.full_name" = "Full name";
+"signUpView.username" = "Username";
+"signUpView.email" = "Email";
+"signUpView.password" = "Password";
+"signUpView.register" = "register";
+
+//TODO: in fr locale
+////MyProfileView
+//"MyProfileView.NO_DESCRIPTION" = "Pas de description.";
+//"MyProfileView.FOLLOWERS" = "Abonnés";
+//"MyProfileView.FOLLOWING" = "Abonnements";
+//"MyProfileView.EDIT_PROFILE" = "Editer mon profil";
+//"MyProfileView.NEW_POST" = "Nouvelle publication";
+//"MyProfileView.LOG_OUT" = "Deconnexion";
+//"MyProfileView.DELETE_ACCOUNT" = "Supprimer mon compte"';

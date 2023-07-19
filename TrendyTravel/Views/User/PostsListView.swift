@@ -25,14 +25,16 @@ struct PostsListView: View {
                         VStack{
                             HStack {
                                 Spacer()
-                                EditButton()
-                                    .foregroundColor(.black)
-                                    .padding(10)
-                                    .padding(.vertical, 8)
-                                    .background(Color(white: 0.9))
-                                    .cornerRadius(50)
-                                    .opacity(0.92)
-                                    .padding(10)
+                                Button(action: {
+                                    //EditPostView()
+                                }, label: {
+                                    Image(systemName: "pencil")
+                                        .font(.system(size: 20))
+                                        .foregroundColor(Color.cyan)
+                                        .frame(width: 44, height: 44)
+                                        .background(Color.white)
+                                        .cornerRadius(.infinity)
+                                })
                             }
                             Spacer()
                         }

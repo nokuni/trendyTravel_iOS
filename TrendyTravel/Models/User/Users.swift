@@ -8,8 +8,8 @@
 import Foundation
 
 // MARK: - User
-struct User: Codable, Identifiable, Hashable {
-    var id = Int()
+struct User: Identifiable, Hashable, Codable {
+    var id: Int?
     var firstName: String
     var lastName: String?
     var description: String?
@@ -18,6 +18,7 @@ struct User: Codable, Identifiable, Hashable {
     var email: String
     var password: String
     var posts: [Post] = []
+    var followers: [Follower] = []
     
     enum CodingKeys: String, CodingKey {
         case firstName = "first_name"
@@ -34,7 +35,8 @@ struct User: Codable, Identifiable, Hashable {
 
 extension User {
     static let example =
-    User(firstName: "Amy",
+    User(id: 1,
+         firstName: "Amy",
          lastName: "Example",
          description: "Bonjour je vis dans la demo",
          profileImage: "amy",
@@ -47,11 +49,15 @@ extension User {
                  imageName: "eiffel_tower",
                  hashtags: ["hashtag", "example"],
                  userID: 1)
+         ],
+         followers: [
+            Follower(id: 0, followerID: 0, followedID: 0)
          ]
-    )
-    
+    );
+
     static let errorIndicators =
-    User(firstName: "ERR_NameNotFound",
+    User(id: 0,
+         firstName: "ERR_NameNotFound",
          lastName: "",
          description: "",
          profileImage: "",
@@ -64,6 +70,9 @@ extension User {
                  imageName: "ERR_LocationImage",
                  hashtags: ["ERR_HashtagsNotFound"],
                  userID: 1)
+         ],
+         followers: [
+            Follower(id: 0, followerID: 0, followedID: 0)
          ]
     )
 }

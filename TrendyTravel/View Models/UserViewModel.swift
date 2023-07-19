@@ -39,7 +39,7 @@ class UserViewModel: ObservableObject {
         let url = AppConfiguration.routes.userBaseURL
         
         do {
-            let newUser = User(firstName: user.firstName, lastName: user.lastName, description: user.description, profileImage: user.profileImage, username: user.username, email: user.email, password: user.password)
+            let newUser = User(id: 0, firstName: user.firstName, lastName: user.lastName, description: user.description, profileImage: user.profileImage, username: user.username, email: user.email, password: user.password)
             _ = try await AppConfiguration.routes.manager.post(url: url, value: newUser)
         } catch {
             throw error.localizedDescription
@@ -50,7 +50,7 @@ class UserViewModel: ObservableObject {
         let url = AppConfiguration.routes.userBaseURL
         
         do {
-            let putUser = User(firstName: user.firstName, lastName: user.lastName, description: user.description, profileImage: user.profileImage, username: user.username, email: user.email, password: user.password)
+            let putUser = User(id: userID, firstName: user.firstName, lastName: user.lastName, description: user.description, profileImage: user.profileImage, username: user.username, email: user.email, password: user.password)
             _ = try await AppConfiguration.routes.manager.put(url: "\(url)/\(userID)", value: putUser)
             self.loggedUser = putUser
         } catch {

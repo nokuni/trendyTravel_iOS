@@ -48,9 +48,16 @@ struct EditProfileView: View {
                 }
                 Button {
                     Task.init {
-                        let updatedUserInfos = User(firstName: firstName, lastName: lastName, description: description, profileImage: profileImage, username: username, email: email, password: password)
-//                        try await userVM.putUser(userID: loggedUser.id, user: updatedUserInfos)
-                        userVM.loggedUser = updatedUserInfos
+                        do {
+                            guard let userID = userVM.loggedUser?.id else {
+                                return
+                            }
+                            let updatedUserInfos = User(id: userID, firstName: firstName, lastName: lastName, description: description, profileImage: profileImage, username: username, email: email, password: password)
+                            try await userVM.putUser(userID: userID, user: updatedUserInfos)
+                            userVM.loggedUser = updatedUserInfos
+                        } catch {
+                            print("Failed to update user: \(error)")
+                        }
                     }
                 } label: {
                     HStack {

@@ -42,7 +42,7 @@ struct MyProfileView: View {
                 .padding(.vertical,20)
             }
         }
-        //if user is not logged, goes back to Home page
+        //if user is not logged in, goes back to Home page
         else {
             DiscoverView()
         }
@@ -93,7 +93,7 @@ struct MyProfileView: View {
                 .font(.system(size: 14, weight: .regular))
                 .foregroundColor(Color(.black)).opacity(0.35)
         } else {
-            Text("NO_DESCRIPTION")
+            Text("MyProfileView.NO_DESCRIPTION")
                 .font(.system(size: 13, weight: .regular))
                 .foregroundColor(Color(.black)).opacity(0.35)
                 .italic()
@@ -106,7 +106,7 @@ struct MyProfileView: View {
             VStack {
                 Text("3")
                     .font(.system(size: 13, weight: .semibold))
-                Text("FOLLOWERS")
+                Text("MyProfileView.FOLLOWERS")
                     .font(.system(size: 9, weight: .regular))
             }
             Spacer()
@@ -115,7 +115,7 @@ struct MyProfileView: View {
             VStack {
                 Text("2")
                     .font(.system(size: 13, weight: .semibold))
-                Text("FOLLOWING")
+                Text("MyProfileView.FOLLOWING")
                     .font(.system(size: 9, weight: .regular))
             }
         }
@@ -128,7 +128,7 @@ struct MyProfileView: View {
         } label: {
             HStack {
                 Spacer()
-                Text("EDIT_PROFILE")
+                Text("MyProfileView.EDIT_PROFILE")
                     .foregroundColor(.black)
                     .opacity(0.97)
                 Spacer()
@@ -147,7 +147,7 @@ struct MyProfileView: View {
         } label: {
             HStack {
                 Spacer()
-                Text("NEW_POST")
+                Text("MyProfileView.NEW_POST")
                     .foregroundColor(.white)
                     .fontWeight(.semibold)
                     .opacity(0.97)
@@ -168,7 +168,7 @@ struct MyProfileView: View {
         } label: {
             HStack {
                 Spacer()
-                Text("LOG_OUT")
+                Text("MyProfileView.LOG_OUT")
                     .foregroundColor(.red)
                     .opacity(0.97)
                     .fontWeight(.semibold)
@@ -189,7 +189,7 @@ struct MyProfileView: View {
         } label: {
             HStack {
                 Spacer()
-                Text("DELETE_ACCOUNT")
+                Text("MyProfileView.DELETE_ACCOUNT")
                     .foregroundColor(.white)
                     .opacity(0.97)
                     .fontWeight(.semibold)
