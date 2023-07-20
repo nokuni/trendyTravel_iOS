@@ -40,7 +40,7 @@ struct PopularDestinationTile: View {
         Text(destination.city.capitalized)
             .font(.system(size: 12, weight: .semibold))
             .padding(.horizontal, 12)
-            .foregroundColor(Color(.label))
+            .foregroundColor(.black)
     }
     
     @ViewBuilder

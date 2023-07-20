@@ -14,9 +14,11 @@ struct PopularDestinationsView: View {
             HStack {
                 Text(L10n.PopularDestinationsView.title)
                     .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.black)
                 Spacer()
                 Text(L10n.PopularDestinationsView.see_all)
                     .font(.system(size: 12, weight: .semibold))
+                    .foregroundColor(.black)
             }
             .padding(.horizontal)
             .padding(.top)
