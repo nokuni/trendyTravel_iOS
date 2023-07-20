@@ -48,7 +48,7 @@ struct PostsListView: View {
                         // action pour ajouter des likes
                     } label: {
                         Image(systemName: "hand.thumbsup.fill")
-                            .foregroundColor(.cyan)
+                            .foregroundColor(.accentColor)
                             .font(.system(size: 12))
                     }
                     Text(L10n.PostsListView.likes)

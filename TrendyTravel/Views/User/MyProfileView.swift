@@ -69,7 +69,7 @@ struct MyProfileView: View {
                                 Spacer()
                             }
                             .padding(.vertical, 8)
-                            .background(Color.cyan)
+                            .background(Color.accentColor)
                             .cornerRadius(50)
                         }
                         Button(action: {}) {
