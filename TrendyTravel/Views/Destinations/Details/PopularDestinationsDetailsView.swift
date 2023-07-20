@@ -84,7 +84,7 @@ struct PopularDestinationsDetailsView: View {
                 Button(action: {
                     isShowingAttractions.toggle()
                 }) {
-                    Text("\(isShowingAttractions ? L10n.PopularDestinationsDetailsView.Toggle.hide : L10n.PopularDestinationsDetailsView.Toggle.show)")
+                    Text(isShowingAttractions ? L10n.PopularDestinationsDetailsView.Toggle.hide : L10n.PopularDestinationsDetailsView.Toggle.show)
                         .font(.system(size: 12, weight: .semibold))
                 }
                 Toggle("", isOn: $isShowingAttractions)
@@ -102,7 +102,7 @@ struct PopularDestinationsDetailsView: View {
     }
 }
 
-struct PopularDestinationsDetailsView_Previews: PreviewProvider {
+private struct PopularDestinationsDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         PopularDestinationsDetailsView(destination: Destination.example)
     }

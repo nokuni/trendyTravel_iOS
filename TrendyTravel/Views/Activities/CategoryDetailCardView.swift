@@ -32,7 +32,7 @@ struct CategoryDetailCardView: View {
     }
 }
 
-struct CategoryDetailCardView_Previews: PreviewProvider {
+private struct CategoryDetailCardView_Previews: PreviewProvider {
     static var previews: some View {
         CategoryDetailCardView(activity: Activity.example)
     }

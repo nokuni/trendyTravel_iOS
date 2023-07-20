@@ -29,7 +29,8 @@ struct TrendingCreatorsItemView: View {
         .shadow(color: .gray, radius: 2, x: 0, y: 2)
     }
 }
-struct TrendingCreatorsItemView_Previews: PreviewProvider {
+
+private struct TrendingCreatorsItemView_Previews: PreviewProvider {
     static var previews: some View {
         TrendingCreatorsItemView(user: User.example)
     }

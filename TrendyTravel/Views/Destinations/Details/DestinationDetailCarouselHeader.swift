@@ -38,7 +38,7 @@ struct DestinationDetailCarouselHeader: View {
     }
 }
 
-struct DestinationDetailCarouselHeader_Previews: PreviewProvider {
+private struct DestinationDetailCarouselHeader_Previews: PreviewProvider {
     static let attractionsImages: [String] = [
         .init("eiffel_tower"),
         .init("new_york"),

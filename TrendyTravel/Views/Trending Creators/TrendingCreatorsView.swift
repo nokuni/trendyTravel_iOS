@@ -40,7 +40,7 @@ struct TrendingCreatorsListView: View {
     }
 }
 
-struct TrendingCreatorsListView_Previews: PreviewProvider {
+private struct TrendingCreatorsListView_Previews: PreviewProvider {
     static var previews: some View {
         TrendingCreatorsListView()
             .environmentObject(UserViewModel())

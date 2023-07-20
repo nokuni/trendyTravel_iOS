@@ -63,7 +63,7 @@ struct DiscoverView: View {
 }
 
 
-struct DiscoverView_Previews: PreviewProvider {
+private struct DiscoverView_Previews: PreviewProvider {
     static var previews: some View {
         DiscoverView()
             .colorScheme(.light)

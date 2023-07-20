@@ -41,7 +41,7 @@ struct UserProfileItemView: View {
     }
 }
 
-struct UserProfileItemView_Previews: PreviewProvider {
+private struct UserProfileItemView_Previews: PreviewProvider {
     static var previews: some View {
         UserProfileItemView()
             .environmentObject(UserViewModel())

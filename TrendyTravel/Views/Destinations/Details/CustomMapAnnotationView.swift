@@ -35,7 +35,7 @@ struct CustomMapAnnotationView: View {
     }
 }
 
-struct CustomMapAnnotationView_Previews: PreviewProvider {
+private struct CustomMapAnnotationView_Previews: PreviewProvider {
     static var previews: some View {
         CustomMapAnnotationView(attraction: Attraction.example)
     }

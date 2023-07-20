@@ -26,7 +26,7 @@ struct DestinationsCategoriesImageAndLabelView: View {
     }
 }
 
-struct DestinationsCategoriesImageAndLabelView_Previews: PreviewProvider {
+private struct DestinationsCategoriesImageAndLabelView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ZStack {
