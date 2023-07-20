@@ -100,3 +100,5 @@
 "signUpView.password" = "Mot de passe";
 "signUpView.register" = "S'enregistrer";
 
+//AttractionDetailsView
+"attractionDetailsView.title" = "Attraction";

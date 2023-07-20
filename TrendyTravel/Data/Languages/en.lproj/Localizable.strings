@@ -99,3 +99,6 @@
 "signUpView.email" = "Email";
 "signUpView.password" = "Password";
 "signUpView.register" = "register";
+
+//AttractionDetailsView
+"attractionDetailsView.title" = "Attraction";

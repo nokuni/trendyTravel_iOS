@@ -9,8 +9,10 @@ import Foundation
 
 struct Attraction: Identifiable {
     let id = UUID().uuidString
-    let name, imageName: String
-    let latitude, longitude: Double
+    let name: String
+    let imageName: String
+    let latitude: Double
+    let longitude: Double
 }
 
 extension Attraction {

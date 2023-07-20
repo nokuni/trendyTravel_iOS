@@ -93,7 +93,11 @@ struct PopularDestinationsDetailsView: View {
             .padding()
             Map(coordinateRegion: $region, annotationItems: isShowingAttractions ? attractions : []) { attraction in
                 MapAnnotation(coordinate: .init(latitude: attraction.latitude, longitude: attraction.longitude)) {
-                    CustomMapAnnotationView(attraction: attraction)
+                    NavigationLink {
+                        AttractionDetailsView(attraction: attraction)
+                    } label: {
+                        CustomMapAnnotationView(attraction: attraction)
+                    }
                 }
             }
             .frame(height: 300)

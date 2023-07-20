@@ -118,4 +118,7 @@ internal enum L10n {
         internal static let restaurant = NSLocalizedString("destinationsCategoriesView.restaurant", comment: "")
         internal static let bar = NSLocalizedString("destinationsCategoriesView.bar", comment: "")
     }
+    internal enum AttractionDetailsView {
+        internal static let title = NSLocalizedString("attractionDetailsView.title", comment: "")
+    }
 }
