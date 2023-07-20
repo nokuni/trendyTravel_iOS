@@ -22,7 +22,7 @@ struct DestinationDetailCarouselHeader: View {
             HStack(spacing: 2) {
                 ForEach((0..<3), id: \.self) { index in
                     Rectangle()
-                        .fill(index == self.index ? Color.cyan : Color.cyan.opacity(0.5))
+                        .fill(index == self.index ? Color.accentColor : Color.accentColor.opacity(0.5))
                         .frame(width: 30, height: 5)
                 }
             }
