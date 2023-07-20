@@ -70,10 +70,12 @@ struct DiscoverView_Previews: PreviewProvider {
             .environmentObject(UserViewModel())
             .environmentObject(DestinationViewModel())
             .environmentObject(CategoryDetailsViewModel())
+            .environmentObject(ActivityViewModel())
         DiscoverView()
             .colorScheme(.dark)
             .environmentObject(UserViewModel())
             .environmentObject(DestinationViewModel())
             .environmentObject(CategoryDetailsViewModel())
+            .environmentObject(ActivityViewModel())
     }
 }
