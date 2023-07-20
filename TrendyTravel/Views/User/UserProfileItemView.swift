@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UserProfileItemView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var userVM: UserViewModel
 
     var body: some View {
@@ -17,7 +18,7 @@ struct UserProfileItemView: View {
                     Image(systemName: "person.crop.circle.fill")
                         .resizable()
                         .frame(width: 36, height: 36)
-                        .foregroundColor(.white.opacity(0.95))
+                        .foregroundColor(colorScheme == .dark ? .white.opacity(0.95) : .black.opacity(0.95))
                         .padding(.bottom, 8)
                     if let loggedUserImage = userVM.user?.profileImage, !loggedUserImage.isEmpty {
                         Image(loggedUserImage)
@@ -34,7 +35,7 @@ struct UserProfileItemView: View {
                 Image(systemName: "person.crop.circle")
                     .resizable()
                     .frame(width: 36, height: 36)
-                    .foregroundColor(.black.opacity(0.95))
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                     .padding(.bottom, 8)
             }
         }
