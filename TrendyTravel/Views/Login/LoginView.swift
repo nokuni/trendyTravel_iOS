@@ -35,7 +35,7 @@ struct LoginView: View {
     
     @ViewBuilder
     private func signInButton() -> some View {
-        AppButtonView(label: L10n.LoginView.signIn,
+        AppButtonView(label: L10n.signIn,
                       labelColor: .blue,
                       backgroundColor: .white) {
             isSigningIn.toggle()
@@ -44,7 +44,7 @@ struct LoginView: View {
     
     @ViewBuilder
     private func signUpButton() -> some View {
-        AppButtonView(label: L10n.LoginView.signUp,
+        AppButtonView(label: L10n.signUp,
                       labelColor: .white,
                       backgroundColor: .blue) {
             isSigningUp.toggle()

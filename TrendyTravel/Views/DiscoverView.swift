@@ -12,14 +12,13 @@ struct DiscoverView: View {
     @FocusState var focusField: FocusField?
     @EnvironmentObject var userVM: UserViewModel
     @State private var searchText = ""
-    
     var body: some View {
         NavigationView {
             ZStack {
                 background()
                 scrollContent()
             }
-            .navigationTitle(L10n.DiscoverView.NavigationBar.title)
+            .navigationTitle(L10n.discover)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     UserProfileItemView()
@@ -42,7 +41,7 @@ struct DiscoverView: View {
     private func scrollContent() -> some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                SearchBarView(prompt: L10n.DiscoverView.SchearchBar.prompt,
+                SearchBarView(prompt: L10n.discoverSearchPrompt,
                               focusField: $focusField,
                               text: $searchText)
                 if searchText.isNotEmpty {

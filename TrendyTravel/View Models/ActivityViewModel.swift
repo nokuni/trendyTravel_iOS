@@ -72,4 +72,12 @@ class ActivityViewModel: ObservableObject {
     func particularActivities(category: Activity.Category) -> [Activity] {
         activities.filter { $0.category == category }
     }
+    
+    func destinationActivities(destination: Destination) -> [Activity] {
+        activities.filter { $0.destinationId == destination.id }
+    }
+    
+    func activityImages(destination: Destination) -> [String] {
+        destinationActivities(destination: destination).map { $0.imageName }
+    }
 }

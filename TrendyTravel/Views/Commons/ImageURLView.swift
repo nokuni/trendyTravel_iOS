@@ -16,8 +16,7 @@ struct ImageURLView: View {
                 if let image = phase.image {
                     image.resizable()
                 } else if phase.error != nil {
-                    Image(image)
-                        .resizable()
+                    Color.blue
                 } else {
                     ProgressView()
                 }

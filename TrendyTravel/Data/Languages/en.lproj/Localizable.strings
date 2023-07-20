@@ -6,81 +6,47 @@
   
 */
 
-//DestinationsView
-"destinationView.schearchBar.title" = "Where do you want to go?";
-"destinationView.navigationBar.title" = "Discover";
+// Commons
+"See all" = "See all";
+"Previous" = "Previous";
+"Next" = "Next";
 
-//DestinationsCategoriesView
-"destinationsCategoriesView.culture" = "Culture";
-"destinationsCategoriesView.show" = "Show";
-"destinationsCategoriesView.sports" = "Sports";
-"destinationsCategoriesView.restaurant" = "Restaurant";
-"destinationsCategoriesView.bar" = "Bar";
+// Destination
+"Popular Destinations" = "Popular destinations";
+"Where do you want to go ?" = "Where do you want to go ?";
+"Discover" = "Discover";
 
-// CategoryDetailLoadingView
-"categoryDetailLoadingView.loarding" = "Loarding...";
+// Activity
+"Culture" = "Culture";
+"Show" = "Show";
+"Sports" = "Sports";
+"Restaurants" = "Restaurants";
+"Bar" = "Bar";
+"Popular restaurants" = "Popular restaurants";
+"Location" = "Location";
+"Hide activities" = "Hide activities";
+"Show activities" = "Show activities";
+"Customer reviews" = "Customer reviews";
+"Location & Description" = "Location & Description";
+"Restaurant details" = "Restaurant details";
 
-//PopularDestinationsView
-"popularDestinationsView.title" = "Popular Destinations";
-"popularDestinationsView.see_all" = "See all";
+// User
+"Trending creators" = "Trending creators";
+"Followers" = "Followers";
+"Following" = "Following";
+"Follow" = "Follow";
+"Contact" = "Contact";
+"likes" = "likes";
 
-//PopularDestinationsDetailsView
-"popularDestinationsDetailsView.toggle.title" = "Location";
-"popularDestinationsDetailsView.toggle.hide" = "Hide Attractions";
-"popularDestinationsDetailsView.toggle.show" = "Show Attractions";
-
-//DiscoverView
-"discoverView.schearchBar.promt" = "Where do you want to go?";
-"discoverView.navigationBar.title" = "Discover";
-
-//TrendingCreatorsListView
-"trendingCreatorsListView.title" = "Trending Creators";
-"trendingCreatorsListView.see_all" = "See all";
-
-//popularRestaurantsView
-"popularRestaurantsView.title" = "Popular Restaurants";
-"popularRestaurantsView.see_all" = "See all";
-
-//RestaurantDetailsView
-"restaurantDetailsView.content" = "Very good restaurant with typical Tokyo habitants and amazing food";
-"restaurantDetailsView.title" = "Location & Description";
-"restaurantDetailsView.navigationBar_title" = "Restaurant Details";
-
-//ReviewList
-"reviewList.title" = "Customer Reviews";
-
-//MyProfileView
-"myProfileView.followers" = "Followers";
-"myProfileView.following" = "Following";
-"myProfileView.follow" = "Follow";
-"myProfileView.contact" = "Contact";
-"myProfileView.follow" = "Follow";
-
-//UserDetailsView
-"userDetailsView.followers.followers" = "Followers";
-"userDetailsView.following.following" = "Following";
-"userDetailsView.follow" = "Follow";
-"userDetailsView.contact" = "Contact";
-"userDetailsView.follow" = "Follow";
-"userDetailsView.likes" = "likes";
-
-//PostsListView
-"postsListView.likes" = "likes";
-
-//LoginView
-"loginView.signIn" = "Sign In";
-"loginView.signUp" = "Sign Un";
-
-//SignInView
-"signInView.logIn" = "Log in";
-"signInView.email" = "Email";
-"signInView.password" = "Password";
-"signInView.connect" = "Connect";
-
-//SignUpView
-"signUpView.title" = "Create an account";
-"signUpView.full_name" = "Full name";
-"signUpView.username" = "Username";
-"signUpView.email" = "Email";
-"signUpView.password" = "Password";
-"signUpView.register" = "register";
+// Login
+"Sign In" = "Sign In";
+"Sign Up" = "Sign Up";
+"Log in" = "Log in";
+"Create an account" = "Create an account";
+"First name" = "First name";
+"Last name" = "Last name";
+"Username" = "Username";
+"Email" = "Email";
+"Password" = "Password";
+"Register" = "Register";
+"Connect" = "Connect";

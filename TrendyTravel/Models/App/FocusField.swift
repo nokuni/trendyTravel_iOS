@@ -8,9 +8,11 @@
 import Foundation
 
 enum FocusField: String {
-    case fullName
+    case firstName
+    case lastName
     case username
     case email
     case password
+    case description
     case search
 }

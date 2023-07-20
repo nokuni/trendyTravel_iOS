@@ -10,7 +10,7 @@ import SwiftUI
 struct StarRatingView: View {
     var rating: Int
     var body: some View {
-        HStack {
+        HStack(spacing: 5) {
             ForEach(0..<5, id: \.self) { index in
                 Image(systemName: index >= rating ? "star" : "star.fill")
                     .foregroundColor(index >= rating ? .white : .orange)

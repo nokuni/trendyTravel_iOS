@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Activity
-struct Activity: Codable, Hashable {
+struct Activity: Codable, Identifiable {
     var id: Int
     var name: String
     var imageName: String

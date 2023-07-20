@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct PostsListView: View {
-    var user: User
+    @EnvironmentObject var userVM: UserViewModel
     var body: some View {
-        ForEach(user.posts) { post in
+        ForEach(userVM.posts) { post in
             VStack(alignment: .leading) {
                 Image(post.imageName)
                     .resizable()
@@ -18,9 +18,8 @@ struct PostsListView: View {
                     .frame(height: 200)
                     .clipped()
                 HStack(alignment: .top) {
-                    if let profileImage = user.profileImage {
-                        Image(profileImage)
-                            .resizable()
+                    if let profileImage = userVM.user?.profileImage {
+                        ImageURLView(image: profileImage)
                             .scaledToFit()
                             .frame(height: 34)
                             .clipShape(Circle())
@@ -51,7 +50,7 @@ struct PostsListView: View {
                             .foregroundColor(.cyan)
                             .font(.system(size: 12))
                     }
-                    Text(L10n.PostsListView.likes)
+                    Text(L10n.likes)
                         .font(.system(size: 12, weight: .regular))
                         .foregroundColor(.gray)
                 }
@@ -67,6 +66,6 @@ struct PostsListView: View {
 
 struct PostsListView_Previews: PreviewProvider {
     static var previews: some View {
-        PostsListView(user: User.example)
+        PostsListView()
     }
 }

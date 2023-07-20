@@ -15,7 +15,11 @@ struct AllDestinationListView: View {
         ScrollView {
             VStack {
                 ForEach(searchedDestinations, id: \.self) { destination in
-                    destinationItem(destination: destination)
+                    NavigationLink {
+                        PopularDestinationsDetailsView(destination: destination)
+                    } label: {
+                        destinationItem(destination: destination)
+                    }
                 }
             }
         }
@@ -41,6 +45,7 @@ struct AllDestinationListView: View {
             HStack {
                 Text(destination.country.capitalized)
                     .font(.system(.title2, design: .default, weight: .bold))
+                    .foregroundColor(.primary)
                 Text(destination.city.capitalized)
                     .font(.system(.title3, design: .default, weight: .regular))
                     .foregroundColor(.nickel)

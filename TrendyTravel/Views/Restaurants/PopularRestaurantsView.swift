@@ -12,7 +12,7 @@ struct PopularRestaurantsView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(L10n.PopularRestaurantsView.title)
+                Text(L10n.popularRestaurants)
                     .font(.system(size: 14, weight: .semibold))
                 Spacer()
                 seeAllButton()
@@ -28,7 +28,7 @@ struct PopularRestaurantsView: View {
         NavigationLink {
             AllRestaurantListView()
         } label: {
-            Text(L10n.PopularRestaurantsView.see_all)
+            Text(L10n.seeAll)
                 .font(.system(size: 12, weight: .semibold))
         }
     }
@@ -37,7 +37,7 @@ struct PopularRestaurantsView: View {
     private func restaurantItem(restaurant: Activity) -> some View {
         NavigationLink {
             RestaurantDetailsView(activity: restaurant,
-                                  reviews: [Review(id: 0, content: L10n.RestaurantDetailsView.content, rating: 5, userID: 0, activityID: 0, createdAt: "")])
+                                  reviews: [])
         } label: {
             RestaurantTileView(activity: restaurant)
                 .foregroundColor(Color(.label))
@@ -50,7 +50,7 @@ struct PopularRestaurantsView: View {
     private func restaurantList() -> some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
-                ForEach(activityVM.particularActivities(category: .restaurant), id: \.self) { restaurant in
+                ForEach(activityVM.particularActivities(category: .restaurant)) { restaurant in
                     restaurantItem(restaurant: restaurant)
                 }
             }

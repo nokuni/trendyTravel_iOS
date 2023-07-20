@@ -125,4 +125,15 @@ class UserViewModel: ObservableObject {
         let likes = Array(userPosts.map { $0.likes }.joined())
         return likes.count
     }
+    
+    func userPosts(user: User) -> [Post] {
+        posts.filter { $0.userID == user.id }
+    }
+    
+    func userFollowing(user: User) -> Int {
+        let otherUsers = users.filter { $0.id != user.id }
+        let followers = Array(otherUsers.map { $0.followers }.joined())
+        let following = followers.filter { $0.followerID == user.id }.count
+        return following
+    }
 }

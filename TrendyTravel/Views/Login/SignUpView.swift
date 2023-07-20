@@ -6,23 +6,43 @@
 //
 
 import SwiftUI
+import Utility_Toolbox
+import PhotosUI
 
 struct SignUpView: View {
-    @FocusState var focusField: FocusField?
-    @State var fullName: String = ""
-    @State var username: String = ""
-    @State var email: String = ""
-    @State var password: String = ""
+    @EnvironmentObject var userVM: UserViewModel
+    @FocusState private var focusField: FocusField?
+    @State private var firstName: String = ""
+    @State private var lastName: String = ""
+    @State private var username: String = ""
+    @State private var email: String = ""
+    @State private var password: String = ""
+    @State private var description: String = ""
+    @State private var hasEnteredPrimaryInfos: Bool = false
+    var hasFieldsBeenFilled: Bool {
+        firstName.isNotEmpty && lastName.isNotEmpty && username.isNotEmpty && email.isNotEmpty && password.isNotEmpty
+    }
     var body: some View {
-        VStack(spacing: 30) {
+        VStack {
             logo()
             title()
-            fullNameField()
-            usernameField()
-            emailField()
-            passwordField()
-            registerButton()
-            Spacer()
+            if hasEnteredPrimaryInfos {
+                PhotoSelectionView()
+                TextField("Description", text: $description, axis: .vertical)
+                registerButton()
+                previousButton()
+                Spacer()
+            } else {
+                VStack(spacing: 20) {
+                    firstNameField()
+                    lastNameField()
+                    usernameField()
+                    emailField()
+                    passwordField()
+                }
+                nextButton()
+                Spacer()
+            }
         }
     }
     
@@ -33,17 +53,26 @@ struct SignUpView: View {
     
     @ViewBuilder
     private func title() -> some View {
-        Text(L10n.SignUpView.title)
+        Text(L10n.signUp)
             .font(.system(.title, design: .default, weight: .bold))
             .padding()
     }
     
     @ViewBuilder
-    private func fullNameField() -> some View {
+    private func firstNameField() -> some View {
         FieldView(focusField: $focusField,
-                  text: $fullName,
-                  prompt: L10n.SignUpView.full_name,
-                  focusedValue: .fullName,
+                  text: $firstName,
+                  prompt: L10n.firstName,
+                  focusedValue: .firstName,
+                  submitValue: .username)
+    }
+    
+    @ViewBuilder
+    private func lastNameField() -> some View {
+        FieldView(focusField: $focusField,
+                  text: $lastName,
+                  prompt: L10n.lastName,
+                  focusedValue: .lastName,
                   submitValue: .username)
     }
     
@@ -51,7 +80,7 @@ struct SignUpView: View {
     private func usernameField() -> some View {
         FieldView(focusField: $focusField,
                   text: $username,
-                  prompt: L10n.SignUpView.username,
+                  prompt: L10n.username,
                   focusedValue: .username,
                   submitValue: .email)
     }
@@ -60,7 +89,7 @@ struct SignUpView: View {
     private func emailField() -> some View {
         FieldView(focusField: $focusField,
                   text: $email,
-                  prompt: L10n.SignUpView.email,
+                  prompt: L10n.email,
                   focusedValue: .email,
                   submitValue: .password)
     }
@@ -69,17 +98,44 @@ struct SignUpView: View {
     private func passwordField() -> some View {
         FieldView(focusField: $focusField,
                   text: $password,
-                  prompt: L10n.SignUpView.password,
+                  prompt: L10n.password,
                   focusedValue: .password,
                   submitValue: .password)
     }
     
     @ViewBuilder
-    private func registerButton() -> some View {
-        AppButtonView(label: L10n.SignUpView.register,
+    private func previousButton() -> some View {
+        AppButtonView(label: L10n.previous,
                       labelColor: .white,
                       backgroundColor: .accentColor) {
-            // Connection
+            hasEnteredPrimaryInfos.toggle()
+        }
+                      .disabled(!hasFieldsBeenFilled)
+    }
+    
+    @ViewBuilder
+    private func nextButton() -> some View {
+        AppButtonView(label: L10n.next,
+                      labelColor: .white,
+                      backgroundColor: .accentColor) {
+            hasEnteredPrimaryInfos.toggle()
+        }
+                      .disabled(!hasFieldsBeenFilled)
+    }
+    
+    @ViewBuilder
+    private func registerButton() -> some View {
+        AppButtonView(label: L10n.register,
+                      labelColor: .white,
+                      backgroundColor: .accentColor) {
+//            let user = User(firstName: firstName,
+//                            lastName: lastName,
+//                            description: "",
+//                            profileImage: "",
+//                            username: username,
+//                            email: email,
+//                            password: password)
+//            userVM.signUp(user: user)
         }
     }
 }

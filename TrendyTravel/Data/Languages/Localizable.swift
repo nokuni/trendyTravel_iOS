@@ -5,120 +5,92 @@
 //  Created by Amelie Pocchiolo on 18/07/2023.
 //
 
-import Foundation
-
-// internal is implemented by default on every class, struct, class, enum, etc...
-// No need to say it explicitly.
+import Utility_Toolbox
 
 enum L10n {
-    enum DestinationView {
-        enum SchearchBar {
-            static let title = NSLocalizedString("destinationView.schearchBar.title", comment: "")
-        }
-        enum NavigationBar {
-            static let title = NSLocalizedString("destinationView.navigationBar.title", comment: "")
-        }
-    }
     
-    enum CategoryDetailLoadingView {
-        static let loarding = NSLocalizedString("categoryDetailLoadingView.loarding", comment: "")
-    }
+    // MARK: - Commons
     
-    enum PopularDestinationsView {
-        static let title = NSLocalizedString("popularDestinationsView.title", comment: "")
-        static let see_all = NSLocalizedString("popularDestinationsView.see_all", comment: "")
-    }
+    /// See all
+    static let seeAll = "See all".localized()
+    /// Previous
+    static let previous = "Previous".localized()
+    /// Next
+    static let next = "Next".localized()
+
+    // MARK: - Destination
     
-    enum PopularDestinationsDetailsView {
-        enum Toggle {
-            static let title = NSLocalizedString("popularDestinationsDetailsView.toggle.title", comment: "")
-            static let hide = NSLocalizedString("popularDestinationsDetailsView.toggle.hide", comment: "")
-            static let show = NSLocalizedString("popularDestinationsDetailsView.toggle.show", comment: "")
-        }
-    }
+    /// Popular Destinations
+    static let popularDestinations = "Popular Destinations".localized()
+    /// Where do you want to go ?
+    static let discoverSearchPrompt = "Where do you want to go ?".localized()
+    /// Discover
+    static let discover = "Discover".localized()
+
+    // MARK: - Activity
     
-    enum DiscoverView {
-        enum SchearchBar {
-            static let prompt = NSLocalizedString("discoverView.schearchBar.promt", comment: "")
-        }
-        enum NavigationBar {
-            static let title = NSLocalizedString("discoverView.navigationBar.title", comment: "")
-        }
-    }
+    /// Culture
+    static let culture = "Culture".localized()
+    /// Show
+    static let show = "Show".localized()
+    /// Sports
+    static let sports = "Sports".localized()
+    /// Restaurant
+    static let restaurants = "Restaurants".localized()
+    /// Bar
+    static let bar = "Bar".localized()
+    /// Popular restaurants
+    static let popularRestaurants = "Popular restaurants".localized()
+    /// Location
+    static let location = "Location".localized()
+    /// Hide activities
+    static let hideActivities = "Hide activities".localized()
+    /// Show activities
+    static let showActivities = "Show activities".localized()
+    /// Customer reviews
+    static let customerReviews = "Customer reviews".localized()
+    /// Location & Description
+    static let locationAndDescription = "Location & Description".localized()
+    /// Restaurant details
+    static let restaurantDetails = "Restaurant details".localized()
+
+    // MARK: - User
     
-    enum TrendingCreatorsListView {
-        static let title = NSLocalizedString("trendingCreatorsListView.title", comment: "")
-        static let see_all = NSLocalizedString("trendingCreatorsListView.see_all", comment: "")
-    }
+    /// Trending creators
+    static let trendingCreators = "Trending creators".localized()
+    /// Followers
+    static let followers = "Followers".localized()
+    /// Following
+    static let following = "Following".localized()
+    /// Follow
+    static let follow = "Follow".localized()
+    /// Contact
+    static let contact = "Contact".localized()
+    /// likes
+    static let likes = "likes".localized()
+
+    // MARK: - Login
     
-    enum PopularRestaurantsView {
-        static let title = NSLocalizedString("popularRestaurantsView.title", comment: "")
-        static let see_all = NSLocalizedString("popularRestaurantsView.see_all", comment: "")
-    }
-    
-    enum RestaurantDetailsView {
-        static let content = NSLocalizedString("restaurantDetailsView.content", comment: "")
-        static let title = NSLocalizedString("restaurantDetailsView.title", comment: "")
-        static let navigationBar_title = NSLocalizedString("restaurantDetailsView.navigationBar_title", comment: "")
-    }
-    
-    enum ReviewList {
-        static let title = NSLocalizedString("reviewList.title", comment: "")
-    }
-    
-    enum MyProfileView {
-        static let follow = NSLocalizedString("myProfileView.follow", comment: "")
-        static let contact = NSLocalizedString("myProfileView.contact", comment: "")
-        enum Followers {
-            static let followers = NSLocalizedString("myProfileView.followers.numero", comment: "")
-        }
-        enum Following {
-            static let following = NSLocalizedString("myProfileView.following.numero", comment: "")
-        }
-    }
-    
-    enum UserDetailsView {
-        static let follow = NSLocalizedString("userDetailsView.follow", comment: "")
-        static let likes = NSLocalizedString("userDetailsView.likes", comment: "")
-        static let contact = NSLocalizedString("userDetailsView.contact", comment: "")
-        enum Followers {
-            static let followers = NSLocalizedString("userDetailsView.followers.followers", comment: "")
-        }
-        enum Following {
-            static let following = NSLocalizedString("userDetailsView.following.following", comment: "")
-        }
-    }
-    
-    enum PostsListView {
-        static let likes = NSLocalizedString("postsListView.likes", comment: "")
-    }
-    
-    enum LoginView {
-        static let signIn = NSLocalizedString("loginView.signIn", comment: "")
-        static let signUp = NSLocalizedString("loginView.signUp", comment: "")
-    }
-    
-    enum SignInView {
-        static let logIn = NSLocalizedString("signInView.logIn", comment: "")
-        static let email = NSLocalizedString("signInView.email", comment: "")
-        static let password = NSLocalizedString("signInView.password", comment: "")
-        static let connect = NSLocalizedString("signInView.connect", comment: "")
-    }
-    
-    enum SignUpView {
-        static let title = NSLocalizedString("signUpView.title", comment: "")
-        static let full_name = NSLocalizedString("signUpView.full_name", comment: "")
-        static let username = NSLocalizedString("signUpView.username", comment: "")
-        static let email = NSLocalizedString("signUpView.email", comment: "")
-        static let password = NSLocalizedString("signUpView.password", comment: "")
-        static let register = NSLocalizedString("signUpView.register", comment: "")
-    }
-    
-    enum DestinationsCategoriesView {
-        static let culture = NSLocalizedString("destinationsCategoriesView.culture", comment: "")
-        static let show = NSLocalizedString("destinationsCategoriesView.show", comment: "")
-        static let sports = NSLocalizedString("destinationsCategoriesView.sports", comment: "")
-        static let restaurant = NSLocalizedString("destinationsCategoriesView.restaurant", comment: "")
-        static let bar = NSLocalizedString("destinationsCategoriesView.bar", comment: "")
-    }
+    /// Sign In
+    static let signIn = "Sign In".localized()
+    /// Sign Up
+    static let signUp = "Sign Up".localized()
+    /// Log in
+    static let logIn = "Log in".localized()
+    /// Create an account
+    static let createAccount = "Create an account".localized()
+    /// First name
+    static let firstName = "First name".localized()
+    /// Last name
+    static let lastName = "Last name".localized()
+    /// Username
+    static let username = "Username".localized()
+    /// Email
+    static let email = "Email".localized()
+    /// Password
+    static let password = "Password".localized()
+    /// Register
+    static let register = "Register".localized()
+    /// Connect
+    static let connect = "Connect".localized()
 }

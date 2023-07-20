@@ -17,7 +17,7 @@ struct User: Codable, Identifiable {
     var username: String?
     var email: String?
     var password: String?
-    var posts: [Post] = []
+//    var posts: [Post] = []
     var followers: [Follower] = []
 
     enum CodingKeys: String, CodingKey {
@@ -29,7 +29,7 @@ struct User: Codable, Identifiable {
         case username = "pseudo"
         case password
         case email
-        case posts = "Posts"
+//        case posts = "Posts"
         case followers = "Followers"
     }
 }
@@ -44,14 +44,6 @@ extension User {
          username: "jo.D",
          email: "jo.d@gmail.com",
          password: "kkk",
-         posts: [
-            Post(id: 0,
-                 title: "1st post",
-                 imageName: "eiffel_tower",
-                 hashtags: ["paradise", "lost"],
-                 userID: 0,
-                 likes: [])
-         ],
          followers: [
             Follower(id: 0, followerID: 0, followedID: 0)
          ]

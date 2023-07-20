@@ -47,7 +47,7 @@ struct MyProfileView: View {
                         VStack {
 //                            Text(L10n.MyProfileView.Followers.numbers)
 //                                .font(.system(size: 13, weight: .semibold))
-                            Text(L10n.MyProfileView.Followers.followers)
+                            Text(L10n.followers)
                                 .font(.system(size: 9, weight: .regular))
                         }
                         Spacer()
@@ -56,7 +56,7 @@ struct MyProfileView: View {
                         VStack {
 //                            Text(L10n.MyProfileView.Following.numbers)
 //                                .font(.system(size: 13, weight: .semibold))
-                            Text(L10n.MyProfileView.Following.following)
+                            Text(L10n.following)
                                 .font(.system(size: 9, weight: .regular))
                         }
                     }
@@ -64,7 +64,7 @@ struct MyProfileView: View {
                         Button(action: {}) {
                             HStack {
                                 Spacer()
-                                Text(L10n.MyProfileView.follow)
+                                Text(L10n.follow)
                                     .foregroundColor(.white)
                                 Spacer()
                             }
@@ -75,7 +75,7 @@ struct MyProfileView: View {
                         Button(action: {}) {
                             HStack {
                                 Spacer()
-                                Text(L10n.MyProfileView.contact)
+                                Text(L10n.contact)
                                     .foregroundColor(.black)
                                 Spacer()
                             }
@@ -86,7 +86,7 @@ struct MyProfileView: View {
                     }
                     .font(.system(size: 12, weight: .semibold))
                     
-                    PostsListView(user: user)
+                    PostsListView()
                 }
                 .padding(.horizontal)
             }

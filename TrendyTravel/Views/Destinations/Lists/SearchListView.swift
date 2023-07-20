@@ -10,9 +10,9 @@ import SwiftUI
 struct SearchListView: View {
     @EnvironmentObject var destinationVM : DestinationViewModel
     @Binding var text: String
-
+    
     var body: some View {
-
+        
         ScrollView(.vertical, showsIndicators: false) {
             HStack(spacing: 8) {
                 ForEach(filteredDestinations, id: \.id) { destination in
@@ -25,7 +25,7 @@ struct SearchListView: View {
             .padding()
         }
     }
-
+    
     var filteredDestinations: [Destination] {
         if text.isEmpty {
             return destinationVM.destinations
@@ -41,16 +41,15 @@ struct SearchListView: View {
 
 struct DestinationItemView: View {
     let destination: Destination
-
+    
     var body: some View {
         VStack {
-            Image(destination.imageName)
-                .resizable()
+            ImageURLView(image: destination.imageName)
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 100, height: 100)
                 .cornerRadius(2)
                 .padding(.top, 8)
-
+            
             HStack{
                 VStack(alignment: .leading) {
                     Text("\(destination.city)")
@@ -74,12 +73,6 @@ struct DestinationItemView: View {
 }
 
 struct SearchListView_Previews: PreviewProvider {
-    static let destinations: [Destination] = [
-        .init(id: 1, country: "France", city: "Paris", imageName: "eiffel_tower", latitude: 48.859565, longitude: 2.353235),
-        .init(id: 2, country: "Italy", city: "Rome", imageName: "colosseum", latitude: 41.890210, longitude: 12.492231),
-        .init(id: 3, country: "USA", city: "New York", imageName: "statue_of_liberty", latitude: 40.689247, longitude: -74.044502)
-    ]
-
     static var previews: some View {
         SearchListView(text: .constant(""))
             .environmentObject(DestinationViewModel())

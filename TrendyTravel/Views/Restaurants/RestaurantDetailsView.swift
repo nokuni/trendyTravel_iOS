@@ -20,7 +20,7 @@ struct RestaurantDetailsView: View {
                 nameAndRating()
             }
             VStack(alignment: .leading, spacing: 8) {
-                Text(L10n.RestaurantDetailsView.title)
+                Text(L10n.locationAndDescription)
                     .font(.system(size: 16, weight: .bold))
                 if let destination = destinationVM.destination(id: activity.id) {
                     Text("\(destination.city), \(destination.country)")
@@ -41,7 +41,7 @@ struct RestaurantDetailsView: View {
             ReviewList(activity: activity)
                 .padding(.top)
         }
-        .navigationBarTitle(L10n.RestaurantDetailsView.navigationBar_title, displayMode: .inline)
+        .navigationBarTitle(L10n.restaurantDetails, displayMode: .inline)
     }
     
     @ViewBuilder

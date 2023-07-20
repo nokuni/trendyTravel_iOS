@@ -10,7 +10,6 @@ import Utility_Toolbox
 
 struct CategoryDetailCardView: View {
     let activity: Activity
-    
     var destination: Destination {
         for destination in  DestinationViewModel().destinations {
             if   activity.destinationId == destination.id {
@@ -21,9 +20,9 @@ struct CategoryDetailCardView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text(activity.name)
-                .font(.system(size: 12, weight: .semibold))
+        VStack(alignment: .leading) {
+            Text(activity.name.capitalized)
+                .font(.system(.title2, design: .default, weight: .bold))
             ImageURLView(image: activity.imageName)
                 .cornerRadius(5)
                 .frame(maxWidth: .infinity, maxHeight: CGSize.screen.height * 0.3)

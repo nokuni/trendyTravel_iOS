@@ -12,9 +12,12 @@ struct CategoryDetailView: View {
     let category: Activity.Category
     var body: some View {
         ScrollView {
-            ForEach(activityVM.particularActivities(category: category), id: \.self) { activity in
-                CategoryDetailCardView(activity: activity)
-                    .navigationBarTitle(activity.category.rawValue.capitalized, displayMode: .inline)
+            VStack {
+                ForEach(activityVM.particularActivities(category: category)) { activity in
+                    CategoryDetailCardView(activity: activity)
+                        .navigationBarTitle(activity.category.rawValue.capitalized,
+                                            displayMode: .inline)
+                }
             }
         }
     }

@@ -13,7 +13,7 @@ struct ReviewList: View {
     var activity: Activity
     var body: some View {
         HStack {
-            Text(L10n.ReviewList.title)
+            Text(L10n.customerReviews)
                 .font(.system(size: 16, weight: .bold))
             Spacer()
         }
