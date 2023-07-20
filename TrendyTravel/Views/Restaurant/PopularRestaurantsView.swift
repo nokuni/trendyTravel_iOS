@@ -14,9 +14,11 @@ struct PopularRestaurantsView: View {
             HStack {
                 Text(L10n.PopularRestaurantsView.title)
                     .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.black)
                 Spacer()
                 Text(L10n.PopularRestaurantsView.see_all)
                     .font(.system(size: 12, weight: .semibold))
+                    .environmentObject(ActivityViewModel())
             }
             .padding(.horizontal)
             .padding(.top)
@@ -64,5 +66,6 @@ struct PopularRestaurantsView: View {
 struct PopularRestaurantsView_Previews: PreviewProvider {
     static var previews: some View {
         PopularRestaurantsView()
+            .environmentObject(ActivityViewModel())
     }
 }
