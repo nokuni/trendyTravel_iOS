@@ -21,7 +21,7 @@
 "categoryDetailLoadingView.loarding" = "Chargement...";
 
 //PopularDestinationsView
-"popularDestinationsView.title" = "Destination populaire";
+"popularDestinationsView.title" = "Destinations populaires";
 "popularDestinationsView.see_all" = "Tout voir";
 
 //PopularDestinationsDetailsView
