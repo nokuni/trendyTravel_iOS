@@ -31,8 +31,10 @@ struct DiscoverView: View {
     @ViewBuilder
     private func background() -> some View {
         VStack {
-            LinearGradient(gradient: Gradient(colors: [.cyan, .mint]), startPoint: .top,
-                           endPoint: .center)
+//            LinearGradient(gradient: Gradient(colors: [.cyan, .mint]), startPoint: .top,
+//                           endPoint: .center)
+            LinearGradient(gradient: Gradient(colors: [Color("LightBlue"), Color("LightBlue"), Color("DarkBlue")]), startPoint: .topLeading,
+                           endPoint: .bottomTrailing)
             Color.white
         }
         .ignoresSafeArea()
