@@ -9,6 +9,7 @@ import Foundation
 
 internal enum L10n {
     internal enum DestinationView {
+        //TODO: typo?
         internal enum SchearchBar {
             internal static let title = NSLocalizedString("destinationView.schearchBar.title", comment: "")
         }
