@@ -15,11 +15,12 @@ struct TrendyTravelApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                if userVM.isUserConnected {
-                    DiscoverView()
-                } else {
-                    LoginView()
+                switch true {
+                case userVM.isUserConnected: DiscoverView()
+                case userVM.userID == nil: LoginView()
+                default: EmptyView()
                 }
+                LoadingView()
             }
             .environmentObject(destinationVM)
             .environmentObject(activityVM)

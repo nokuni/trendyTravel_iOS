@@ -30,10 +30,10 @@ struct SeeAllCreatorsView: View {
                 .frame(width: 100, height: 100)
                 .cornerRadius(.infinity)
             VStack(alignment: .leading){
-                Text("\(user.firstName ?? "") - @\(user.username ?? "")")
+                Text("\(user.firstName) - @\(user.username)")
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color(.label))
-                Text(user.description ?? "")
+                Text(user.description)
                     .foregroundColor(.tin)
             }
             Spacer()

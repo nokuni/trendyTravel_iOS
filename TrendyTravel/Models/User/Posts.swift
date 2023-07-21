@@ -14,7 +14,7 @@ struct Post: Codable, Identifiable {
     var imageName: String
     var hashtags: [String]
     var userID: Int
-    var likes: [Like]
+    var likes: [Like]?
 
     enum CodingKeys: String, CodingKey {
         case id

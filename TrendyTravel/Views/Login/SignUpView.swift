@@ -12,26 +12,38 @@ import PhotosUI
 struct SignUpView: View {
     @EnvironmentObject var userVM: UserViewModel
     @FocusState private var focusField: FocusField?
+    @Binding var isSigningUp: Bool
     @State private var firstName: String = ""
     @State private var lastName: String = ""
     @State private var username: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var description: String = ""
+    @State var selectedImageData: Data?
     @State private var hasEnteredPrimaryInfos: Bool = false
     var hasFieldsBeenFilled: Bool {
         firstName.isNotEmpty && lastName.isNotEmpty && username.isNotEmpty && email.isNotEmpty && password.isNotEmpty
     }
+    var canRegister: Bool {
+        selectedImageData != nil && description.isNotEmpty
+    }
+    
     var body: some View {
         VStack {
             logo()
             title()
             if hasEnteredPrimaryInfos {
-                PhotoSelectionView()
-                TextField("Description", text: $description, axis: .vertical)
-                registerButton()
-                previousButton()
-                Spacer()
+                VStack(spacing: 10) {
+                    PhotoSelectionView(selectedImageData: $selectedImageData)
+                    TextField("Description", text: $description, axis: .vertical)
+                        .padding(16)
+                        .background(Color.ultraLightGray.cornerRadius(8))
+                        .padding()
+                        .limitText(text: $description, limit: 100)
+                    registerButton()
+                    previousButton()
+                    Spacer()
+                }
             } else {
                 VStack(spacing: 20) {
                     firstNameField()
@@ -53,7 +65,7 @@ struct SignUpView: View {
     
     @ViewBuilder
     private func title() -> some View {
-        Text(L10n.signUp)
+        Text(hasEnteredPrimaryInfos ? L10n.signUp : "Enter your informations")
             .font(.system(.title, design: .default, weight: .bold))
             .padding()
     }
@@ -107,7 +119,8 @@ struct SignUpView: View {
     private func previousButton() -> some View {
         AppButtonView(label: L10n.previous,
                       labelColor: .white,
-                      backgroundColor: .accentColor) {
+                      backgroundColor: .accentColor,
+                      padding: .horizontal) {
             hasEnteredPrimaryInfos.toggle()
         }
                       .disabled(!hasFieldsBeenFilled)
@@ -127,15 +140,15 @@ struct SignUpView: View {
     private func registerButton() -> some View {
         AppButtonView(label: L10n.register,
                       labelColor: .white,
-                      backgroundColor: .accentColor) {
-//            let user = User(firstName: firstName,
-//                            lastName: lastName,
-//                            description: "",
-//                            profileImage: "",
-//                            username: username,
-//                            email: email,
-//                            password: password)
-//            userVM.signUp(user: user)
+                      backgroundColor: canRegister ? .green : .gray,
+                      padding: .horizontal) {
+            isSigningUp.toggle()
+            userVM.isLoading.toggle()
+            if let data = selectedImageData,
+               let image = UIImage(data: data) {
+                userVM.signUp(firstName: firstName, lastName: lastName, description: description, image: image, username: username, email: email, password: password)
+            }
         }
+                      .disabled(!canRegister)
     }
 }

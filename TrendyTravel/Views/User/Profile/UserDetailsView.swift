@@ -28,35 +28,33 @@ struct UserDetailsView: View {
             }
             .padding(.horizontal)
         }
-        .navigationBarTitle("\(user.username ?? "")",  displayMode: .inline)
+        .navigationBarTitle("\(user.username)",  displayMode: .inline)
     }
     
     @ViewBuilder
     private func profilePicture() -> some View {
-        if let profileImage = user.profileImage {
-            ImageURLView(image: profileImage)
-                .scaledToFill()
-                .frame(width: 80)
-                .clipShape(Circle())
-                .shadow(radius: 10)
-                .overlay(
-                    Circle()
-                        .stroke(Color.cyan.opacity(0.6), lineWidth: 2)
-                        .frame(width: 80, height: 80)
-                )
-        }
+        ImageURLView(image: user.profileImage)
+            .scaledToFill()
+            .frame(width: 80, height: 80)
+            .clipShape(Circle())
+            .shadow(radius: 10)
+            .overlay(
+                Circle()
+                    .stroke(Color.cyan.opacity(0.6), lineWidth: 2)
+                    .frame(width: 80, height: 80)
+            )
     }
     
     @ViewBuilder
     private func profileName() -> some View {
-        Text("\(user.firstName ?? "") \(user.lastName ?? "")")
+        Text("\(user.firstName) \(user.lastName)")
             .font(.system(size: 14, weight: .semibold))
     }
     
     @ViewBuilder
     private func usernameAndLikes() -> some View {
         HStack {
-            Text("@\(user.username ?? "") •")
+            Text("@\(user.username) •")
             Image(systemName: "hand.thumbsup.fill")
                 .font(.system(size: 10, weight: .semibold))
             Text("\(userVM.userLikes(user: user))")
@@ -66,7 +64,7 @@ struct UserDetailsView: View {
     
     @ViewBuilder
     private func profileDescription() -> some View {
-        Text(user.description ?? "")
+        Text(user.description)
             .font(.system(size: 14, weight: .regular))
             .foregroundColor(Color(.lightGray))
     }
@@ -74,7 +72,7 @@ struct UserDetailsView: View {
     @ViewBuilder
     private func followerCount() -> some View {
         VStack {
-            Text("\(user.followers.count)")
+            Text("\(user.followers?.count ?? 0)")
                 .font(.system(size: 13, weight: .semibold))
             Text(L10n.followers)
                 .font(.system(size: 9, weight: .regular))

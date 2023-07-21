@@ -11,6 +11,7 @@ struct SignInView: View {
     @FocusState var focusField: FocusField?
     @State var email: String = ""
     @State var password: String = ""
+    @Binding var isSigningIn: Bool
     var body: some View {
         VStack(spacing: 30) {
             logo()
@@ -59,13 +60,13 @@ struct SignInView: View {
         AppButtonView(label: L10n.connect,
                       labelColor: .white,
                       backgroundColor: .accentColor) {
-            // Connection
+            isSigningIn.toggle()
         }
     }
 }
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignInView()
+        SignInView(isSigningIn: .constant(false))
     }
 }

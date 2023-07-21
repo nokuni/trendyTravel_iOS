@@ -18,10 +18,10 @@ struct LoginView: View {
             signUpButton()
         }
         .sheet(isPresented: $isSigningIn) {
-            SignInView()
+            SignInView(isSigningIn: $isSigningIn)
         }
         .sheet(isPresented: $isSigningUp) {
-            SignUpView()
+            SignUpView(isSigningUp: $isSigningUp)
         }
     }
     

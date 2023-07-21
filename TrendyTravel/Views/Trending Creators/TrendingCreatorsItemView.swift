@@ -12,12 +12,10 @@ struct TrendingCreatorsItemView: View {
     var body: some View {
         VStack {
             image()
-            if let firstName = user.firstName {
-                Text(firstName)
-                    .font(.system(size: 11, weight: .semibold))
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(Color(.label))
-            }
+            Text(user.firstName)
+                .font(.system(size: 11, weight: .semibold))
+                .multilineTextAlignment(.center)
+                .foregroundColor(Color(.label))
         }
         .frame(width: 60)
         .shadow(color: .gray, radius: 2, x: 0, y: 2)
@@ -32,12 +30,10 @@ struct TrendingCreatorsItemView: View {
     
     @ViewBuilder
     private func firstName() -> some View {
-        if let firstName = user.firstName {
-            Text(firstName)
-                .font(.system(size: 11, weight: .semibold))
-                .multilineTextAlignment(.center)
-                .foregroundColor(Color(.label))
-        }
+        Text(user.firstName)
+            .font(.system(size: 11, weight: .semibold))
+            .multilineTextAlignment(.center)
+            .foregroundColor(Color(.label))
     }
 }
 struct TrendingCreatorsItemView_Previews: PreviewProvider {

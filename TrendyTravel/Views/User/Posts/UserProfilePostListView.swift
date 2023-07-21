@@ -41,13 +41,11 @@ struct UserProfilePostListView: View {
     
     @ViewBuilder
     private func profileImage() -> some View {
-        if let profileImage = user.profileImage {
-            Image(profileImage)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 34)
-                .clipShape(Circle())
-        }
+        Image(user.profileImage)
+            .resizable()
+            .scaledToFit()
+            .frame(height: 34)
+            .clipShape(Circle())
     }
     
     @ViewBuilder

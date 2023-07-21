@@ -29,7 +29,7 @@ struct ReviewList: View {
                            
                         VStack(alignment: .leading, spacing: 4) {
                             if let user = userVM.userFromReview(review) {
-                                Text("\(user.lastName ?? "") \(user.firstName ?? "")")
+                                Text("\(user.lastName) \(user.firstName)")
                                     .font(.system(size: 14,weight: .bold))
                             }
                             StarRatingView(rating: review.rating)

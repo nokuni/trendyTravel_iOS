@@ -14,6 +14,9 @@ struct APIRoute {
     // MARK: CORE
     let baseURL = "https://trendytravel.onrender.com/"
     
+    // MARK: Image
+    let imageURL = "https://trendytravel.onrender.com/image"
+    
     // MARK: Destinations - GET(all,id)
     var destinationsBaseURL: String { baseURL + "destinations/" }
     

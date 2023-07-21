@@ -12,7 +12,23 @@ struct AppButtonView: View {
     var label: String
     var labelColor: Color
     var backgroundColor: Color
+    var padding: Edge.Set
+    var paddingValue: CGFloat
     var action: (() -> Void)?
+    
+    init(label: String,
+         labelColor: Color,
+         backgroundColor: Color,
+         padding: Edge.Set = .all,
+         paddingValue: CGFloat = 16,
+         action: (() -> Void)? = nil) {
+        self.label = label
+        self.labelColor = labelColor
+        self.backgroundColor = backgroundColor
+        self.padding = padding
+        self.paddingValue = paddingValue
+        self.action = action
+    }
     var body: some View {
         Button {
             action?()
@@ -28,6 +44,6 @@ struct AppButtonView: View {
                         .shadow(color: .silver, radius: 4)
                 )
         }
-        .padding()
+        .padding(padding, paddingValue)
     }
 }

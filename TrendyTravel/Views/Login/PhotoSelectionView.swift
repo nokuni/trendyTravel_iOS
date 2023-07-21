@@ -6,28 +6,35 @@
 //
 
 import SwiftUI
-
-import SwiftUI
 import PhotosUI
+import Utility_Toolbox
 
 struct PhotoSelectionView: View {
     @State private var selectedItem: PhotosPickerItem? = nil
-    @State private var selectedImageData: Data? = nil
+    @Binding var selectedImageData: Data?
     
     var body: some View {
-        if let selectedImageData,
-           let uiImage = UIImage(data: selectedImageData) {
-            Image(uiImage: uiImage)
-                .resizable()
-                .clipShape(Circle())
-                .frame(width: 150, height: 150)
-        } else {
+        VStack {
             PhotosPicker(
                 selection: $selectedItem,
                 matching: .images,
                 photoLibrary: .shared()) {
-                    Circle()
-                        .frame(width: 150, height: 150)
+                    if let selectedImageData,
+                       let uiImage = UIImage(data: selectedImageData) {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .clipShape(Circle())
+                            .frame(width: 100, height: 100)
+                    } else {
+                        Circle()
+                            .foregroundColor(.accentColor)
+                            .frame(width: 100, height: 100)
+                            .overlay(
+                                Image(systemName: "plus")
+                                    .font(.system(.largeTitle, design: .default, weight: .bold))
+                                    .foregroundColor(.background)
+                            )
+                    }
                 }
                 .onChange(of: selectedItem) { newItem in
                     Task {
@@ -36,12 +43,14 @@ struct PhotoSelectionView: View {
                         }
                     }
                 }
+            Text("Add your photo")
+                .foregroundColor(.tin)
         }
     }
 }
 
 struct PhotoSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        PhotoSelectionView()
+        PhotoSelectionView(selectedImageData: .constant(nil))
     }
 }

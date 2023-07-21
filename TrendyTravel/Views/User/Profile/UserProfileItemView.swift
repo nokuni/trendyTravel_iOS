@@ -12,7 +12,7 @@ struct UserProfileItemView: View {
 
     var body: some View {
         if userVM.user != nil {
-            NavigationLink(destination: MyProfileView()) {
+            NavigationLink(destination: UserDetailsView(user: userVM.user!)) {
                 ZStack{
                     Image(systemName: "person.crop.circle.fill")
                         .resizable()

@@ -9,27 +9,27 @@ import Foundation
 
 // MARK: - User
 struct User: Codable, Identifiable {
-    var id: Int?
-    var firstName: String?
-    var lastName: String?
-    var description: String?
-    var profileImage: String?
-    var username: String?
-    var email: String?
-    var password: String?
-//    var posts: [Post] = []
-    var followers: [Follower] = []
+    var id: Int
+    var firstName: String
+    var lastName: String
+    var description: String
+    var profileImage: String
+    var username: String
+    var email: String
+    var password: String
+    var posts: [Post]?
+    var followers: [Follower]?
 
     enum CodingKeys: String, CodingKey {
         case id
-        case firstName = "first_name"
-        case lastName = "last_name"
+        case firstName
+        case lastName
         case description
         case profileImage = "profilImage"
         case username = "pseudo"
         case password
         case email
-//        case posts = "Posts"
+        case posts = "Posts"
         case followers = "Followers"
     }
 }
@@ -44,6 +44,7 @@ extension User {
          username: "jo.D",
          email: "jo.d@gmail.com",
          password: "kkk",
+         posts: [],
          followers: [
             Follower(id: 0, followerID: 0, followedID: 0)
          ]
