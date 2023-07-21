@@ -60,6 +60,7 @@ struct PopularDestinationsDetailsView: View {
     
     var body: some View {
         ScrollView(showsIndicators: false) {
+            // TODO: Fix proper city images
             DestinationDetailCarouselHeader(images: activityImages(destination: destination))
                 .frame(height: 250)
             HStack {
