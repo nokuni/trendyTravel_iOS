@@ -12,11 +12,31 @@ struct PostsListView: View {
     var body: some View {
         ForEach(userVM.posts) { post in
             VStack(alignment: .leading) {
-                Image(post.imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 200)
-                    .clipped()
+                ZStack{
+                    Image(post.imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 200)
+                        .clipped()
+                    if user.id == userVM.userID ??  0{
+                        VStack{
+                            HStack {
+                                Spacer()
+                                Button(action: {
+                                    //EditPostView()
+                                }, label: {
+                                    Image(systemName: "pencil")
+                                        .font(.system(size: 20))
+                                        .foregroundColor(Color.cyan)
+                                        .frame(width: 44, height: 44)
+                                        .background(Color.white)
+                                        .cornerRadius(.infinity)
+                                })
+                            }
+                            Spacer()
+                        }
+                    }
+                }
                 HStack(alignment: .top) {
                     if let profileImage = userVM.user?.profileImage {
                         ImageURLView(image: profileImage)
@@ -47,7 +67,7 @@ struct PostsListView: View {
                         // action pour ajouter des likes
                     } label: {
                         Image(systemName: "hand.thumbsup.fill")
-                            .foregroundColor(.cyan)
+                            .foregroundColor(.accentColor)
                             .font(.system(size: 12))
                     }
                     Text(L10n.likes)
@@ -60,11 +80,12 @@ struct PostsListView: View {
             .background(Color(white: 1))
             .cornerRadius(12)
             .shadow(color: .init(white: 0.8), radius: 5, x: 0, y: 4)
+            .frame(maxHeight:280)
         }
     }
 }
 
-struct PostsListView_Previews: PreviewProvider {
+private struct PostsListView_Previews: PreviewProvider {
     static var previews: some View {
         PostsListView()
     }

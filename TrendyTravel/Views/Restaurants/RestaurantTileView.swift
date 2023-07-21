@@ -41,6 +41,7 @@ struct RestaurantTileView: View {
                     Text("\(destination.country.capitalized), \(destination.city.capitalized)")
                 }
             }
+            .foregroundColor(.black)
             .font(.system(size: 12, weight: .semibold))
         }
         .frame(maxWidth: .infinity, alignment: .leading)

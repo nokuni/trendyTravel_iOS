@@ -30,7 +30,7 @@ struct PopularDestinationTile: View {
         Text(destination.city.capitalized)
             .font(.system(size: 12, weight: .semibold))
             .padding(.horizontal, 12)
-            .foregroundColor(Color(.label))
+            .foregroundColor(.black)
     }
     
     @ViewBuilder
@@ -43,7 +43,7 @@ struct PopularDestinationTile: View {
     }
 }
 
-struct PopularDestinationTile_Previews: PreviewProvider {
+private struct PopularDestinationTile_Previews: PreviewProvider {
     static var previews: some View {
         PopularDestinationTile(destination: Destination.example)
     }

@@ -14,6 +14,7 @@ struct PopularRestaurantsView: View {
             HStack {
                 Text(L10n.popularRestaurants)
                     .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.black)
                 Spacer()
                 seeAllButton()
             }
@@ -59,8 +60,9 @@ struct PopularRestaurantsView: View {
     }
 }
 
-struct PopularRestaurantsView_Previews: PreviewProvider {
+private struct PopularRestaurantsView_Previews: PreviewProvider {
     static var previews: some View {
         PopularRestaurantsView()
+            .environmentObject(ActivityViewModel())
     }
 }

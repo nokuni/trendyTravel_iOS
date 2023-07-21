@@ -65,7 +65,7 @@ struct SignInView: View {
     }
 }
 
-struct SignInView_Previews: PreviewProvider {
+private struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
         SignInView(isSigningIn: .constant(false))
     }

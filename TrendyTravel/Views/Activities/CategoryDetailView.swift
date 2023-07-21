@@ -23,7 +23,7 @@ struct CategoryDetailView: View {
     }
 }
 
-struct CategoryDetailView_Previews: PreviewProvider {
+private struct CategoryDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             CategoryDetailView(category: .bar)

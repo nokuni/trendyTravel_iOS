@@ -46,13 +46,13 @@ struct LoginView: View {
     private func signUpButton() -> some View {
         AppButtonView(label: L10n.signUp,
                       labelColor: .white,
-                      backgroundColor: .blue) {
+                      backgroundColor: .accentColor) {
             isSigningUp.toggle()
         }
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+private struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
     }

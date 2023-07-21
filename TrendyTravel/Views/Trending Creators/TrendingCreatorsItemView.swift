@@ -18,7 +18,6 @@ struct TrendingCreatorsItemView: View {
                 .foregroundColor(Color(.label))
         }
         .frame(width: 60)
-        .shadow(color: .gray, radius: 2, x: 0, y: 2)
     }
     
     @ViewBuilder
@@ -36,7 +35,8 @@ struct TrendingCreatorsItemView: View {
             .foregroundColor(Color(.label))
     }
 }
-struct TrendingCreatorsItemView_Previews: PreviewProvider {
+
+private struct TrendingCreatorsItemView_Previews: PreviewProvider {
     static var previews: some View {
         TrendingCreatorsItemView(user: User.example)
     }

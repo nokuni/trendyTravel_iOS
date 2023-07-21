@@ -37,6 +37,16 @@ struct Activity: Codable, Identifiable {
             case .culture: return "books.vertical.fill"
             }
         }
+        
+        var text: String {
+            switch self {
+            case .bar: return L10n.DestinationsCategoriesView.bar
+            case .spectacle: return L10n.DestinationsCategoriesView.show
+            case .sport: return L10n.DestinationsCategoriesView.sports
+            case .restaurant: return L10n.DestinationsCategoriesView.restaurant
+            case .culture: return L10n.DestinationsCategoriesView.culture
+            }
+        }
     }
 
     enum CodingKeys: String, CodingKey {

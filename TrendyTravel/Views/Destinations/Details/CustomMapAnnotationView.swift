@@ -23,7 +23,7 @@ struct CustomMapAnnotationView: View {
                 .font(.system(size: 12, weight: .semibold))
                 .padding(.horizontal, 6)
                 .padding(.vertical, 4)
-                .background(LinearGradient(gradient: Gradient(colors: [Color.cyan, Color.mint]), startPoint: .leading, endPoint: .trailing))
+                .background(LinearGradient(gradient: Gradient(colors: [Color("DarkBlue"), Color("LightBlue")]), startPoint: .leading, endPoint: .trailing))
                 .foregroundColor(.white)
                 .cornerRadius(4)
                 .overlay(
@@ -35,7 +35,7 @@ struct CustomMapAnnotationView: View {
     }
 }
 
-struct CustomMapAnnotationView_Previews: PreviewProvider {
+private struct CustomMapAnnotationView_Previews: PreviewProvider {
     static var previews: some View {
         CustomMapAnnotationView(activity: Activity.example)
     }

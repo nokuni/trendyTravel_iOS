@@ -9,7 +9,7 @@ import SwiftUI
 import Utility_Toolbox
 
 class UserViewModel: ObservableObject {
-    @Published var user: User?
+    @Published var loggedUser: User?
     @Published var users: [User] = []
     @Published var posts: [Post] = []
     @Published var isLoading = false
