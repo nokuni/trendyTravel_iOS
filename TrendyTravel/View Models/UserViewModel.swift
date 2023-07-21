@@ -15,7 +15,7 @@ class UserViewModel: ObservableObject {
     @Published var isLoading = false
     @AppStorage("userID") var userID: Int?
     
-    var isUserConnected: Bool { user != nil }
+    var isUserConnected: Bool { loggedUser != nil }
     
     init() {
         fetchUsers()
@@ -53,7 +53,7 @@ class UserViewModel: ObservableObject {
     
     private func signInUser(user: User) async {
         DispatchQueue.main.async {
-            self.user = user
+            self.loggedUser = user
             self.userID = user.id
         }
     }
@@ -124,7 +124,7 @@ class UserViewModel: ObservableObject {
         DispatchQueue.main.async {
             AsyncManager.loadContent { [weak self] in
                 guard let self else { return }
-                self.user = try await self.getUser(id: id)
+                self.loggedUser = try await self.getUser(id: id)
             }
         }
     }
@@ -134,7 +134,7 @@ class UserViewModel: ObservableObject {
         DispatchQueue.main.async {
             AsyncManager.loadContent { [weak self] in
                 guard let self else { return }
-                self.user = try await self.getUser(id: userID)
+                self.loggedUser = try await self.getUser(id: userID)
             }
         }
     }
@@ -144,7 +144,7 @@ class UserViewModel: ObservableObject {
         if let firstUser = users.first(where: {
             $0.email == email && $0.password == $0.password
         }) {
-            user = firstUser
+            loggedUser = firstUser
             userID = firstUser.id
         }
     }
@@ -161,7 +161,7 @@ class UserViewModel: ObservableObject {
             AsyncManager.loadContent { [weak self] in
                 guard let self else { return }
                 let postedUser = try await self.postUser(firstName: firstName, lastName: lastName, description: description, image: image, username: username, email: email, password: password)
-                self.user = postedUser
+                self.loggedUser = postedUser
                 self.userID = postedUser.id
                 self.isLoading = false
             }

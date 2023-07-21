@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PostsListView: View {
     @EnvironmentObject var userVM: UserViewModel
+    var user: User
     var body: some View {
         ForEach(userVM.posts) { post in
             VStack(alignment: .leading) {
@@ -18,7 +19,7 @@ struct PostsListView: View {
                         .scaledToFill()
                         .frame(height: 200)
                         .clipped()
-                    if user.id == userVM.userID ??  0{
+                    if user.id == userVM.userID ??  0 {
                         VStack{
                             HStack {
                                 Spacer()
@@ -38,7 +39,7 @@ struct PostsListView: View {
                     }
                 }
                 HStack(alignment: .top) {
-                    if let profileImage = userVM.user?.profileImage {
+                    if let profileImage = userVM.loggedUser?.profileImage {
                         ImageURLView(image: profileImage)
                             .scaledToFit()
                             .frame(height: 34)
@@ -87,6 +88,6 @@ struct PostsListView: View {
 
 private struct PostsListView_Previews: PreviewProvider {
     static var previews: some View {
-        PostsListView()
+        PostsListView(user: User.example)
     }
 }

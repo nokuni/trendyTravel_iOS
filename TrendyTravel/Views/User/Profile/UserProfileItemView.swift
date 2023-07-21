@@ -8,37 +8,31 @@
 import SwiftUI
 
 struct UserProfileItemView: View {
-    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var userVM: UserViewModel
     
     var body: some View {
-        if userVM.user != nil {
-            NavigationLink(destination: UserDetailsView(user: userVM.user!)) {
-                ZStack{
-                    Image(systemName: "person.crop.circle.fill")
-                        .resizable()
-                        .frame(width: 36, height: 36)
-                        .foregroundColor(colorScheme == .dark ? .white.opacity(0.95) : .black.opacity(0.95))
-                        .padding(.bottom, 8)
-                    if let loggedUserImage = loggedUser.profileImage, !loggedUserImage.isEmpty {
-                        Image(loggedUserImage)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 41, height: 41)
-                            .clipShape(Circle())
-                            .padding(.bottom, 8)
-                    }
-                }
+        if let user = userVM.loggedUser {
+            NavigationLink {
+                UserDetailsView(user: user)
+            } label: {
+                profilePicture(user: user)
             }
         } else {
-            NavigationLink(destination: LoginView()) {
-                Image(systemName: "person.crop.circle")
-                    .resizable()
+            NavigationLink {
+                LoginView()
+            } label: {
+                Image(systemName: "person.crop.circle.fill")
                     .frame(width: 36, height: 36)
-                    .foregroundColor(colorScheme == .dark ? .white : .black)
-                    .padding(.bottom, 8)
             }
         }
+    }
+    
+    @ViewBuilder
+    private func profilePicture(user: User) -> some View {
+        ImageURLView(image: user.profileImage)
+            .scaledToFill()
+            .frame(width: 40, height: 40)
+            .clipShape(Circle())
     }
 }
 

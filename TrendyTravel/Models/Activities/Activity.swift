@@ -40,11 +40,11 @@ struct Activity: Codable, Identifiable {
         
         var text: String {
             switch self {
-            case .bar: return L10n.DestinationsCategoriesView.bar
-            case .spectacle: return L10n.DestinationsCategoriesView.show
-            case .sport: return L10n.DestinationsCategoriesView.sports
-            case .restaurant: return L10n.DestinationsCategoriesView.restaurant
-            case .culture: return L10n.DestinationsCategoriesView.culture
+            case .bar: return L10n.bar
+            case .spectacle: return L10n.show
+            case .sport: return L10n.sports
+            case .restaurant: return L10n.restaurants
+            case .culture: return L10n.culture
             }
         }
     }
