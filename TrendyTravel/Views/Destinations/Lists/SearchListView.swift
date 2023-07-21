@@ -43,24 +43,29 @@ struct DestinationItemView: View {
     let destination: Destination
 
     var body: some View {
-        VStack {
-            image()
+        NavigationLink(destination: PopularDestinationsDetailsView(destination: destination)) {
 
-            HStack{
-                VStack(alignment: .leading) {
-                    Text("\(destination.city)")
-                        .foregroundColor(.black)
-                    Text("\(destination.country)")
-                        .foregroundColor(.gray)
+            VStack {
+                image()
+
+                HStack{
+                    VStack(alignment: .leading) {
+                        Text("\(destination.city)")
+                            .foregroundColor(.black)
+                        Text("\(destination.country)")
+                            .foregroundColor(.gray)
+
+                        Spacer()
+                    }
+                    .font(.system(size: 12, weight: .semibold))
+                    .lineLimit(2)
+                    .multilineTextAlignment(.center)
+
                     Spacer()
                 }
-                .font(.system(size: 12, weight: .semibold))
-                .lineLimit(2)
-                .multilineTextAlignment(.center)
-                Spacer()
+                .padding(.horizontal, 8)
+                .padding(.bottom, 4)
             }
-            .padding(.horizontal, 8)
-            .padding(.bottom, 4)
         }
         .background(.white)
         .frame(width: 120, height: 158)
