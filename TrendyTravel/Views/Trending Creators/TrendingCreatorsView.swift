@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TrendingCreatorsListView: View {
     @EnvironmentObject var userVM: UserViewModel
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -34,6 +36,7 @@ struct TrendingCreatorsListView: View {
                         }
                     }
                 }
+                .foregroundColor(colorScheme == .dark ? .white : .black)
                 .padding(.horizontal)
                 .padding(.bottom)
             }
