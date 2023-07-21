@@ -10,8 +10,10 @@ import SwiftUI
 struct UserProfileItemView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var userVM: UserViewModel
-
+    
     var body: some View {
+        let loggedUser = userVM.loggedUser ?? User.errorIndicators
+
         if userVM.isUserConnected{
             NavigationLink(destination:  MyProfileView()) {
                 ZStack{
@@ -20,7 +22,7 @@ struct UserProfileItemView: View {
                         .frame(width: 36, height: 36)
                         .foregroundColor(colorScheme == .dark ? .white.opacity(0.95) : .black.opacity(0.95))
                         .padding(.bottom, 8)
-                    if let loggedUserImage = userVM.user?.profileImage, !loggedUserImage.isEmpty {
+                    if let loggedUserImage = loggedUser.profileImage, !loggedUserImage.isEmpty {
                         Image(loggedUserImage)
                             .resizable()
                             .scaledToFill()

@@ -17,7 +17,7 @@ struct DestinationsCategoriesImageAndLabelView: View {
                 .frame(width: 64, height: 64)
                 .background(Color.white)
                 .cornerRadius(.infinity)
-            Text(category.rawValue)
+            Text(category.text)
                 .font(.system(size: 12, weight: .semibold))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)

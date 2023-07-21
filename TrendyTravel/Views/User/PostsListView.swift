@@ -8,15 +8,38 @@
 import SwiftUI
 
 struct PostsListView: View {
+    
+    @EnvironmentObject var userVM: UserViewModel
     var user: User
+    
     var body: some View {
         ForEach(user.posts, id: \.self) { post in
             VStack(alignment: .leading) {
-                Image(post.imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 200)
-                    .clipped()
+                ZStack{
+                    Image(post.imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 200)
+                        .clipped()
+                    if user.id == userVM.userID ??  0{
+                        VStack{
+                            HStack {
+                                Spacer()
+                                Button(action: {
+                                    //EditPostView()
+                                }, label: {
+                                    Image(systemName: "pencil")
+                                        .font(.system(size: 20))
+                                        .foregroundColor(Color.cyan)
+                                        .frame(width: 44, height: 44)
+                                        .background(Color.white)
+                                        .cornerRadius(.infinity)
+                                })
+                            }
+                            Spacer()
+                        }
+                    }
+                }
                 HStack(alignment: .top) {
                     if let profileImage = user.profileImage {
                         Image(profileImage)
@@ -61,6 +84,7 @@ struct PostsListView: View {
             .background(Color(white: 1))
             .cornerRadius(12)
             .shadow(color: .init(white: 0.8), radius: 5, x: 0, y: 4)
+            .frame(maxHeight:280)
         }
     }
 }
@@ -68,5 +92,6 @@ struct PostsListView: View {
 struct PostsListView_Previews: PreviewProvider {
     static var previews: some View {
         PostsListView(user: User.example)
+            .environmentObject(UserViewModel())
     }
 }
