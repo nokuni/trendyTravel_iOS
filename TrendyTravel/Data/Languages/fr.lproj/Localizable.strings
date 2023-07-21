@@ -1,11 +1,4 @@
-/* 
-  Localizable.strings
-  TrendyTravel
-
-  Created by Yann Christophe Maertens on 17/07/2023.
-  
-*/
-
+//Commented because they are not referencing keys
 //Les traductions doivent faire référence à une clé et pas à du texte dans une autre langue
 
 //// Commons

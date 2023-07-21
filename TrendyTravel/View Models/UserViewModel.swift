@@ -172,7 +172,7 @@ class UserViewModel: ObservableObject {
         DispatchQueue.main.async {
             AsyncManager.loadContent { [weak self] in
                 guard let self else { return }
-                try await removeUser(id: id)
+                try await self.removeUser(id: id)
             }
         }
     }
