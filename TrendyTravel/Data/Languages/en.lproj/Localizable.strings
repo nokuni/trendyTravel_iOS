@@ -49,13 +49,13 @@
 "reviewList.date" = "Dec 2020";
 
 //MyProfileView
-"MyProfileView.noDescription" = "No description.";
-"MyProfileView.folowers" = "Followers";
-"MyProfileView.following" = "Following";
-"MyProfileView.editProfile" = "Edit My Profile";
-"MyProfileView.newPost" = "New Post";
-"MyProfileView.logOut" = "Log Out";
-"MyProfileView.deleteAccount" = "Delete My Account";
+"myProfileView.noDescription" = "No description.";
+"myProfileView.folowers" = "Followers";
+"myProfileView.following" = "Following";
+"myProfileView.editProfile" = "Edit My Profile";
+"myProfileView.newPost" = "New Post";
+"myProfileView.logOut" = "Log Out";
+"myProfileView.deleteAccount" = "Delete My Account";
 
 
 //UserDetailsView
@@ -75,7 +75,7 @@
 
 //LoginView
 "loginView.signIn" = "Sign In";
-"loginView.signUp" = "Sign Un";
+"loginView.signUp" = "Sign Up";
 
 //SignInView
 "signInView.logIn" = "Log in";

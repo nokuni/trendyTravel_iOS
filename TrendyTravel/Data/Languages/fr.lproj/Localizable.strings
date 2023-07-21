@@ -57,13 +57,13 @@
 "reviewList.date" = "Dec 2020";
 
 //MyProfileView
-"MyProfileView.noDescription" = "Pas de description.";
-"MyProfileView.folowers" = "Abonnés";
-"MyProfileView.following" = "Abonnements";
-"MyProfileView.editProfile" = "Editer mon profil";
-"MyProfileView.newPost" = "Nouvelle publication";
-"MyProfileView.logOut" = "Deconnexion";
-"MyProfileView.deleteAccount" = "Supprimer mon compte";
+"myProfileView.noDescription" = "Pas de description.";
+"myProfileView.folowers" = "Abonnés";
+"myProfileView.following" = "Abonnements";
+"myProfileView.editProfile" = "Editer mon profil";
+"myProfileView.newPost" = "Nouvelle publication";
+"myProfileView.logOut" = "Deconnexion";
+"myProfileView.deleteAccount" = "Supprimer mon compte";
 
 //UserDetailsView
 "userDetailsView.numero" = "2541";
