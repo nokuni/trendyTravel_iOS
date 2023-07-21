@@ -64,7 +64,7 @@ struct RestaurantDetailsView: View {
     }
 }
 
-struct RestaurantDetailsView_Previews: PreviewProvider {
+private struct RestaurantDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             RestaurantDetailsView(activity: Activity.example, reviews: [])

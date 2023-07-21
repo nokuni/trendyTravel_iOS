@@ -19,7 +19,7 @@ struct CategoryDetailErrorView: View {
     }
 }
 
-struct CategoryDetailErrorView_Previews: PreviewProvider {
+private struct CategoryDetailErrorView_Previews: PreviewProvider {
     static var previews: some View {
         CategoryDetailErrorView(errorMessage: "")
     }

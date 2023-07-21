@@ -53,7 +53,7 @@ struct PopularDestinationTile: View {
     }
 }
 
-struct PopularDestinationTile_Previews: PreviewProvider {
+private struct PopularDestinationTile_Previews: PreviewProvider {
     static var previews: some View {
         PopularDestinationTile(destination: Destination.example)
     }

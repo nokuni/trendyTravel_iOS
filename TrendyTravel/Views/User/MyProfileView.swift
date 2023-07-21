@@ -203,7 +203,7 @@ struct MyProfileView: View {
     }
 }
 
-struct MyProfileView_Previews: PreviewProvider {
+private struct MyProfileView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             MyProfileView()

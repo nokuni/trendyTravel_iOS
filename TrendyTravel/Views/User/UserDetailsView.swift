@@ -82,7 +82,7 @@ struct UserDetailsView: View {
     }
 }
 
-struct UserDetailsView_Previews: PreviewProvider {
+private struct UserDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         UserDetailsView(user: User.example)
     }

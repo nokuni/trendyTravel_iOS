@@ -63,7 +63,7 @@ struct PopularRestaurantsView: View {
     }
 }
 
-struct PopularRestaurantsView_Previews: PreviewProvider {
+private struct PopularRestaurantsView_Previews: PreviewProvider {
     static var previews: some View {
         PopularRestaurantsView()
             .environmentObject(ActivityViewModel())

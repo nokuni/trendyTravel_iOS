@@ -24,7 +24,7 @@ struct CircleShapeImageView: View {
     }
 }
 
-struct CircleShapeImageView_Previews: PreviewProvider {
+private struct CircleShapeImageView_Previews: PreviewProvider {
     static var previews: some View {
         CircleShapeImageView(image: "amy")
     }

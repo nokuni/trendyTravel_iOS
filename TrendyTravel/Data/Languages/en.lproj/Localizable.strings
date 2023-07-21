@@ -91,6 +91,9 @@
 "signUpView.password" = "Password";
 "signUpView.register" = "register";
 
+//AttractionDetailsView
+"attractionDetailsView.title" = "Attraction";
+
 //TODO: in fr locale
 ////MyProfileView
 //"MyProfileView.NO_DESCRIPTION" = "Pas de description.";
@@ -100,4 +103,3 @@
 //"MyProfileView.NEW_POST" = "Nouvelle publication";
 //"MyProfileView.LOG_OUT" = "Deconnexion";
 //"MyProfileView.DELETE_ACCOUNT" = "Supprimer mon compte"';
-

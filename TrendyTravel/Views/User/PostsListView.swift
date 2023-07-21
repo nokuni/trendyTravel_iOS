@@ -89,7 +89,7 @@ struct PostsListView: View {
     }
 }
 
-struct PostsListView_Previews: PreviewProvider {
+private struct PostsListView_Previews: PreviewProvider {
     static var previews: some View {
         PostsListView(user: User.example)
             .environmentObject(UserViewModel())

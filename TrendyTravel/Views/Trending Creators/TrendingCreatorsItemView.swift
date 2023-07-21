@@ -28,7 +28,8 @@ struct TrendingCreatorsItemView: View {
         .frame(width: 60)
     }
 }
-struct TrendingCreatorsItemView_Previews: PreviewProvider {
+
+private struct TrendingCreatorsItemView_Previews: PreviewProvider {
     static var previews: some View {
         TrendingCreatorsItemView(user: User.example)
     }

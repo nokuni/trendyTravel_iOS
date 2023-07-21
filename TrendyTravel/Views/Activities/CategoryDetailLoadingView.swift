@@ -21,7 +21,7 @@ struct CategoryDetailLoadingView: View {
     }
 }
 
-struct CategoryDetailLoadingView_Previews: PreviewProvider {
+private struct CategoryDetailLoadingView_Previews: PreviewProvider {
     static var previews: some View {
         CategoryDetailLoadingView()
     }

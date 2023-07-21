@@ -84,7 +84,7 @@ struct PopularDestinationsDetailsView: View {
                 Button(action: {
                     isShowingAttractions.toggle()
                 }) {
-                    Text("\(isShowingAttractions ? L10n.PopularDestinationsDetailsView.Toggle.hide : L10n.PopularDestinationsDetailsView.Toggle.show)")
+                    Text(isShowingAttractions ? L10n.PopularDestinationsDetailsView.Toggle.hide : L10n.PopularDestinationsDetailsView.Toggle.show)
                         .font(.system(size: 12, weight: .semibold))
                 }
                 Toggle("", isOn: $isShowingAttractions)
@@ -94,7 +94,11 @@ struct PopularDestinationsDetailsView: View {
             .padding()
             Map(coordinateRegion: $region, annotationItems: isShowingAttractions ? attractions : []) { attraction in
                 MapAnnotation(coordinate: .init(latitude: attraction.latitude, longitude: attraction.longitude)) {
-                    CustomMapAnnotationView(attraction: attraction)
+                    NavigationLink {
+                        AttractionDetailsView(attraction: attraction)
+                    } label: {
+                        CustomMapAnnotationView(attraction: attraction)
+                    }
                 }
             }
             .frame(height: 300)
@@ -103,7 +107,7 @@ struct PopularDestinationsDetailsView: View {
     }
 }
 
-struct PopularDestinationsDetailsView_Previews: PreviewProvider {
+private struct PopularDestinationsDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         PopularDestinationsDetailsView(destination: Destination.example)
     }
