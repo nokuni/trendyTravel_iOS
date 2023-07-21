@@ -9,12 +9,12 @@ import SwiftUI
 import Utility_Toolbox
 
 class UserViewModel: ObservableObject {
-    @Published var user: User?
+    @Published var loggedUser: User?
     @Published var users: [User] = []
     @AppStorage("userID") var userID: Int?
     
     var isUserConnected: Bool { userID != nil }
-    
+        
     private func getUsers() async throws -> [User] {
         let url = AppConfiguration.routes.userBaseURL
         
@@ -35,12 +35,24 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    private func postUser(user: User) async throws {
+    func postUser(user: User) async throws {
         let url = AppConfiguration.routes.userBaseURL
         
         do {
-            let newUser = User(firstName: user.firstName, lastName: user.lastName, description: user.description, profileImage: user.profileImage, username: user.username, email: user.email, password: user.password)
+            let newUser = User(id: 0, firstName: user.firstName, lastName: user.lastName, description: user.description, profileImage: user.profileImage, username: user.username, email: user.email, password: user.password)
             _ = try await AppConfiguration.routes.manager.post(url: url, value: newUser)
+        } catch {
+            throw error.localizedDescription
+        }
+    }
+    
+    func putUser(userID: Int, user:User) async throws {
+        let url = AppConfiguration.routes.userBaseURL
+        
+        do {
+            let putUser = User(id: userID, firstName: user.firstName, lastName: user.lastName, description: user.description, profileImage: user.profileImage, username: user.username, email: user.email, password: user.password)
+            _ = try await AppConfiguration.routes.manager.put(url: "\(url)/\(userID)", value: putUser)
+            self.loggedUser = putUser
         } catch {
             throw error.localizedDescription
         }
@@ -59,7 +71,7 @@ class UserViewModel: ObservableObject {
         DispatchQueue.main.async {
             AsyncManager.loadContent { [weak self] in
                 guard let self else { return }
-                self.user = try await self.getUser(email: email, password: password)
+                self.loggedUser = try await self.getUser(email: email, password: password)
             }
         }
     }

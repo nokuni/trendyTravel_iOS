@@ -1,11 +1,3 @@
-/* 
-  Localizable.strings
-  TrendyTravel
-
-  Created by Yann Christophe Maertens on 17/07/2023.
-  
-*/
-
 //DestinationsView
 "destinationView.schearchBar.title" = "Where do you want to go?";
 "destinationView.navigationBar.title" = "Discover";
@@ -18,7 +10,7 @@
 "destinationsCategoriesView.bar" = "Bar";
 
 // CategoryDetailLoadingView
-"categoryDetailLoadingView.loarding" = "Loarding...";
+"categoryDetailLoadingView.loarding" = "Loading...";
 
 //PopularDestinationsView
 "popularDestinationsView.title" = "Popular Destinations";
@@ -57,15 +49,14 @@
 "reviewList.date" = "Dec 2020";
 
 //MyProfileView
-"myProfileView.numero" = "2541";
-"myProfileView.description" = "YouTuber, Vlogger, Travel Creator";
-"myProfileView.followers" = "Followers";
-"myProfileView.followers.numbers" = "3";
-"myProfileView.following" = "Following";
-"myProfileView.following.numbers" = "2";
-"myProfileView.follow" = "Follow";
-"myProfileView.contact" = "Contact";
-"myProfileView.follow" = "Follow";
+"MyProfileView.NO_DESCRIPTION" = "No description.";
+"MyProfileView.FOLLOWERS" = "Followers";
+"MyProfileView.FOLLOWING" = "Following";
+"MyProfileView.EDIT_PROFILE" = "Edit My Profile";
+"MyProfileView.NEW_POST" = "New Post";
+"MyProfileView.LOG_OUT" = "Log Out";
+"MyProfileView.DELETE_ACCOUNT" = "Delete My Account";
+
 
 //UserDetailsView
 "userDetailsView.numero" = "2541";
@@ -102,3 +93,13 @@
 
 //AttractionDetailsView
 "attractionDetailsView.title" = "Attraction";
+
+//TODO: in fr locale
+////MyProfileView
+//"MyProfileView.NO_DESCRIPTION" = "Pas de description.";
+//"MyProfileView.FOLLOWERS" = "Abonnés";
+//"MyProfileView.FOLLOWING" = "Abonnements";
+//"MyProfileView.EDIT_PROFILE" = "Editer mon profil";
+//"MyProfileView.NEW_POST" = "Nouvelle publication";
+//"MyProfileView.LOG_OUT" = "Deconnexion";
+//"MyProfileView.DELETE_ACCOUNT" = "Supprimer mon compte"';

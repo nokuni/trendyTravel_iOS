@@ -64,6 +64,7 @@
 		A8D718452A66DA28008F4524 /* DestinationDetailCarouselHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539DE5E2A499BE60015FA4F /* DestinationDetailCarouselHeader.swift */; };
 		ACAFA0962A681A38003E2C83 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAFA0952A681A38003E2C83 /* SearchListView.swift */; };
 		C846F6922A6572D6000FF9E8 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C846F6912A6572D6000FF9E8 /* MyProfileView.swift */; };
+		C859BB7F2A681CA00006F499 /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C859BB7E2A681CA00006F499 /* EditProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		A8D718432A66D589008F4524 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		ACAFA0952A681A38003E2C83 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 		C846F6912A6572D6000FF9E8 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		C859BB7E2A681CA00006F499 /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				C846F6912A6572D6000FF9E8 /* MyProfileView.swift */,
+				C859BB7E2A681CA00006F499 /* EditProfileView.swift */,
 				A8C503F22A65A62100A4BF22 /* UserProfileItemView.swift */,
 				A8C503F62A65A74400A4BF22 /* UserDetailsView.swift */,
 				A8C503FE2A65AF7400A4BF22 /* PostsListView.swift */,
@@ -608,8 +611,12 @@
 				A8C503FF2A65AF7400A4BF22 /* PostsListView.swift in Sources */,
 				758A0E802A4D64EB008E22FC /* Posts.swift in Sources */,
 				7539DE812A49B84A0015FA4F /* Users.swift in Sources */,
+				C859BB7F2A681CA00006F499 /* EditProfileView.swift in Sources */,
+				7539DE5D2A4999A50015FA4F /* PopularDestinationsView.swift in Sources */,
 				A8D7183E2A66CF4C008F4524 /* CategoryDetailErrorView.swift in Sources */,
 				A8C504172A65E34800A4BF22 /* ReviewUser.swift in Sources */,
+        A8D7183E2A66CF4C008F4524 /* CategoryDetailErrorView.swift in Sources */,
+				C859BB7F2A681CA00006F499 /* EditProfileView.swift in Sources */,
 				A8C504012A65BD7600A4BF22 /* SearchBarView.swift in Sources */,
 				A8C5041B2A65E3B700A4BF22 /* ReviewListView.swift in Sources */,
 				A8D718402A66CF4C008F4524 /* CategoryDetailLoadingView.swift in Sources */,

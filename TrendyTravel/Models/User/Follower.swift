@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Follower: Codable {
+struct Follower: Codable, Hashable {
     var id: Int
     var followerID: Int
     var followedID: Int
@@ -16,6 +16,5 @@ struct Follower: Codable {
         case id
         case followerID = "followerId"
         case followedID = "followedId"
-
     }
 }

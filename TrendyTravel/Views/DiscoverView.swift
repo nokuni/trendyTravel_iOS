@@ -14,6 +14,8 @@ struct DiscoverView: View {
     @State private var searchText = ""
     
     var body: some View {
+//        let loggedUser = userVM.loggedUser ?? User.errorIndicators
+
         NavigationView {
             ZStack {
                 background()
