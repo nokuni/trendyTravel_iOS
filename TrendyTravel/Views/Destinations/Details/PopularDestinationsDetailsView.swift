@@ -89,6 +89,7 @@ struct PopularDestinationsDetailsView: View {
                 }
                 Toggle("", isOn: $isShowingAttractions)
                     .labelsHidden()
+                    .tint(.accentColor)
             }
             .padding()
             Map(coordinateRegion: $region, annotationItems: isShowingAttractions ? attractions : []) { attraction in

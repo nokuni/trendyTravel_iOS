@@ -17,16 +17,15 @@ struct TrendingCreatorsItemView: View {
                     .scaledToFill()
                     .frame(width: 80, height: 80)
                     .cornerRadius(.infinity)
+                    .shadow(color: .gray, radius: 2, x: 0, y: 2)
             }
             if let firstName = user.firstName {
                 Text(firstName)
                     .font(.system(size: 11, weight: .semibold))
                     .multilineTextAlignment(.center)
-                    .foregroundColor(Color(.label))
             }
         }
         .frame(width: 60)
-        .shadow(color: .gray, radius: 2, x: 0, y: 2)
     }
 }
 struct TrendingCreatorsItemView_Previews: PreviewProvider {

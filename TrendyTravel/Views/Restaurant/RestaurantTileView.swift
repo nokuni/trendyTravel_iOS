@@ -51,6 +51,7 @@ struct RestaurantTileView: View {
                     Text("\(destination.country), \(destination.city)")
                 }
             }
+            .foregroundColor(.black)
             .font(.system(size: 12, weight: .semibold))
             .onAppear {
                 destinationVM.destination(id: activity.destinationId)

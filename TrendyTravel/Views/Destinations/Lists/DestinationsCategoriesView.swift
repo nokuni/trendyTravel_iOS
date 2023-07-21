@@ -28,7 +28,7 @@ struct DestinationsCategoriesView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ZStack {
-                Color.cyan
+                Color.accentColor
                 DestinationsCategoriesView()
             }
         }

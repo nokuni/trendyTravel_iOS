@@ -14,9 +14,11 @@ struct TrendingCreatorsListView: View {
             HStack {
                 Text(L10n.TrendingCreatorsListView.title)
                     .font(.system(size: 14, weight: .semibold))
+                    .foregroundColor(.black)
                 Spacer()
                 Text(L10n.TrendingCreatorsListView.see_all)
                     .font(.system(size: 12, weight: .semibold))
+                    .foregroundColor(.black)
             }
             .padding(.top)
             .onAppear { userVM.fetchUsers() }
@@ -29,9 +31,9 @@ struct TrendingCreatorsListView: View {
                         } label: {
                             TrendingCreatorsItemView(user: user)
                         }
-                        
                     }
                 }
+                .foregroundColor(.black)
                 .padding(.horizontal)
                 .padding(.bottom)
             }

@@ -13,7 +13,7 @@ struct DestinationsCategoriesImageAndLabelView: View {
         VStack(spacing: 8) {
             Image(systemName: category.image)
                 .font(.system(size: 20))
-                .foregroundColor(Color.cyan)
+                .foregroundColor(Color("LightBlue"))
                 .frame(width: 64, height: 64)
                 .background(Color.white)
                 .cornerRadius(.infinity)
@@ -30,7 +30,7 @@ struct DestinationsCategoriesImageAndLabelView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ZStack {
-                Color.cyan
+                Color("LightBlue")
                 DestinationsCategoriesImageAndLabelView(category: .restaurant)
             }
         }

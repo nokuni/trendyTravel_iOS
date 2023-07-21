@@ -16,7 +16,7 @@ struct CategoryDetailLoadingView: View {
                 .font(.system(size: 16, weight: .semibold))
         }
         .padding()
-        .background(Color.mint)
+        .background(Color("DarkBlue"))
         .cornerRadius(8)
     }
 }
