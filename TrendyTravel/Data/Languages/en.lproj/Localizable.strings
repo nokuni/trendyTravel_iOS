@@ -49,13 +49,13 @@
 "reviewList.date" = "Dec 2020";
 
 //MyProfileView
-"MyProfileView.NO_DESCRIPTION" = "No description.";
-"MyProfileView.FOLLOWERS" = "Followers";
-"MyProfileView.FOLLOWING" = "Following";
-"MyProfileView.EDIT_PROFILE" = "Edit My Profile";
-"MyProfileView.NEW_POST" = "New Post";
-"MyProfileView.LOG_OUT" = "Log Out";
-"MyProfileView.DELETE_ACCOUNT" = "Delete My Account";
+"MyProfileView.noDescription" = "No description.";
+"MyProfileView.folowers" = "Followers";
+"MyProfileView.following" = "Following";
+"MyProfileView.editProfile" = "Edit My Profile";
+"MyProfileView.newPost" = "New Post";
+"MyProfileView.logOut" = "Log Out";
+"MyProfileView.deleteAccount" = "Delete My Account";
 
 
 //UserDetailsView
@@ -91,13 +91,4 @@
 "signUpView.password" = "Password";
 "signUpView.register" = "register";
 
-//TODO: in fr locale
-////MyProfileView
-//"MyProfileView.NO_DESCRIPTION" = "Pas de description.";
-//"MyProfileView.FOLLOWERS" = "Abonnés";
-//"MyProfileView.FOLLOWING" = "Abonnements";
-//"MyProfileView.EDIT_PROFILE" = "Editer mon profil";
-//"MyProfileView.NEW_POST" = "Nouvelle publication";
-//"MyProfileView.LOG_OUT" = "Deconnexion";
-//"MyProfileView.DELETE_ACCOUNT" = "Supprimer mon compte"';
 

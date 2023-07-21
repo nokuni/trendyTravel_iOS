@@ -57,15 +57,13 @@
 "reviewList.date" = "Dec 2020";
 
 //MyProfileView
-"myProfileView.numero" = "2541";
-"myProfileView.description" = "YouTuber, Vlogger, Travel Creator";
-"myProfileView.followers" = "Followers";
-"myProfileView.followers.numbers" = "3";
-"myProfileView.following" = "Following";
-"myProfileView.following.numbers" = "2";
-"myProfileView.follow" = "Follow";
-"myProfileView.contact" = "Contact";
-"myProfileView.follow" = "Follow";
+"MyProfileView.noDescription" = "Pas de description.";
+"MyProfileView.folowers" = "Abonnés";
+"MyProfileView.following" = "Abonnements";
+"MyProfileView.editProfile" = "Editer mon profil";
+"MyProfileView.newPost" = "Nouvelle publication";
+"MyProfileView.logOut" = "Deconnexion";
+"MyProfileView.deleteAccount" = "Supprimer mon compte";
 
 //UserDetailsView
 "userDetailsView.numero" = "2541";
