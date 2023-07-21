@@ -6,48 +6,55 @@
 //
 
 import SwiftUI
+import Utility_Toolbox
 
 struct DestinationDetailCarouselHeader: View {
-    @State private var index = 0
+    @Binding var selectedIndex: Int
     var images: [String]
     var body: some View {
         VStack {
-            TabView(selection: $index) {
-                ForEach((0..<images.count), id: \.self) { index in
-                    image(index: index)
-                }
+            if images.isNotEmpty {
+                carousel()
+                carouselIndicators()
+            } else {
+                Text("There is no activities yet")
+                    .font(.title)
+                    .foregroundColor(.tin)
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            
-            HStack(spacing: 2) {
-                ForEach((0..<3), id: \.self) { index in
-                    Rectangle()
-                        .fill(index == self.index ? Color.cyan : Color.cyan.opacity(0.5))
-                        .frame(width: 30, height: 5)
-                }
-            }
-            .padding()
         }
     }
     
     @ViewBuilder
     private func image(index: Int) -> some View {
-        Image(images[index])
-            .resizable()
+        ImageURLView(image: images[index])
             .scaledToFill()
+    }
+    
+    @ViewBuilder
+    private func carousel() -> some View {
+        TabView(selection: $selectedIndex) {
+            ForEach((0..<images.count), id: \.self) { index in
+                image(index: index)
+            }
+        }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+    }
+    
+    @ViewBuilder
+    private func carouselIndicators() -> some View {
+        HStack(spacing: 2) {
+            ForEach((0..<images.count), id: \.self) { index in
+                Rectangle()
+                    .fill(index == selectedIndex ? Color.cyan : Color.cyan.opacity(0.5))
+                    .frame(width: 30, height: 5)
+            }
+        }
+        .padding()
     }
 }
 
 struct DestinationDetailCarouselHeader_Previews: PreviewProvider {
-    static let attractionsImages: [String] = [
-        .init("eiffel_tower"),
-        .init("new_york"),
-        .init("art2"),
-        .init("art1")
-    ]
-    
     static var previews: some View {
-        DestinationDetailCarouselHeader(images: attractionsImages)
-            .frame(height: 300)
+        DestinationDetailCarouselHeader(selectedIndex: .constant(0), images: [])
     }
 }

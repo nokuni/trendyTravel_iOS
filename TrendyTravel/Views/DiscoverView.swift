@@ -12,7 +12,6 @@ struct DiscoverView: View {
     @FocusState var focusField: FocusField?
     @EnvironmentObject var userVM: UserViewModel
     @State private var searchText = ""
-    
     var body: some View {
 //        let loggedUser = userVM.loggedUser ?? User.errorIndicators
 
@@ -21,7 +20,7 @@ struct DiscoverView: View {
                 background()
                 scrollContent()
             }
-            .navigationTitle(L10n.DiscoverView.NavigationBar.title)
+            .navigationTitle(L10n.discover)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     UserProfileItemView()
@@ -33,8 +32,8 @@ struct DiscoverView: View {
     @ViewBuilder
     private func background() -> some View {
         VStack {
-            LinearGradient(gradient: Gradient(colors: [.cyan, .mint]), startPoint: .top,
-                           endPoint: .center)
+            LinearGradient(gradient: Gradient(colors: [Color("LightBlue"), Color("LightBlue"), Color("DarkBlue")]), startPoint: .topLeading,
+                           endPoint: .bottomTrailing)
             Color.white
         }
         .ignoresSafeArea()
@@ -44,7 +43,7 @@ struct DiscoverView: View {
     private func scrollContent() -> some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                SearchBarView(prompt: L10n.DiscoverView.SchearchBar.prompt,
+                SearchBarView(prompt: L10n.discoverSearchPrompt,
                               focusField: $focusField,
                               text: $searchText)
                 if searchText.isNotEmpty {
@@ -65,17 +64,15 @@ struct DiscoverView: View {
 }
 
 
-struct DiscoverView_Previews: PreviewProvider {
+private struct DiscoverView_Previews: PreviewProvider {
     static var previews: some View {
         DiscoverView()
             .colorScheme(.light)
             .environmentObject(UserViewModel())
             .environmentObject(DestinationViewModel())
-            .environmentObject(CategoryDetailsViewModel())
         DiscoverView()
             .colorScheme(.dark)
             .environmentObject(UserViewModel())
             .environmentObject(DestinationViewModel())
-            .environmentObject(CategoryDetailsViewModel())
     }
 }

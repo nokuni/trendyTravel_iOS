@@ -6,10 +6,10 @@
 //
 
 import SwiftUI
+import Utility_Toolbox
 
 struct CategoryDetailCardView: View {
     let activity: Activity
-    
     var destination: Destination {
         for destination in  DestinationViewModel().destinations {
             if   activity.destinationId == destination.id {
@@ -20,19 +20,18 @@ struct CategoryDetailCardView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Image(activity.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            Text(activity.name)
-                .font(.system(size: 12, weight: .semibold))
-                .padding()
+        VStack(alignment: .leading) {
+            Text(activity.name.capitalized)
+                .font(.system(.title2, design: .default, weight: .bold))
+            ImageURLView(image: activity.imageName)
+                .cornerRadius(5)
+                .frame(maxWidth: .infinity, maxHeight: CGSize.screen.height * 0.3)
         }
         .padding()
     }
 }
 
-struct CategoryDetailCardView_Previews: PreviewProvider {
+private struct CategoryDetailCardView_Previews: PreviewProvider {
     static var previews: some View {
         CategoryDetailCardView(activity: Activity.example)
     }

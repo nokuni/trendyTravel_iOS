@@ -9,31 +9,12 @@ import SwiftUI
 import MapKit
 
 struct PopularDestinationsDetailsView: View {
-    @ObservedObject private var vm: DestinationViewModel
-    let destination: Destination
+    @EnvironmentObject var activityVM: ActivityViewModel
+    @EnvironmentObject private var destinationVM: DestinationViewModel
+    var destination: Destination
     @State var region: MKCoordinateRegion
     @State var isShowingAttractions = true
-    
-    let attractions: [Attraction] = [
-        .init(
-            name: "eiffel tower",
-            imageName: "eiffel_tower",
-            latitude: 48.858605,
-            longitude: 2.2946
-        ),
-        .init(
-            name: "Champs-Elysees",
-            imageName: "new_york",
-            latitude: 48.866867,
-            longitude: 2.311780
-        ),
-        .init(
-            name: "Louvre Museum",
-            imageName: "art2",
-            latitude: 48.860288,
-            longitude: 2.337789
-        )
-    ]
+    @State var selectedIndex: Int = 0
     
     init(destination: Destination) {
         self.destination = destination
@@ -47,62 +28,71 @@ struct PopularDestinationsDetailsView: View {
                 longitudeDelta: 0.07
             )
         )
-        self.vm = .init()
-    }
-    
-    func activityImages(destination: Destination) -> [String] {
-        var images: [String] = []
-        for activity in attractions {
-            images.append(activity.imageName)
-        }
-        return images
     }
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            DestinationDetailCarouselHeader(images: activityImages(destination: destination))
-                .frame(height: 250)
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(destination.city)
-                        .font(.system(size: 18, weight: .bold))
-                    Text(destination.country)
-                }
-                Spacer()
-                HStack {
-                    ForEach(0..<5, id: \.self) { _ in
-                        Image(systemName: "star.fill")
-                            .foregroundColor(.orange)
-                    }
-                }
-            }
-            .padding(.horizontal)
-            HStack {
-                Text(L10n.PopularDestinationsDetailsView.Toggle.title)
-                    .font(.system(size: 18, weight: .semibold))
-                Spacer()
-                Button(action: {
-                    isShowingAttractions.toggle()
-                }) {
-                    Text("\(isShowingAttractions ? L10n.PopularDestinationsDetailsView.Toggle.hide : L10n.PopularDestinationsDetailsView.Toggle.show)")
-                        .font(.system(size: 12, weight: .semibold))
-                }
-                Toggle("", isOn: $isShowingAttractions)
-                    .labelsHidden()
-            }
-            .padding()
-            Map(coordinateRegion: $region, annotationItems: isShowingAttractions ? attractions : []) { attraction in
-                MapAnnotation(coordinate: .init(latitude: attraction.latitude, longitude: attraction.longitude)) {
-                    CustomMapAnnotationView(attraction: attraction)
-                }
-            }
-            .frame(height: 300)
+            carouselHeader()
+            nameAndRating()
+            showMapActivityToggle()
+            destinationMap()
         }
         .navigationBarTitle(destination.city, displayMode: .inline)
     }
+    
+    @ViewBuilder
+    private func carouselHeader() -> some View {
+        DestinationDetailCarouselHeader(selectedIndex: $selectedIndex,
+                                        images: activityVM.activityImages(destination: destination))
+        .frame(height: 250)
+    }
+    
+    @ViewBuilder
+    private func nameAndRating() -> some View {
+        if activityVM.destinationActivities(destination: destination).isNotEmpty {
+            HStack {
+                Text(activityVM.activities[selectedIndex].name)
+                    .font(.system(.callout, design: .default, weight: .bold))
+                Spacer()
+                StarRatingView(rating: activityVM.activities[selectedIndex].rating)
+                
+            }
+            .padding(.horizontal)
+        }
+    }
+    
+    @ViewBuilder
+    private func showMapActivityToggle() -> some View {
+        HStack {
+            Text(L10n.location)
+                .font(.system(size: 18, weight: .semibold))
+            Spacer()
+            Button(action: {
+                isShowingAttractions.toggle()
+            }) {
+                Text("\(isShowingAttractions ? L10n.hideActivities : L10n.showActivities)")
+                    .font(.system(size: 12, weight: .semibold))
+            }
+            Toggle("", isOn: $isShowingAttractions)
+                .labelsHidden()
+        }
+        .padding()
+        .disabled(activityVM.destinationActivities(destination: destination).isEmpty)
+    }
+    
+    @ViewBuilder
+    private func destinationMap() -> some View {
+        Map(coordinateRegion: $region,
+            annotationItems: isShowingAttractions ? activityVM.destinationActivities(destination: destination) : []) { activity in
+            MapAnnotation(coordinate: .init(latitude: activity.latitude, longitude: activity.longitude)) {
+                CustomMapAnnotationView(activity: activity)
+            }
+        }
+            .frame(height: 300)
+    }
 }
 
-struct PopularDestinationsDetailsView_Previews: PreviewProvider {
+private struct PopularDestinationsDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         PopularDestinationsDetailsView(destination: Destination.example)
     }

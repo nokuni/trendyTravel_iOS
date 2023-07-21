@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CustomMapAnnotationView: View {
-    let attraction: Attraction
+    let activity: Activity
     var body: some View {
         VStack {
-            Image(attraction.imageName)
+            Image(activity.imageName)
                 .resizable()
                 .frame(width: 50, height: 30)
                 .cornerRadius(4)
@@ -19,11 +19,11 @@ struct CustomMapAnnotationView: View {
                     RoundedRectangle(cornerRadius: 4)
                         .stroke(Color(.init(white: 0, alpha: 0.5)))
                 )
-            Text(attraction.name)
+            Text(activity.name)
                 .font(.system(size: 12, weight: .semibold))
                 .padding(.horizontal, 6)
                 .padding(.vertical, 4)
-                .background(LinearGradient(gradient: Gradient(colors: [Color.cyan, Color.mint]), startPoint: .leading, endPoint: .trailing))
+                .background(LinearGradient(gradient: Gradient(colors: [Color("DarkBlue"), Color("LightBlue")]), startPoint: .leading, endPoint: .trailing))
                 .foregroundColor(.white)
                 .cornerRadius(4)
                 .overlay(
@@ -35,8 +35,8 @@ struct CustomMapAnnotationView: View {
     }
 }
 
-struct CustomMapAnnotationView_Previews: PreviewProvider {
+private struct CustomMapAnnotationView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomMapAnnotationView(attraction: Attraction.example)
+        CustomMapAnnotationView(activity: Activity.example)
     }
 }

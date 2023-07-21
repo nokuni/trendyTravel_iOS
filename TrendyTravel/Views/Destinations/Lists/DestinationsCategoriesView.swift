@@ -13,7 +13,7 @@ struct DestinationsCategoriesView: View {
             HStack(alignment: .top, spacing: 14) {
                 ForEach(Activity.Category.allCases, id: \.self) { category in
                     NavigationLink {
-                        CategoryDetailView(name: category.rawValue)
+                        CategoryDetailView(category: category)
                     } label: {
                         DestinationsCategoriesImageAndLabelView(category: category)
                     }
@@ -24,11 +24,11 @@ struct DestinationsCategoriesView: View {
     }
 }
 
-struct DestinationsCategoriesView_Previews: PreviewProvider {
+private struct DestinationsCategoriesView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ZStack {
-                Color.cyan
+                Color.accentColor
                 DestinationsCategoriesView()
             }
         }

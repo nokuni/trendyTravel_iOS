@@ -8,12 +8,13 @@
 import Foundation
 
 // MARK: - Post
-struct Post: Codable, Hashable {
+struct Post: Codable, Identifiable {
     var id: Int
     var title: String
     var imageName: String
     var hashtags: [String]
     var userID: Int
+    var likes: [Like]?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -21,5 +22,6 @@ struct Post: Codable, Hashable {
         case imageName
         case hashtags
         case userID = "userId"
+        case likes = "Likes"
     }
 }

@@ -19,20 +19,10 @@ struct PopularDestinationTile: View {
     
     @ViewBuilder
     private func image() -> some View {
-        if let url = URL(string: destination.imageName) {
-            AsyncImage(url: url) { phase in
-                if let image = phase.image {
-                    image.resizable()
-                } else if phase.error != nil {
-                    Color.silver
-                } else {
-                    ProgressView()
-                }
-            }
+        ImageURLView(image: destination.imageName)
             .frame(width: 125, height: 125)
             .cornerRadius(4)
             .padding(.all, 6)
-        }
     }
     
     @ViewBuilder
@@ -40,7 +30,7 @@ struct PopularDestinationTile: View {
         Text(destination.city.capitalized)
             .font(.system(size: 12, weight: .semibold))
             .padding(.horizontal, 12)
-            .foregroundColor(Color(.label))
+            .foregroundColor(.black)
     }
     
     @ViewBuilder
@@ -53,7 +43,7 @@ struct PopularDestinationTile: View {
     }
 }
 
-struct PopularDestinationTile_Previews: PreviewProvider {
+private struct PopularDestinationTile_Previews: PreviewProvider {
     static var previews: some View {
         PopularDestinationTile(destination: Destination.example)
     }

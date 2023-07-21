@@ -14,24 +14,27 @@ struct APIRoute {
     // MARK: CORE
     let baseURL = "https://trendytravel.onrender.com/"
     
+    // MARK: Image
+    let imageURL = "https://trendytravel.onrender.com/image"
+    
     // MARK: Destinations - GET(all,id)
-    let destinationsBaseURL = "https://trendytravel.onrender.com/destinations/"
+    var destinationsBaseURL: String { baseURL + "destinations/" }
     
     // MARK: Activities - GET(all,id)
-    let activitiesBaseURL = "https://trendytravel.onrender.com/activities/"
+    var activitiesBaseURL: String { baseURL + "activities/" }
     
     // MARK: Users - GET(all,id)/POST/PUT(id)/DELETE(id)
-    let userBaseURL = "https://trendytravel.onrender.com/users/"
+    var userBaseURL: String { baseURL + "users/" }
     
     // MARK: Followers - POST/DELETE(id)
-    let followersBaseURL = "https://trendytravel.onrender.com/followers/"
+    var followersBaseURL: String { baseURL + "followers/" }
     
     // MARK: Posts - GET(all,id)/POST/PUT(id)/DELETE(id)
-    let postsBaseURL = "https://trendytravel.onrender.com/posts/"
+    var postsBaseURL: String { baseURL + "posts/" }
     
     // MARK: Likes - POST/DELETE(id)
-    let likesBaseURL = "https://trendytravel.onrender.com/likes/"
+    var likesBaseURL: String { baseURL + "likes/" }
     
     // MARK: Reviews - GET(all,id)/POST/PUT(id)/DELETE(id)
-    let reviewsBaseURL = "https://trendytravel.onrender.com/reviews/"
+    var reviewsBaseURL: String { baseURL + "reviews/" }
 }

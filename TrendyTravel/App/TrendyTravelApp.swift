@@ -11,18 +11,20 @@ import SwiftUI
 struct TrendyTravelApp: App {
     @StateObject var destinationVM = DestinationViewModel()
     @StateObject var activityVM = ActivityViewModel()
-    @StateObject var userVm = UserViewModel()
-    @StateObject var catVm = CategoryDetailsViewModel()
-    
+    @StateObject var userVM = UserViewModel()
     var body: some Scene {
         WindowGroup {
-//            LoginView()
-            DiscoverView()
-                .environmentObject(destinationVM)
-                .environmentObject(activityVM)
-                .environmentObject(userVm)
-                .environmentObject(catVm)
-                .environmentObject(destinationVM)
+            ZStack {
+                switch true {
+                case userVM.isUserConnected: DiscoverView()
+                case userVM.userID == nil: LoginView()
+                default: EmptyView()
+                }
+                LoadingView()
+            }
+            .environmentObject(destinationVM)
+            .environmentObject(activityVM)
+            .environmentObject(userVM)
         }
     }
 }

@@ -57,7 +57,7 @@ struct UserDetailsView: View {
                             Spacer()
                         }
                         .padding(.vertical, 8)
-                        .background(Color.cyan)
+                        .background(Color.accentColor)
                         .cornerRadius(50)
                     }
                     Button(action: {}) {
@@ -82,7 +82,7 @@ struct UserDetailsView: View {
     }
 }
 
-struct UserDetailsView_Previews: PreviewProvider {
+private struct UserDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         UserDetailsView(user: User.example)
     }

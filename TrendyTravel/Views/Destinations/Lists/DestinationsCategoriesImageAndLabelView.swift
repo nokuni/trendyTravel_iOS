@@ -13,11 +13,11 @@ struct DestinationsCategoriesImageAndLabelView: View {
         VStack(spacing: 8) {
             Image(systemName: category.image)
                 .font(.system(size: 20))
-                .foregroundColor(Color.cyan)
+                .foregroundColor(Color("LightBlue"))
                 .frame(width: 64, height: 64)
                 .background(Color.white)
                 .cornerRadius(.infinity)
-            Text(category.text)
+            Text(category.rawValue.capitalized)
                 .font(.system(size: 12, weight: .semibold))
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
@@ -26,11 +26,11 @@ struct DestinationsCategoriesImageAndLabelView: View {
     }
 }
 
-struct DestinationsCategoriesImageAndLabelView_Previews: PreviewProvider {
+private struct DestinationsCategoriesImageAndLabelView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             ZStack {
-                Color.cyan
+                Color("LightBlue")
                 DestinationsCategoriesImageAndLabelView(category: .restaurant)
             }
         }

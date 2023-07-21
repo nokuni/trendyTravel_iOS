@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct ReviewUser: Codable, Hashable {
-    let id: Int
-    let username, firstName, lastName, profileImage: String
-}
+//struct ReviewUser: Codable, Hashable {
+//    let id: Int
+//    let username
+//    lfirstName, lastName, profileImage: String
+//}

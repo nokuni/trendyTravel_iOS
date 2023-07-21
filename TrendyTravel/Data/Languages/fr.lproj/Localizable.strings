@@ -6,6 +6,53 @@
   
 */
 
+//Les traductions doivent faire référence à une clé et pas à du texte dans une autre langue
+
+//// Commons
+//"See all" = "Tout voir";
+//"Previous" = "Précédent";
+//"Next" = "Suivant";
+//
+//// Destination
+//"Where do you want to go ?" = "Où voulez-vous allez ?";
+//"Discover" = "Découvrir";
+//"Popular Destinations" = "Destinations populaires";
+//
+//// Activity
+//"Culture" = "Culture";
+//"Show" = "Spectacle";
+//"Sports" = "Sports";
+//"Restaurants" = "Restaurants";
+//"Bar" = "Bar";
+//"Popular restaurants" = "Restaurants populaires";
+//"Location" = "Emplacement";
+//"Hide activities" = "Cacher les activités";
+//"Show activities" = "Montrer les activités";
+//"Customer reviews" = "Avis des clients";
+//"Location & Description" = "Emplacement & Description";
+//"Restaurant details" = "Détails du restaurant";
+//
+//// User
+//"Trending creators" = "Créateurs tendance";
+//"Followers" = "Abonnés";
+//"Following" = "Abonnements";
+//"Follow" = "Suivre";
+//"Contact" = "Contact";
+//"likes" = "j'aimes";
+//
+//// Login
+//"Sign In" = "S'identifier";
+//"Sign Up" = "S'inscrire";
+//"Log in" = "Connexion";
+//"Create an account" = "Créer un compte";
+//"First name" = "Prénom";
+//"Last name" = "Nom de famille";
+//"Username" = "Pseudo";
+//"Email" = "E-mail";
+//"Password" = "Mot de passe";
+//"Register" = "S'enregistrer";
+//"Connect" = "Se connecter";
+
 //DestinationsView
 "destinationView.schearchBar.title" = "Où voulez-vous allez?";
 "destinationView.navigationBar.title" = "Découvrir";
@@ -97,4 +144,3 @@
 "signUpView.email" = "Email";
 "signUpView.password" = "Mot de passe";
 "signUpView.register" = "S'enregistrer";
-

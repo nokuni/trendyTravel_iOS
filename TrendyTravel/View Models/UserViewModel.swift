@@ -11,53 +11,91 @@ import Utility_Toolbox
 class UserViewModel: ObservableObject {
     @Published var loggedUser: User?
     @Published var users: [User] = []
+    @Published var posts: [Post] = []
+    @Published var isLoading = false
     @AppStorage("userID") var userID: Int?
     
-    var isUserConnected: Bool { userID != nil }
-        
+    var isUserConnected: Bool { loggedUser != nil }
+    
+    init() {
+        fetchUsers()
+        fetchPosts()
+        signInOnLaunch()
+    }
+    
+    private let userURL = AppConfiguration.routes.userBaseURL
+    private let postsURL = AppConfiguration.routes.postsBaseURL
+    private let imageURL = AppConfiguration.routes.imageURL
+    
     private func getUsers() async throws -> [User] {
-        let url = AppConfiguration.routes.userBaseURL
-        
         do {
-            return try await AppConfiguration.routes.manager.get(url: url)
+            return try await AppConfiguration.routes.manager.get(url: userURL, keyDecodingStrategy: .convertFromSnakeCase)
         } catch {
             throw error.localizedDescription
         }
     }
     
-    private func getUser(email: String, password: String) async throws -> User? {
-        let url = AppConfiguration.routes.userBaseURL
-        guard let userID = userID else { return nil }
+    private func getAllPosts() async throws -> [Post] {
         do {
-            return try await AppConfiguration.routes.manager.get(url: url, id: userID)
+            return try await AppConfiguration.routes.manager.get(url: postsURL)
         } catch {
             throw error.localizedDescription
         }
     }
     
-    func postUser(user: User) async throws {
-        let url = AppConfiguration.routes.userBaseURL
-        
+    private func getUser(id: Int) async throws -> User? {
         do {
-            let newUser = User(id: 0, firstName: user.firstName, lastName: user.lastName, description: user.description, profileImage: user.profileImage, username: user.username, email: user.email, password: user.password)
-            _ = try await AppConfiguration.routes.manager.post(url: url, value: newUser)
+            return try await AppConfiguration.routes.manager.get(url: userURL, id: id, keyDecodingStrategy: .convertFromSnakeCase)
         } catch {
             throw error.localizedDescription
         }
     }
     
-    func putUser(userID: Int, user:User) async throws {
-        let url = AppConfiguration.routes.userBaseURL
-        
+    private func signInUser(user: User) async {
+        DispatchQueue.main.async {
+            self.loggedUser = user
+            self.userID = user.id
+        }
+    }
+    
+    private func postUser(firstName: String,
+                          lastName: String,
+                          description: String,
+                          image: UIImage,
+                          username: String,
+                          email: String,
+                          password: String) async throws -> User {
         do {
-            let putUser = User(id: userID, firstName: user.firstName, lastName: user.lastName, description: user.description, profileImage: user.profileImage, username: user.username, email: user.email, password: user.password)
-            _ = try await AppConfiguration.routes.manager.put(url: "\(url)/\(userID)", value: putUser)
-            self.loggedUser = putUser
+            let imageURL = try await AppConfiguration.routes.manager.uploadImage(
+                url: imageURL,
+                parameters: ["\(username)PP": "\(username)ID"],
+                image: image
+            )
+            let nextID = users.count + 1
+            let newUser = User(id: nextID,
+                               firstName: firstName,
+                               lastName: lastName,
+                               description: description,
+                               profileImage: imageURL ?? username,
+                               username: username,
+                               email: email,
+                               password: password)
+            let postedUser = try await AppConfiguration.routes.manager.postRequest(url: userURL, value: newUser, keyDecodingStrategy: .convertFromSnakeCase)
+            return postedUser
         } catch {
             throw error.localizedDescription
         }
     }
     
+    private func removeUser(id: Int) async throws {
+        do {
+            let _: User = try await AppConfiguration.routes.manager.delete(url: userURL, id: id)
+        } catch {
+            throw error.localizedDescription
+        }
+    }
+    
+    /// Get all users
     func fetchUsers() {
         DispatchQueue.main.async {
             AsyncManager.loadContent { [weak self] in
@@ -67,21 +105,92 @@ class UserViewModel: ObservableObject {
         }
     }
     
-    func signIn(email: String, password: String) {
+    /// Get all posts
+    func fetchPosts() {
         DispatchQueue.main.async {
             AsyncManager.loadContent { [weak self] in
                 guard let self else { return }
-                self.loggedUser = try await self.getUser(email: email, password: password)
+                self.posts = try await self.getAllPosts()
             }
         }
     }
     
-    func signUp(user: User) {
+    func userFromReview(_ review: Review) -> User? {
+        let user = users.first(where: { $0.id == review.userID })
+        return user
+    }
+    
+    func signUser(id: Int) {
         DispatchQueue.main.async {
             AsyncManager.loadContent { [weak self] in
                 guard let self else { return }
-                try await self.postUser(user: user)
+                self.loggedUser = try await self.getUser(id: id)
             }
         }
+    }
+    
+    func signInOnLaunch() {
+        guard let userID = userID else { return }
+        DispatchQueue.main.async {
+            AsyncManager.loadContent { [weak self] in
+                guard let self else { return }
+                self.loggedUser = try await self.getUser(id: userID)
+            }
+        }
+    }
+    
+    /// Get 1 user
+    func signIn(email: String, password: String) {
+        if let firstUser = users.first(where: {
+            $0.email == email && $0.password == $0.password
+        }) {
+            loggedUser = firstUser
+            userID = firstUser.id
+        }
+    }
+    
+    /// Register 1 user
+    func signUp(firstName: String,
+                lastName: String,
+                description: String,
+                image: UIImage,
+                username: String,
+                email: String,
+                password: String) {
+        DispatchQueue.main.async {
+            AsyncManager.loadContent { [weak self] in
+                guard let self else { return }
+                let postedUser = try await self.postUser(firstName: firstName, lastName: lastName, description: description, image: image, username: username, email: email, password: password)
+                self.loggedUser = postedUser
+                self.userID = postedUser.id
+                self.isLoading = false
+            }
+        }
+    }
+    
+    func deleteUser(id: Int) {
+        DispatchQueue.main.async {
+            AsyncManager.loadContent { [weak self] in
+                guard let self else { return }
+                try await removeUser(id: id)
+            }
+        }
+    }
+    
+    func userLikes(user: User) -> Int {
+        let userPosts = posts.filter { $0.userID == user.id }
+        let likes = Array(userPosts.compactMap { $0.likes }.joined())
+        return likes.count
+    }
+    
+    func userPosts(user: User) -> [Post] {
+        posts.filter { $0.userID == user.id }
+    }
+    
+    func userFollowing(user: User) -> Int {
+        let otherUsers = users.filter { $0.id != user.id }
+        let followers = Array(otherUsers.compactMap { $0.followers }.joined())
+        let following = followers.filter { $0.followerID == user.id }.count
+        return following
     }
 }

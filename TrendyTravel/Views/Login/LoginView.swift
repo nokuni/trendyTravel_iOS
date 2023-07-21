@@ -18,10 +18,10 @@ struct LoginView: View {
             signUpButton()
         }
         .sheet(isPresented: $isSigningIn) {
-            SignInView()
+            SignInView(isSigningIn: $isSigningIn)
         }
         .sheet(isPresented: $isSigningUp) {
-            SignUpView()
+            SignUpView(isSigningUp: $isSigningUp)
         }
     }
     
@@ -35,7 +35,7 @@ struct LoginView: View {
     
     @ViewBuilder
     private func signInButton() -> some View {
-        AppButtonView(label: L10n.LoginView.signIn,
+        AppButtonView(label: L10n.signIn,
                       labelColor: .blue,
                       backgroundColor: .white) {
             isSigningIn.toggle()
@@ -44,15 +44,15 @@ struct LoginView: View {
     
     @ViewBuilder
     private func signUpButton() -> some View {
-        AppButtonView(label: L10n.LoginView.signUp,
+        AppButtonView(label: L10n.signUp,
                       labelColor: .white,
-                      backgroundColor: .blue) {
+                      backgroundColor: .accentColor) {
             isSigningUp.toggle()
         }
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+private struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
     }

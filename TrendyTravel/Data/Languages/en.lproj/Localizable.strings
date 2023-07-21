@@ -1,3 +1,52 @@
+//Commented because they are not referencing keys
+//Les traductions doivent faire référence à une clé et pas à du texte dans une autre langue
+
+//// Commons
+//"See all" = "See all";
+//"Previous" = "Previous";
+//"Next" = "Next";
+//
+//// Destination
+//"Popular Destinations" = "Popular destinations";
+//"Where do you want to go ?" = "Where do you want to go ?";
+//"Discover" = "Discover";
+//
+//// Activity
+//"Culture" = "Culture";
+//"Show" = "Show";
+//"Sports" = "Sports";
+//"Restaurants" = "Restaurants";
+//"Bar" = "Bar";
+//"Popular restaurants" = "Popular restaurants";
+//"Location" = "Location";
+//"Hide activities" = "Hide activities";
+//"Show activities" = "Show activities";
+//"Customer reviews" = "Customer reviews";
+//"Location & Description" = "Location & Description";
+//"Restaurant details" = "Restaurant details";
+//
+//// User
+//"Trending creators" = "Trending creators";
+//"Followers" = "Followers";
+//"Following" = "Following";
+//"Follow" = "Follow";
+//"Contact" = "Contact";
+//"likes" = "likes";
+//
+//// Login
+//"Sign In" = "Sign In";
+//"Sign Up" = "Sign Up";
+//"Log in" = "Log in";
+//"Create an account" = "Create an account";
+//"First name" = "First name";
+//"Last name" = "Last name";
+//"Username" = "Username";
+//"Email" = "Email";
+//"Password" = "Password";
+//"Register" = "Register";
+//"Connect" = "Connect";
+
+
 //DestinationsView
 "destinationView.schearchBar.title" = "Where do you want to go?";
 "destinationView.navigationBar.title" = "Discover";
@@ -90,5 +139,3 @@
 "signUpView.email" = "Email";
 "signUpView.password" = "Password";
 "signUpView.register" = "register";
-
-
