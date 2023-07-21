@@ -11,6 +11,7 @@ import Utility_Toolbox
 struct DiscoverView: View {
     @FocusState var focusField: FocusField?
     @EnvironmentObject var userVM: UserViewModel
+    @Environment(\.colorScheme) var colorScheme
     @State private var searchText = ""
     
     var body: some View {
@@ -35,7 +36,7 @@ struct DiscoverView: View {
         VStack {
             LinearGradient(gradient: Gradient(colors: [Color("LightBlue"), Color("LightBlue"), Color("DarkBlue")]), startPoint: .topLeading,
                            endPoint: .bottomTrailing)
-            Color.white
+            Color(colorScheme == .dark ? .black : .white)
         }
         .ignoresSafeArea()
     }
@@ -56,7 +57,7 @@ struct DiscoverView: View {
                         PopularRestaurantsView()
                         TrendingCreatorsListView()
                     }
-                    .background(Color.white)
+                    .background(colorScheme == .dark ? .black : .white)
                     .cornerRadius(16)
                 }
             }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PopularDestinationTile: View {
     let destination: Destination
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             image()
@@ -40,7 +42,7 @@ struct PopularDestinationTile: View {
         Text(destination.city.capitalized)
             .font(.system(size: 12, weight: .semibold))
             .padding(.horizontal, 12)
-            .foregroundColor(.black)
+            .foregroundColor(colorScheme == .dark ? .white : .black)
     }
     
     @ViewBuilder
