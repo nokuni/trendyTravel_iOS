@@ -44,12 +44,7 @@ struct DestinationItemView: View {
 
     var body: some View {
         VStack {
-            Image(destination.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 100, height: 100)
-                .cornerRadius(2)
-                .padding(.top, 8)
+            image()
 
             HStack{
                 VStack(alignment: .leading) {
@@ -71,6 +66,24 @@ struct DestinationItemView: View {
         .frame(width: 120, height: 158)
         .cornerRadius(12)
     }
+
+    @ViewBuilder
+        private func image() -> some View {
+            if let url = URL(string: destination.imageName) {
+                AsyncImage(url: url) { phase in
+                    if let image = phase.image {
+                        image.resizable()
+                    } else if phase.error != nil {
+                        Color.silver
+                    } else {
+                        ProgressView()
+                    }
+                }
+                .frame(width: 100, height: 100)
+                .cornerRadius(2)
+                .padding(.top, 8)
+            }
+        }
 }
 
 struct SearchListView_Previews: PreviewProvider {
