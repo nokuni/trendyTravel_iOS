@@ -14,8 +14,9 @@ struct PopularRestaurantsView: View {
             HStack {
                 Text(L10n.PopularRestaurantsView.title)
                     .font(.system(size: 14, weight: .semibold))
-                    .foregroundColor(.black)
+
                 Spacer()
+                
                 Text(L10n.PopularRestaurantsView.see_all)
                     .font(.system(size: 12, weight: .semibold))
                     .environmentObject(ActivityViewModel())
